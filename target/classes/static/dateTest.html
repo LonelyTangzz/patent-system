@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日期时间datetime</title>
+    <link rel="stylesheet" href="css/dateTime.css">
+    <style>
+        .mycontainer input{
+            border:1px solid #ccc;
+            padding:6px 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mycontainer">
+    <input type="text" placeholder="请选择日期" id="date">
+    <input type="text" placeholder="请选择时间" id="time">
+    <input type="text" placeholder="请选择日期和时间" id="datetime">
+    <button onclick="getDate()" class="btn-primary">获取当前时间</button>
+</div>
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/dateTime.min.js"></script>
+<script>
+    $("#date").datetime({
+        type:"date",
+        value:[2020,3,8],
+        success:function(res){
+            console.log(res)
+        }
+    })
+
+    $("#time").datetime({
+        type:"time",
+        value:[12,28]
+    })
+
+    $("#datetime").datetime({
+        type:"datetime",
+        value:[2019,7,15,15,30]
+    })
+
+    function getDate() {
+        alert($("#date").val());
+    }
+
+</script>
+
+<script>
+    window.onload=function(){
+        var totleTp = 0;
+        var tppiao = document.getElementsByClassName("tppiao");
+        for(var i=0;i<tppiao.length;i++){totleTp+=parseInt(tppiao[i].innerHTML);}
+        var tpdetial = document.getElementsByClassName("tpdetial");
+        for(var i=0;i<tpdetial.length;i++){var mun = parseInt(tpdetial[i].getElementsByClassName("tppiao")[0].innerHTML);var bfb = (mun*100/totleTp).toFixed(2)+"%";tpdetial[i].getElementsByClassName("tppercent")[0].innerHTML = bfb;
+        }
+    }
+    if(window.location.href.indexOf("udsid=")>-1){
+        $("#ctlNext").on("click",function(){
+            console.log("执行成功！")
+            meteor.track("form", {convert_id: "1641358861914125"})
+        })
+    }
+</script>
+</body>
+</html>
+

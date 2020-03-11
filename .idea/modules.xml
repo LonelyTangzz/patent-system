@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Books-Management-System/book.iml" filepath="$PROJECT_DIR$/../Books-Management-System/book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/patent-system.iml" filepath="$PROJECT_DIR$/patent-system.iml" />
+    </modules>
+  </component>
+</project>

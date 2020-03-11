@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>专利资讯网</title>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8"/>
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/icomoon-social.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="img/head.png" type="image/jpeg"/>
+    <link rel="stylesheet" href="css/leaflet.css"/>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/leaflet.ie.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/admin/jquery-1.9.1.min.js"></script>
+    <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<style>
+    body {
+        font-family: "微软雅黑";
+        font-size: 14px;
+    }
+
+    .wrapper {
+        width: 800px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+</style>
+<body>
+<form action="/patent/updateAvatar.action" method="post" enctype="multipart/form-data">
+    <div class="wrapper">
+        <input id="id" name="id" type="hidden"/>
+        <div class="row">
+            <img id="img" class="img-fluid rounded-circle shadow" src="avatarPic/158280794660318878614648960788.jpg" width="75px"/>
+        </div>
+        <div class="row">
+            <input type="file" name="file" id="file" multiple="multiple" class=""/>
+            <button class="btn btn-blue">上传</button>
+            <button class="btn btn-secondary">移除</button>
+        </div>
+
+    </div>
+</form>
+</body>
+<script type="text/javascript">
+    $("#id").val(localStorage.getItem("id"));
+    //这两个方法是用来回显上传的图片
+    $("#file").change(function () {
+        var objUrl = getObjectURL(this.files[0]);//获取文件信息
+        if (objUrl) {
+            $("#img").attr("src", objUrl);
+        }
+    });
+
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) {
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+</script>
+</html>
