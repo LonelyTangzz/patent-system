@@ -16,9 +16,10 @@ public interface UserService {
 
     int getUserIdByName(String name);
 
-    List<User> listAllUser();
 
     boolean updateUserInfo(User user);
 
     int countUser();
+
+    List<User> getPageUser(int num);
 }

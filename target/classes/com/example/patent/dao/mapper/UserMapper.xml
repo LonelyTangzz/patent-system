@@ -41,10 +41,11 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <select id="listAllUser" resultMap="BaseResultMap">
+    <select id="getPageUser" resultMap="BaseResultMap" parameterType="java.lang.Integer">
     select
     *
     from user
+    limit #{num,jdbcType=INTEGER},10
   </select>
     <select id="countUser" resultType="java.lang.Integer">
     select count(*)

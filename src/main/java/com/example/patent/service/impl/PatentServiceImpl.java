@@ -36,14 +36,13 @@ public class PatentServiceImpl implements PatentService {
     }
 
     /**
-     * 获取专利id号
+     * 删除专利
      *
-     * @param name
+     * @param id
      * @return
      */
     @Override
-    public Boolean deleteByName(String name) {
-        int id = patentMapper.selectIdByName(name);
+    public Boolean deleteById(Integer id) {
         return patentMapper.deleteByPrimaryKey(id) > 0 ? true : false;
     }
 
@@ -66,7 +65,7 @@ public class PatentServiceImpl implements PatentService {
      */
     @Override
     public Boolean updatePatent(Patent patent) {
-        return patentMapper.updateByPrimaryKeySelective(patent) > 0 ? true : false;
+        return patentMapper.updateByNo(patent) > 0 ? true : false;
     }
 
     /**
@@ -74,8 +73,8 @@ public class PatentServiceImpl implements PatentService {
      * @return
      */
     @Override
-    public List<Patent> getAllPatent() {
-        return patentMapper.getAllPatent();
+    public List<Patent> getPatentByPage(Integer page) {
+        return patentMapper.getPatentByPage(page);
     }
 
     @Override

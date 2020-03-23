@@ -22,4 +22,6 @@ public interface CategoryMapper {
     List<Category> getAllCategory();
 
     int countCategory();
+
+    List<Category> getPageCategory(Integer page);
 }

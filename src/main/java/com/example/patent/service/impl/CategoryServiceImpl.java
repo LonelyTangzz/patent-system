@@ -43,4 +43,9 @@ public class CategoryServiceImpl implements CategoryService {
     public int countCategory() {
         return categoryMapper.countCategory();
     }
+
+    @Override
+    public List<Category> getPageCategory(Integer page) {
+        return categoryMapper.getPageCategory(page);
+    }
 }

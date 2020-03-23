@@ -21,7 +21,7 @@ public class Patent {
 
     private String img;
 
-    private Date update;
+    private Date updatetime;
 
     public Integer getId() {
         return id;
@@ -95,11 +95,11 @@ public class Patent {
         this.img = img == null ? null : img.trim();
     }
 
-    public Date getUpdate() {
-        return update;
+    public Date getUpdatetime() {
+        return updatetime;
     }
 
-    public void setUpdate(Date update) {
-        this.update = update;
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
     }
 }

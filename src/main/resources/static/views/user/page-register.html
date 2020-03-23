@@ -35,34 +35,42 @@
 
 
 <!-- Navigation & Logo-->
-<div class="mainmenu-wrapper">
-    <div class="container">
-        <div class="menuextras">
-            <div class="extras">
-                <ul>
-                    <li>
-                        <div class="dropdown choose-country">
-                            <a class="#" data-toggle="dropdown" href="#"><img src="../../img/flags/cn.png" alt="China">
-                                中文</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li role="menuitem"><a href="#"><img src="../../img/flags/us.png" alt="United States">
-                                    英语</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="page-login.html">登录</a></li>
-                </ul>
+<div id="full-height-container" class="project-container color-theme-white">
+    <div id="header" class="header-with-search">
+        <div id="header_item">
+            <div id="header_index">
+                <div id="header-l">
+                    <a href="../admin/main.html"><img src="../../img/logo.png" width="300"
+                                                      height="90"
+                                                      alt="企业logo" class="logo"></a>
+
+                </div>
+
+                <div class="fr h-right">
+                    <div class="fl sig-box">
+                        <div><a class="link" href="page-register.html">注册</a><span class="sep">|</span><a
+                                class="link" href="page-login.html">登录</a></div>
+
+                    </div>
+                </div>
+                <div class="fr searchbox">
+                    <form action="/patent/search.action" method="post">
+                        <input type="text" name="w" class="box" id="search_name" placeholder="输入关键字搜索..."/>
+                        <button type="submit" class="button"/>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
+    </div>
+</div>
+<!--here-->
+<div class="mainmenu-wrapper">
+    <div class="container">
         <nav id="mainmenu" class="mainmenu">
             <ul>
-                <li class="logo-wrapper"><a href="../admin/main.html"><img src="../../img/logo.png" width="300"
-                                                                           height="90"
-                                                                           alt="企业logo"></a>
-                </li>
                 <li>
-                    <a href="../admin/main.html">首页</a>
+                    <a href="index.html">首页</a>
                 </li>
                 <li>
                     <a href="../../features.html">专利信息</a>
@@ -75,6 +83,9 @@
                 </li>
                 <li>
                     <a href="../../features.html">行业资讯</a>
+                </li>
+                <li>
+                    <a href="../../features.html">帮助我们</a>
                 </li>
             </ul>
         </nav>

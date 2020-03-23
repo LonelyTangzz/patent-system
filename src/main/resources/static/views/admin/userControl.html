@@ -24,6 +24,8 @@
     <link rel="shortcut icon" href="../../img/admin/favicon.png?3">
     <!--Date Choose -->
     <link rel="stylesheet" href="../../css/dateTime.css">
+    <!-- 分页 -->
+    <link rel="stylesheet" href="../../css/simplePaging.css">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -51,7 +53,7 @@
             <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown"
                                                      aria-haspopup="true" aria-expanded="false"
                                                      class="nav-link dropdown-toggle"><img
-                    src="../../img/admin/avatar.jpg" alt="Jason Doe" style="max-width: 2.5rem;"
+                    src="../../img/admin/avatar.jpg" alt="Jason Doe" style="max-width: 3.0rem;max-height: 3.0rem"
                     class="img-fluid rounded-circle shadow"></a>
                 <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong
                         class="d-block text-uppercase headings-font-family" id="adminName"></strong>
@@ -88,7 +90,8 @@
                         <li class="sidebar-list-item"><a href="categoryControl.html"
                                                          class="sidebar-link text-muted pl-lg-5">行业种类管理</a>
                         </li>
-                        <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">修改管理密码</a>
+                        <li class="sidebar-list-item"><a href="changePassword.html"
+                                                         class="sidebar-link text-muted pl-lg-5">修改管理密码</a>
                         </li>
                     </ul>
                 </div>
@@ -98,7 +101,7 @@
         </ul>
 
     </div>
-    <div class="page-holder w-100 d-flex flex-wrap">
+    <div class="page-holder w-100 d-flex flex-wrap" style="text-align: center">
         <section class="py-5">
             <div class="row">
                 <div class="col-lg-auto mb-5">
@@ -109,6 +112,7 @@
                             <div class="card-body" style="font-size: 11px">
                                 <table class="table-hover table card-text " id="allUser">
                                 </table>
+                                <div id="simplePaging" class="simplePaging5" style="margin: auto;"></div>
                             </div>
                             <!-- 头像修改界面-->
                             <div id="editUserImg" tabindex="-1" role="dialog" aria-labelledby="editUserImgLabel"
@@ -128,6 +132,7 @@
                                                 <h5 class="header-other">修改用户信息</h5>
                                                 <input id="user_id" name="user_id" type="hidden"/>
                                                 <div class="form-group row">
+                                                    <!-- 这里有空最好改下图片比例 -->
                                                     <div class="col-md-6" style="text-align: center">
                                                         原头像
                                                         <img id="BeforeImg" class="img-fluid rounded-circle shadow"
@@ -148,7 +153,8 @@
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn btn-primary">修改
                                                 </button>
-                                                <button type="button" data-dismiss="modal" class="btn btn-secondary">取消
+                                                <button type="button" data-dismiss="modal"
+                                                        class="btn btn-secondary">取消
                                                 </button>
                                             </div>
                                         </form>
@@ -170,14 +176,16 @@
                                         <div class="modal-body">
                                             <h5 class="header-other">修改用户信息</h5>
                                             <div class="form-group row">
-                                                <label class="col-md-3 form-control-label" style="text-align: right">用户账号：</label>
+                                                <label class="col-md-3 form-control-label"
+                                                       style="text-align: right">用户账号：</label>
                                                 <div class="col-md-8">
                                                     <input id="username" type="text" disabled=""
                                                            class="form-control" style="text-align: center">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-md-3 form-control-label" style="text-align: right">真实姓名：</label>
+                                                <label class="col-md-3 form-control-label"
+                                                       style="text-align: right">真实姓名：</label>
                                                 <div class="col-md-8">
                                                     <input id="realname" type="text"
                                                            class="form-control" style="text-align: center">
@@ -200,26 +208,31 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-3 form-control-label" style="text-align: right">所在地：</label>
+                                                <label class="col-sm-3 form-control-label"
+                                                       style="text-align: right">所在地：</label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control form-check-inline" type="text" id="city" value=""/>
+                                                    <input class="form-control form-check-inline" type="text"
+                                                           id="city" value=""/>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-md-3 form-control-label" style="text-align: right">出生日期：</label>
+                                                <label class="col-md-3 form-control-label"
+                                                       style="text-align: right">出生日期：</label>
                                                 <div class="col-md-8">
                                                     <input type="text" class="form-control" id="date">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-md-3 form-control-label" style="text-align: right">电话号码：</label>
+                                                <label class="col-md-3 form-control-label"
+                                                       style="text-align: right">电话号码：</label>
                                                 <div class="col-md-8">
                                                     <input id="phoneNum" type="text"
                                                            class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-md-3 form-control-label" style="text-align: right">电子邮箱：</label>
+                                                <label class="col-md-3 form-control-label"
+                                                       style="text-align: right">电子邮箱：</label>
                                                 <div class="col-md-8">
                                                     <input id="email" type="email"
                                                            class="form-control">
@@ -228,7 +241,8 @@
                                             <div id="hidden_id" hidden></div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary" onclick="submitEditUser()">修改
+                                            <button type="button" class="btn btn-primary"
+                                                    onclick="submitEditUser()">修改
                                             </button>
                                             <button type="button" data-dismiss="modal" class="btn btn-secondary">取消
                                             </button>
@@ -248,15 +262,15 @@
 <script src="../../vendor/popper.js/umd/popper.min.js"></script>
 <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../vendor/jquery.cookie/jquery.cookie.js"></script>
-<script src="../../vendor/chart.js/Chart.min.js"></script>
 <script src="../../js/admin/js.cookie.min.js"></script>
 <script src="../../js/admin/front.js"></script>
 <script src="../../js/admin/loginCheck.js"></script>
-<script src="../../js/user.js"></script>
-<script src="../../js/dateTime.min.js"></script>
-<script src="../../js/date.js"></script>
-<script src="../../js/Popt.js"></script>
-<script src="../../js/cityJson.js"></script>
-<script src="../../js/citySet.js"></script>
+<script src="../../js/admin/user.js"></script>
+<script src="../../js/tools/dateTime.min.js"></script>
+<script src="../../js/tools/date.js"></script>
+<script src="../../js/tools/Popt.js"></script>
+<script src="../../js/tools/cityJson.js"></script>
+<script src="../../js/tools/citySet.js"></script>
+<script src="../../js/tools/simplePaging.js"></script>
 </body>
 </html>

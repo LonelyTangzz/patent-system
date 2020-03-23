@@ -14,6 +14,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -26,14 +29,15 @@ public class PatentController {
     Patent patent = new Patent();
 
     /**
-     * 上传专利--未调试
+     * 上传专利
+     * -------已調試，还有专利附件未添加上传
      *
      * @param req
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "patent_add.action", method = RequestMethod.POST)
-    public Object patent_add(HttpServletRequest req) {
+    @RequestMapping(value = "patentAdd.action", method = RequestMethod.POST)
+    public Object patent_add(HttpServletRequest req) throws ParseException {
         JSONObject jsonObject = new JSONObject();
         Patent patent = new Patent();
         patent.setPatentNo(req.getParameter("patent_no"));
@@ -42,9 +46,11 @@ public class PatentController {
         String categoryName = categoryService.findCategory(category);
         patent.setCategory(categoryName);
         patent.setLocation(req.getParameter("location"));
-        //patent.setOwner();
+        patent.setOwner(req.getParameter("owner"));
         patent.setPrice(Double.parseDouble(req.getParameter("price")));
         patent.setDetails(req.getParameter("details"));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        patent.setUpdatetime(simpleDateFormat.parse(req.getParameter("updateTime")));
         boolean res = patentService.insertPatent(patent);
         if (res) {
             jsonObject.put("code", 1);
@@ -52,7 +58,7 @@ public class PatentController {
             return jsonObject;
         } else {
             jsonObject.put("code", 0);
-            jsonObject.put("msg", "上传失败!");
+            jsonObject.put("msg", "上传失败，请检查是否符合规定!");
             return jsonObject;
         }
     }
@@ -106,23 +112,18 @@ public class PatentController {
     }
 
     /**
-     * 查询所有专利
+     * 分页查询所有专利
      * -------未测试
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "getPatentList.action", method = RequestMethod.POST)
-    public Object getPatentList() {
+    @RequestMapping(value = "getPatentByPage.action", method = RequestMethod.POST)
+    public Object getPatentList(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
-        if (patentService.getAllPatent().size() != 0) {
-            jsonObject.put("allPatent", patentService.getAllPatent());
-            jsonObject.put("code",1);
-            return jsonObject;
-        }else {
-            jsonObject.put("code",0);
-            jsonObject.put("msg","数据库连接出错");
-            return  jsonObject;
-        }
+        jsonObject.put("total", (int) Math.ceil((double) patentService.countPatent() / 15));
+        jsonObject.put("patentList", patentService.getPatentByPage((Integer.parseInt(req.getParameter("page")) - 1) * 15));
+        return jsonObject;
+
     }
 
     /**
@@ -153,11 +154,11 @@ public class PatentController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "delete.action", method = RequestMethod.POST)
+    @RequestMapping(value = "delePatent.action", method = RequestMethod.POST)
     public Object deleteByName(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
-        String searchName = req.getParameter("search_name");
-        boolean res = patentService.deleteByName(searchName);
+        Integer id = Integer.parseInt(req.getParameter("id"));
+        boolean res = patentService.deleteById(id);
         if (res) {
             jsonObject.put("code", 1);
             jsonObject.put("msg", "删除成功!");
@@ -170,29 +171,32 @@ public class PatentController {
     }
 
     /**
-     * 修改专利信息----未调试
-     *
+     * 修改专利信息
+     * ----------调试通过
      * @param req
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "update.action", method = RequestMethod.POST)
-    public Object updateInfo(HttpServletRequest req) {
+    @RequestMapping(value = "changePatent.action", method = RequestMethod.POST)
+    public Object updateInfo(HttpServletRequest req) throws ParseException {
         JSONObject jsonObject = new JSONObject();
-        patent.setId(Integer.parseInt(req.getParameter("id_patent")));
+        patent.setPatentNo(req.getParameter("patent_no"));
+        patent.setPatentName(req.getParameter("patent_name"));
         patent.setCategory(categoryService.findCategory(Integer.parseInt(req.getParameter("category"))));
         patent.setOwner(req.getParameter("owner"));
         patent.setPrice(Double.parseDouble(req.getParameter("price")));
         patent.setLocation(req.getParameter("location"));
         patent.setDetails(req.getParameter("details"));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        patent.setUpdatetime(simpleDateFormat.parse(req.getParameter("updateTime")));
         boolean res = patentService.updatePatent(patent);
         if (res) {
             jsonObject.put("code", 1);
-            jsonObject.put("msg", "删除成功!");
+            jsonObject.put("msg", "更新成功!");
             return jsonObject;
         } else {
             jsonObject.put("code", 0);
-            jsonObject.put("msg", "删除失败!");
+            jsonObject.put("msg", "更新失败!");
             return jsonObject;
         }
     }

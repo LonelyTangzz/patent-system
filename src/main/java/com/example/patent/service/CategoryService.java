@@ -16,4 +16,6 @@ public interface CategoryService {
     Boolean updateCategory(Category category);
 
     int countCategory();
+
+    List<Category> getPageCategory(Integer page);
 }

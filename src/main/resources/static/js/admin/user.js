@@ -1,9 +1,20 @@
-function showUser() {
+function showUser(num) {
     $.ajax({
         type: "POST",
-        url: "/patent/listAllUser.action",
+        url: "/patent/getPageUser.action",
         dataType: "json",
+        data: {
+            page: num,
+        },
         success: function (data) {
+            total = data.total;
+            if (total < 5) {
+                all = total;
+            } else if (total > 16) {
+                all = 8;
+            } else {
+                all = total / 2;
+            }
             jsonarray = data.userList;
             var head = "<thead>\n" +
                 "<tr>\n" +
@@ -25,7 +36,7 @@ function showUser() {
                 window.sessionStorage.setItem('userList[' + i + ']', JSON.stringify(jsonarray[i]));
                 head = head + "<tr>" + "<th scope=\"row\" style='vertical-align: middle'>" + jsonarray[i].id + "</th>" +
                     "<td style='vertical-align: middle'>" + jsonarray[i].username + "</td>" +
-                    "<td style='vertical-align: middle'><a onclick='changeImg(" + jsonarray[i].id + ",\"" + jsonarray[i].avatar + "\")' data-toggle='modal'  data-target='#editUserImg'>" + "<img class='img-fluid rounded-circle shadow' src='../../" + jsonarray[i].avatar + "' width='75px' />" + "</a></td>" +//这里记得改
+                    "<td style='vertical-align: middle' ><a onclick='changeImg(" + jsonarray[i].id + ",\"" + jsonarray[i].avatar + "\")'  data-toggle='modal'  data-target='#editUserImg'>" + "<img class='img-fluid rounded-circle shadow' src='../../" + jsonarray[i].avatar + "' style='max-width: 5rem;max-height: 5rem' />" + "</a></td>" +//这里记得改
                     "<td style='vertical-align: middle'>" + jsonarray[i].realname + "</td>";
                 if (jsonarray[i].sex == 1) {
                     head = head + "<td style='vertical-align: middle'>" + "男" + "</td>";
@@ -48,6 +59,25 @@ function showUser() {
             }
             head = head + "</tbody>";
             $("#allUser").append(head);
+            $("#simplePaging").simplePaging({
+                allPage: total,//总页数
+                showPage: all,//显示页数
+                startPage: 1,//第一页页码数字
+                initPage: num,//加载完毕自动跳转到第n页
+                initPageClick: false,//每次页面加载完毕后，是否触发initPage页的绑定事件
+                first: "首页",//首页显示字符
+                last: "尾页",//尾页显示字符
+                prev: "«",//上一页显示字符
+                next: "»",//下一页显示字符
+                showTurnTo: false,//是否显示跳转按钮，false不显示，true显示
+                animateType: "normal",//过渡模式：动画“animation”、跳动“jumpy”、快速移动“fast”、正常速度移动“normal”、缓慢的速度移动“slow”、异常缓慢的速度移动“verySlow”
+                animationTime: 300,//animateType为animation时，动画过渡时间(ms)
+                callBack: function (num) {
+                    $("#allUser").empty();
+                    $("#simplePaging5").empty();
+                    showCategory(num);
+                }
+            });
         }
     });
 
@@ -68,7 +98,7 @@ function changeInfo(id) {
     if (object.birth == null) {
         var date = new Date();
         $("#date").datetime({
-            type: "date",
+            type: "static.js.tools.date",
             value: [date.getFullYear(), (date.getMonth() + 1), date.getDate()],
             success: function (res) {
                 console.log(res)
@@ -76,7 +106,7 @@ function changeInfo(id) {
         })
     } else {
         $("#date").datetime({
-            type: "date",
+            type: "static.js.tools.date",
             value: [parseInt(object.birth.substring(0, 4)), parseInt(object.birth.substring(5, 7)), parseInt(object.birth.substring(8, 10))],
             success: function (res) {
                 console.log(res)
@@ -131,9 +161,9 @@ function getObjectURL(file) {
     }
     return url;
 }
-
+var num = 1;
 $(function () {
-    showUser();
+    showUser(num);
 });
 
 $("#file").change(

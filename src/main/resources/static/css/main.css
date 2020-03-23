@@ -2612,18 +2612,36 @@ span.color-red {
 }
 .header-with-search .h-right .mobile { margin-right: 0; }
 #full-height-container {
-  height: 100%;
-  width: 100%;
   position: relative;
   background-color: #F5F5F5;
 }
 .fr { float: right; }
-.no-js .sig-box,.no-js #dropdown-user{
-  height: 80px;
-}
 .h-right { margin-top: 22px; font-size: 14px; line-height: 36px; }
 .h-right .link { padding: 0 8px; }
-
+.topserach{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media screen and (max-width: 979px) {
+  .topserach{
+    font-size: 120%;
+    border: none;
+    margin: 0 auto;
+    padding: 0;
+    transform: scale(1.2);
+  }
+}
+@media screen and (max-width: 300px) {
+  .topserach{
+    font-size: 120%;
+    border: none;
+    margin: 0 auto;
+    padding: 0;
+    transform: scale(1.2);
+  }
+}
 
 /*--------------------------------------------------------------------------
 +	Extras Menu (Cart, Language, Login) Style

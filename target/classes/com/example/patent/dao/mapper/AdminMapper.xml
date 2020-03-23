@@ -19,6 +19,11 @@
   <select id="verifyPassword" resultType="java.lang.Integer">
     SELECT count(*) FROM admin where username = "${username}" and password = "${password}" ;
   </select>
+  <update id="changePassword">
+    update admin
+    set password = "${password}"
+    where username = "${username}"
+  </update>
   <!--新增-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from admin

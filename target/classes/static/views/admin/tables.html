@@ -67,7 +67,7 @@
               <div class="dropdown-divider"></div><a href="#" class="dropdown-item text-center"><small class="font-weight-bold headings-font-family text-uppercase">View all notifications</small></a>
             </div>
           </li>
-          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="../../img/admin/avatar.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
+          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="../../img/admin/avatar.jpg" alt="Jason Doe" style="max-width: 3.0rem;max-height: 3.0rem;" class="img-fluid rounded-circle shadow"></a>
             <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family" id="adminName"></strong><small>权限：管理员</small></a>
               <div class="dropdown-divider"></div><a href="#" class="dropdown-item">个人信息</a>
               <div class="dropdown-divider"></div><a href="#" onclick="login_out()" class="dropdown-item">退出登录</a>
@@ -76,23 +76,6 @@
         </ul>
       </nav>
     </header>
-    <script type="text/javascript">
-      loadUserInfo();
-
-      function login_out() {
-        localStorage.clear();
-        window.location.href="/patent/views/admin/login.html";
-      }
-
-      function loadUserInfo() {
-        if (localStorage.getItem('adminName') != null&&localStorage.getItem('adminName') != 'undefined') {
-          document.getElementById("adminName").innerHTML = localStorage.getItem('adminName');
-        } else {
-          alert("您还未登录，请先登录!");
-          window.location.href="/patent/views/admin/login.html";
-        }
-      }
-    </script>
     <div class="d-flex align-items-stretch">
       <div id="sidebar" class="sidebar py-3">
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">主菜单</div>
@@ -318,5 +301,6 @@
     <script src="../../vendor/chart.js/Chart.min.js"></script>
     <script src="../../js/admin/js.cookie.min.js"></script>
     <script src="../../js/admin/front.js"></script>
+    <script src="../../js/admin/loginCheck.js"></script>
   </body>
 </html>

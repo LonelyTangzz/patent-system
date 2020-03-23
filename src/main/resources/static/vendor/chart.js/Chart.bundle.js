@@ -5094,7 +5094,7 @@ function startOf (units) {
         case 'week':
         case 'isoWeek':
         case 'day':
-        case 'date':
+        case 'static.js.tools.date':
             this.hours(0);
             /* falls through */
         case 'hour':
@@ -5130,7 +5130,7 @@ function endOf (units) {
     }
 
     // 'date' is an alias for 'day', so it should be considered as such.
-    if (units === 'date') {
+    if (units === 'static.js.tools.date') {
         units = 'day';
     }
 
@@ -5318,14 +5318,14 @@ function getSetQuarter (input) {
 
 // FORMATTING
 
-addFormatToken('D', ['DD', 2], 'Do', 'date');
+addFormatToken('D', ['DD', 2], 'Do', 'static.js.tools.date');
 
 // ALIASES
 
-addUnitAlias('date', 'D');
+addUnitAlias('static.js.tools.date', 'D');
 
 // PRIOROITY
-addUnitPriority('date', 9);
+addUnitPriority('static.js.tools.date', 9);
 
 // PARSING
 

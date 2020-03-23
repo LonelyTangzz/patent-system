@@ -19,4 +19,6 @@ public interface AdminMapper {
     int updateByPrimaryKey(Admin record);
 
     int verifyPassword(@Param(value = "username") String username, @Param(value = "password") String password);
+
+    int changePassword(@Param(value = "username") String username, @Param(value = "password") String password);
 }

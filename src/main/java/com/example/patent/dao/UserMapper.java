@@ -26,7 +26,7 @@ public interface UserMapper {
 
     int updateUserImg(User record);
 
-    List<User> listAllUser();
+    List<User> getPageUser(Integer page);
 
     int countUser();
 }

@@ -1,7 +1,7 @@
-﻿function SelCity(obj,e) {
+﻿function SelCity(obj, e) {
     var ths = obj;
     var dal = '<div class="_citys"><span title="关闭" id="cColse" >×</span><ul id="_citysheng" class="_citys0"><li class="citySel">省份</li><li>城市</li><li>区县</li></ul><div id="_citys0" class="_citys1"></div><div style="display:none" id="_citys1" class="_citys1"></div><div style="display:none" id="_citys2" class="_citys1"></div></div>';
-    Iput.show({ id: ths, event: e, content: dal,width:"470"});
+    Iput.show({id: ths, event: e, content: dal, width: "470"});
     $("#cColse").click(function () {
         Iput.colse();
     });
@@ -30,15 +30,14 @@
                 val: lev
             });
             $(ths).after(hcitys);
-        }
-        else {
+        } else {
             $("#hcity").val(lev);
             $("#hcity").attr("data-id", $(this).data("id"));
         }
         $("#_citys1 a").click(function () {
             $("#_citys1 a,#_citys2 a").removeClass("AreaS");
             $(this).addClass("AreaS");
-            var lev =  $(this).data("name");
+            var lev = $(this).data("name");
             if (document.getElementById("hproper") == null) {
                 var hcitys = $('<input>', {
                     type: 'hidden',
@@ -48,13 +47,12 @@
                     val: lev
                 });
                 $(ths).after(hcitys);
-            }
-            else {
+            } else {
                 $("#hproper").attr("data-id", $(this).data("id"));
                 $("#hproper").val(lev);
             }
             var bc = $("#hcity").val();
-            ths.value = bc+ "-" + $(this).data("name");
+            ths.value = bc + "-" + $(this).data("name");
 
             var ar = getArea($(this));
 
@@ -76,8 +74,7 @@
                         val: lev
                     });
                     $(ths).after(hcitys);
-                }
-                else {
+                } else {
                     $("#harea").val(lev);
                     $("#harea").attr("data-id", $(this).data("id"));
                 }
@@ -116,6 +113,7 @@ function getCity(obj) {
     $("#_citysheng li:eq(1)").addClass("citySel");
     return g;
 }
+
 function getArea(obj) {
     var c = obj.data('id');
     var e = area;
@@ -134,7 +132,8 @@ function getArea(obj) {
     $("#_citysheng li:eq(2)").addClass("citySel");
     return g;
 }
-$("#city").click(function (e) {
+
+$(".city").click(function (e) {
     SelCity(this, e);
     console.log("inout", $(this).val(), new Date())
 });

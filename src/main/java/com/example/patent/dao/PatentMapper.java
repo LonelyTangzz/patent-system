@@ -22,11 +22,13 @@ public interface PatentMapper {
 
     List<Patent> selectByName(@Param("name") String name);
 
-    int selectIdByName(@Param("name")String name);
+    int selectIdByName(@Param("name") String name);
 
     int updateUserImg(Patent record);
 
-    List<Patent> getAllPatent();
+    List<Patent> getPatentByPage(@Param("page") Integer page);
 
     int countPatent();
+
+    int updateByNo(Patent record);
 }

@@ -12,7 +12,11 @@ class AdminServiceImpl implements AdminService {
 
     @Override
     public boolean veritypasswd(String name, String password) {
-        return adminMapper.verifyPassword(name, password)>0?true:false;
+        return adminMapper.verifyPassword(name, password) > 0 ? true : false;
     }
 
+    @Override
+    public boolean changePasswd(String name, String password) {
+        return adminMapper.changePassword(name, password) > 0 ? true : false;
+    }
 }

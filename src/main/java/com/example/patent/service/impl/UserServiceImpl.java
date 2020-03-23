@@ -88,9 +88,10 @@ public class UserServiceImpl implements UserService {
      *
      * @return
      */
+
     @Override
-    public List<User> listAllUser() {
-        return userMapper.listAllUser();
+    public List<User> getPageUser(int num) {
+        return userMapper.getPageUser(num);
     }
 
     @Override

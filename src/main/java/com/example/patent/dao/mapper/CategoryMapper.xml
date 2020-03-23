@@ -19,6 +19,12 @@
     *
     from category
   </select>
+  <select id="getPageCategory" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    *
+    from category
+    limit #{page,jdbcType=INTEGER},5
+  </select>
   <select id="countCategory" resultType="java.lang.Integer">
     select count(*)
     from category

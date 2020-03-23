@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @RestController
 @Controller
@@ -176,15 +175,16 @@ public class UserController {
     }
 
     /**
-     * 管理员显示所有用户
+     * 管理员分页显示所有用户
      * ------测试通过
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "listAllUser.action", method = RequestMethod.POST)
-    public Object listAllUser() {
+    @RequestMapping(value = "getPageUser.action", method = RequestMethod.POST)
+    public Object getPageUser(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("userList", userService.listAllUser());
+        jsonObject.put("total", (int) Math.ceil((double) userService.countUser() / 10));
+        jsonObject.put("userList", userService.getPageUser((Integer.parseInt(req.getParameter("page")) - 1) * 10));
         return jsonObject;
 
     }
