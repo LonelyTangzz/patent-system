@@ -1,98 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65ec4b00-07a3-4fd1-b82f-9587df78b89b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/config/ErrorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/simplePaging.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/test.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/changePwd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/patent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/simplePaging.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/views/admin/changePassword.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/views/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avatarPic/15836677954441547477117223tou.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Patent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Patent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/PatentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/PatentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/AdminMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/CategoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/PatentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/PatentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/PatentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/PatentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/PatentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/PatentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/PatentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/PatentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/credits.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/credits.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dateTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dateTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/features.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/features.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/admin/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/user/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Popt.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/Popt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/js.cookie.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/js.cookie.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/loginCheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/loginCheck.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/cityJson.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/cityJson.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/citySet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/citySet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/date.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/date.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/dateTime.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/dateTime.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/page-404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/page-404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/chart.js/Chart.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/chart.js/Chart.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/chart.js/Chart.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/chart.js/Chart.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/admin/categoryControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/admin/categoryControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/admin/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/admin/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/admin/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/admin/patentControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/admin/patentControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/admin/tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/admin/tables.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/admin/userControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/admin/userControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/user/page-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/user/page-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/user/page-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/user/page-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/15836677954441547477117223tou.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/PatentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/PatentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/credits.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/credits.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/dateTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/dateTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/features.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/features.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/admin/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Popt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/admin/js.cookie.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/admin/js.cookie.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/admin/loginCheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/admin/loginCheck.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/category.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/cityJson.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/citySet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/date.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/dateTime.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/page-404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page-404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/vendor/chart.js/Chart.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/vendor/chart.js/Chart.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/vendor/chart.js/Chart.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/vendor/chart.js/Chart.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/views/admin/categoryControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/views/admin/categoryControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/views/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/views/admin/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/views/admin/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/views/admin/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/views/admin/patentControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/views/admin/patentControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/views/admin/tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/views/admin/tables.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/views/admin/userControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/views/admin/userControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/views/user/page-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/views/user/page-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/views/user/page-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/views/user/page-register.html" afterDir="false" />
-    </list>
+    <list default="true" id="65ec4b00-07a3-4fd1-b82f-9587df78b89b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/../Books-Management-System/target/" />
@@ -124,26 +33,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/admin/userControl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="168" column="43" selection-start-line="168" selection-start-column="43" selection-end-line="168" selection-end-column="43" />
+            <state relative-caret-position="136">
+              <caret line="134" column="70" selection-start-line="134" selection-start-column="70" selection-end-line="134" selection-end-column="70" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#li#1;n#ul#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/admin/user.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
-              <caret line="38" column="104" selection-start-line="38" selection-start-column="104" selection-end-line="38" selection-end-column="104" />
+              <caret line="38" column="185" selection-start-line="38" selection-start-column="185" selection-end-line="38" selection-end-column="185" />
               <folding>
                 <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
@@ -278,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/views/admin/categoryControl.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/views/admin/main.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/views/admin/tables.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/views/admin/userControl.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/tools/citySet.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/patent/dao/PatentMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/PatentMapper.xml" />
@@ -288,6 +197,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/admin/patent.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/views/admin/patentControl.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/admin/user.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/views/admin/userControl.html" />
       </list>
     </option>
   </component>
@@ -556,7 +466,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/patent/dao" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -769,7 +679,7 @@
       <workItem from="1584842990540" duration="843000" />
       <workItem from="1584848037038" duration="5425000" />
       <workItem from="1584930026339" duration="18325000" />
-      <workItem from="1584980742462" duration="3187000" />
+      <workItem from="1584980742462" duration="3445000" />
     </task>
     <task id="LOCAL-00001" summary="git push">
       <created>1583898794737</created>
@@ -778,7 +688,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583898794738</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="git push">
+      <created>1584984165779</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584984165779</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -793,7 +710,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="505764000" />
+    <option name="totallyTimeSpent" value="506022000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -806,9 +723,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4975" visible="true" weight="0.33310992" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4975" visible="true" weight="0.33310992" />
       <window_info id="Structure" order="1" sideWeight="0.5025" side_tool="true" weight="0.3069705" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -817,7 +733,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49932975" visible="true" weight="0.40084985" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49932975" weight="0.40084985" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3258595" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39760837" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -831,7 +747,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Problems" order="14" weight="0.3286119" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32735425" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="15" visible="true" weight="0.32719547" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -895,13 +811,6 @@
     <SUITE FILE_PATH="coverage/patent$PatentApplication.ic" NAME="PatentApplication Coverage Results" MODIFIED="1582105968668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="295" column="16" lean-forward="true" selection-start-line="295" selection-start-column="9" selection-end-line="295" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/pagination.css" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/jquery.pagination.js" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/test.jpg">
@@ -1290,23 +1199,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/admin/userControl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="168" column="43" selection-start-line="168" selection-start-column="43" selection-end-line="168" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#li#1;n#ul#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/admin/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
-          <caret line="38" column="104" selection-start-line="38" selection-start-column="104" selection-end-line="38" selection-end-column="104" />
+          <caret line="38" column="185" selection-start-line="38" selection-start-column="185" selection-end-line="38" selection-end-column="185" />
           <folding>
             <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
@@ -1323,6 +1219,23 @@
             <element signature="n#style#0;n#td#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/avatarPic/158410026167415836677954441547477117223tou.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/views/admin/userControl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="134" column="70" selection-start-line="134" selection-start-column="70" selection-end-line="134" selection-end-column="70" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#1;n#ul#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
