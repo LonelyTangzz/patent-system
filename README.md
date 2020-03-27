@@ -6,8 +6,8 @@
 
 登录界面:
 
-![](E:\IntellJ Idea\patent-system\preview\login.png)
+![](https://github.com/LonelyTangzz/patent-system/blob/master/preview/login.png)
 
 主管理界面：
 
-![](E:\IntellJ Idea\patent-system\preview\main.png)
+![](https://github.com/LonelyTangzz/patent-system/blob/master/preview/main.png)
