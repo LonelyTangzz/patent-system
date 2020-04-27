@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface PatentMapper {
@@ -28,7 +29,11 @@ public interface PatentMapper {
 
     List<Patent> getPatentByPage(@Param("page") Integer page);
 
+    List<Patent> getPatentByCategory(String category, Integer page);
+
     int countPatent();
 
     int updateByNo(Patent record);
+
+    List<Map<String, Object>> countPatentOrderByCategory();
 }

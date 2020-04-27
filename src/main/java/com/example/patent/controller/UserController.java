@@ -1,13 +1,18 @@
 package com.example.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.patent.bean.Category;
+import com.example.patent.bean.Patent;
 import com.example.patent.bean.User;
+import com.example.patent.common.MD5;
+import com.example.patent.service.CategoryService;
+import com.example.patent.service.PatentService;
 import com.example.patent.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -16,30 +21,41 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
-@Controller
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private PatentService patentService;
+    @Autowired
+    private CategoryService categoryService;
+    @Autowired
+    User user;
 
+    MD5 md5 = new MD5();
     /**
      * 注册入口
      * ------测试通过
      *
-     * @param req
+     * @param user 用户
      * @return
+     * @author: user
      */
     @ResponseBody
     @RequestMapping(value = "register.action", method = RequestMethod.POST)
-    public Object register(HttpServletRequest req) {
+    public Object register(User user) {
         JSONObject jsonObject = new JSONObject();
-        boolean res = userService.addUser(req.getParameter("name"), req.getParameter("password"));
+        user.setPassword(md5.getMD5ofStr(user.getPassword()));
+        boolean res = userService.addUser(user);
         if (res) {
             jsonObject.put("code", 1);
             jsonObject.put("msg", "注册成功，跳转中");
-            jsonObject.put("name", req.getParameter("name"));
-            jsonObject.put("id", userService.getUserIdByName(req.getParameter("name")));
+            jsonObject.put("name", user.getUsername());
+            jsonObject.put("id", userService.getUserIdByName(user.getUsername()));
             return jsonObject;
         } else {
             jsonObject.put("code", 0);
@@ -54,6 +70,7 @@ public class UserController {
      *
      * @param req
      * @return
+     * @author: user
      */
     @ResponseBody
     @RequestMapping(value = "login.action", method = RequestMethod.POST)
@@ -78,6 +95,7 @@ public class UserController {
      *
      * @param req
      * @return
+     * @author: user
      */
     @ResponseBody
     @RequestMapping("resetPassword.action")
@@ -98,20 +116,24 @@ public class UserController {
 
 
     /**
-     * 信息修改入口-----已通过
-     *------测试通过
+     * 信息修改入口
+     * ------测试通过 tips:我认为这里的逻辑需要优化
+     *
      * @param req
      * @return
+     * @author: user
      */
     @ResponseBody
     @RequestMapping(value = "updateInfo.action", method = RequestMethod.POST)
     public Object updateInfo(HttpServletRequest req) throws ParseException {
         JSONObject jsonObject = new JSONObject();
-        User user = new User();
         user.setId(Integer.parseInt(req.getParameter("id")));
-        user.setSex(Byte.parseByte(req.getParameter("sex")));
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        user.setBirth(simpleDateFormat.parse(req.getParameter("birth")));
+        if (req.getParameter("sex") != null)
+            user.setSex(Byte.parseByte(req.getParameter("sex")));
+        if (req.getParameter("birth") != "" && req.getParameter("birth") != null) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            user.setBirth(simpleDateFormat.parse(req.getParameter("birth")));
+        }
         user.setEmail(req.getParameter("email"));
         user.setLocation(req.getParameter("location"));
         user.setPhoneNum(req.getParameter("phoneNum"));
@@ -121,8 +143,8 @@ public class UserController {
             jsonObject.put("msg", "修改成功！");
             return jsonObject;
         } else {
-            jsonObject.put("code",0);
-            jsonObject.put("msg","修改失败请检查字段是否符合规定！");
+            jsonObject.put("code", 0);
+            jsonObject.put("msg", "修改失败请检查字段是否符合规定！");
             return jsonObject;
         }
     }
@@ -132,6 +154,7 @@ public class UserController {
      * ------测试通过
      *
      * @return
+     * @author: user
      */
     @ResponseBody
     @RequestMapping(value = "updateAvatar.action", method = RequestMethod.POST)
@@ -142,7 +165,7 @@ public class UserController {
             jsonObject.put("msg", "文件为空，请检查");
             return jsonObject;
         }
-        String fileName = System.currentTimeMillis() + file.getOriginalFilename();
+        String fileName = System.currentTimeMillis() + file.getOriginalFilename() + user_id;
         String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "avatarPic";
         File file1 = new File(filePath);
         if (!file1.exists()) {
@@ -177,18 +200,35 @@ public class UserController {
     /**
      * 管理员分页显示所有用户
      * ------测试通过
+     *
      * @return
+     * @author: admin
      */
     @ResponseBody
-    @RequestMapping(value = "getPageUser.action", method = RequestMethod.POST)
+    @RequestMapping(value = "getPageUser.action", method = RequestMethod.GET)
     public Object getPageUser(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("total", (int) Math.ceil((double) userService.countUser() / 10));
         jsonObject.put("userList", userService.getPageUser((Integer.parseInt(req.getParameter("page")) - 1) * 10));
         return jsonObject;
-
     }
 
+    /**
+     * 根据当前年月份获取当月注册用户
+     *
+     * @param req
+     * @return
+     * @author: admin
+     */
+    @ResponseBody
+    @RequestMapping(value = "getUserTimeByMonth.action", method = RequestMethod.GET)
+    public Object getUserTimeByMonth(HttpServletRequest req) {
+        JSONObject jsonObject = new JSONObject();
+        List<Map<String, Object>> result = userService.countUserByMonth(req.getParameter("year"), req.getParameter("month"));
+        jsonObject.put("result", result);
+        return jsonObject;
+
+    }
 
     /**
      * 配置
@@ -201,35 +241,33 @@ public class UserController {
         }
     }
 
-
     /**
-     * 测试页面
-     *
-     * @param file
-     * @return
+     * 以下为页面配置
      */
-    @ResponseBody
-    @RequestMapping(value = "/test", method = RequestMethod.POST)
-    public Object Atest(@RequestParam("file") MultipartFile file) {
-        JSONObject jsonObject = new JSONObject();
-        if (file.isEmpty()) {
-            jsonObject.put("code", 0);
-            jsonObject.put("msg", "上传失败");
-            return jsonObject;
-        } else {
-            String fileName = System.currentTimeMillis() + file.getOriginalFilename();
-            String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "avatarPic";
-            System.out.println(fileName);
-            System.out.println(filePath);
-            jsonObject.put("code", 1);
-            jsonObject.put("msg", "传过来啦");
-//        File file1 = new File(filePath);
-//        if (!file1.exists()) {
-//            file1.mkdir();
-//        }
-//        File dest = new File(filePath + System.getProperty("file.separator") + fileName);
-//        String storeAvatorPath = "/avatarPic/" + fileName;
-            return jsonObject;
-        }
+    @RequestMapping(value = "index")
+    public ModelAndView index() {
+        ModelAndView mv = new ModelAndView("index.html");
+        mv.addObject("patents",patentService.getPatentByPage(0));
+        return mv;
+    }
+
+    @RequestMapping(value = "login")
+    public ModelAndView login() {
+        ModelAndView mv = new ModelAndView("user/page-login.html");
+        return mv;
+    }
+
+    @RequestMapping(value = "register")
+    public ModelAndView register() {
+        ModelAndView mv = new ModelAndView("user/age-register.html");
+        return mv;
+    }
+    @RequestMapping(value = "templates")
+    public ModelAndView templates() {
+        ModelAndView mv = new ModelAndView("templates.html");
+        mv.addObject("categories",categoryService.getAllCategory());
+        HashMap<String,List<Patent>> patents = patentService.getPatentGroupByCategory(categoryService.getAllCategory());
+        mv.addObject("patents",patents);
+        return mv;
     }
 }

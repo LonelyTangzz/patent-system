@@ -1,12 +1,15 @@
 package com.example.patent.service.impl;
 
+import com.example.patent.bean.Category;
 import com.example.patent.bean.Patent;
 import com.example.patent.dao.PatentMapper;
 import com.example.patent.service.PatentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class PatentServiceImpl implements PatentService {
@@ -70,6 +73,7 @@ public class PatentServiceImpl implements PatentService {
 
     /**
      * 显示所有专利
+     *
      * @return
      */
     @Override
@@ -80,5 +84,19 @@ public class PatentServiceImpl implements PatentService {
     @Override
     public int countPatent() {
         return patentMapper.countPatent();
+    }
+
+    @Override
+    public List<Map<String, Object>> countPatentOrderByCategory() {
+        return patentMapper.countPatentOrderByCategory();
+    }
+
+    @Override
+    public HashMap<String, List<Patent>> getPatentGroupByCategory(List<Category> categories) {
+        HashMap<String, List<Patent>> result = new HashMap<>();
+        for (int i = 0; i < categories.size(); i++) {
+            result.put(categories.get(i).getCategory(), patentMapper.getPatentByCategory(categories.get(i).getCategory(), 0));
+        }
+        return result;
     }
 }

@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface UserMapper {
@@ -29,4 +30,7 @@ public interface UserMapper {
     List<User> getPageUser(Integer page);
 
     int countUser();
+
+    List<Map<String, Object>> countUserByMonth(Integer year, Integer month);
+
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -33,14 +34,10 @@ public class UserServiceImpl implements UserService {
     /**
      * 用户注册
      *
-     * @param name     账号
-     * @param password 密码
      * @return
      */
     @Override
-    public boolean addUser(String name, String password) {
-        user.setUsername(name);
-        user.setPassword(password);
+    public boolean addUser(User user) {
         user.setCreateTime(new Date());
         user.setLoginTime(new Date());
         return userMapper.insert(user) > 0 ? true : false;
@@ -102,5 +99,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public int countUser() {
         return userMapper.countUser();
+    }
+
+    @Override
+    public List<Map<String, Object>> countUserByMonth(String year, String month) {
+        return userMapper.countUserByMonth(Integer.parseInt(year), Integer.parseInt(month));
     }
 }

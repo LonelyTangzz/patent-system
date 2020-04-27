@@ -2,20 +2,17 @@ package com.example.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.patent.bean.Category;
+import com.example.patent.common.MD5;
 import com.example.patent.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@Controller
 public class AdminController {
     @Autowired
     private AdminService adminService;
@@ -30,6 +27,7 @@ public class AdminController {
     @Autowired
     private Category category;
 
+    MD5 md5 = new MD5();
     /**
      * 管理员登录
      * -------测试通过
@@ -37,13 +35,11 @@ public class AdminController {
      * @param req
      * @return
      */
-    @ResponseBody
     @RequestMapping(value = "admin.action", method = RequestMethod.POST)
     public Object login(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         String name = req.getParameter("name");
-        String password = req.getParameter("password");
-        boolean res = adminService.veritypasswd(name, password);
+        boolean res = adminService.veritypasswd(name, md5.getMD5ofStr(req.getParameter("password")));
         if (res) {
             jsonObject.put("code", 1);
             jsonObject.put("msg", "登录成功跳转中");
@@ -62,21 +58,20 @@ public class AdminController {
      * @param req
      * @return
      */
-    @ResponseBody
     @RequestMapping(value = "changeAdminPwd.action", method = RequestMethod.POST)
     public Object changeAdminPwd(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         String name = req.getParameter("name");
-        boolean res = adminService.veritypasswd(name, req.getParameter("usedPwd"));
+        boolean res = adminService.veritypasswd(name, md5.getMD5ofStr(req.getParameter("usedPwd")));
         if (res) {
-            res = adminService.changePasswd(name, req.getParameter("nowPwd"));
+            res = adminService.changePasswd(name, md5.getMD5ofStr(req.getParameter("nowPwd")));
             if (res) {
                 jsonObject.put("code", 1);
                 jsonObject.put("msg", "修改成功！");
                 return jsonObject;
             } else {
-                jsonObject.put("code",-1);
-                jsonObject.put("msg","修改出现异常！");
+                jsonObject.put("code", -1);
+                jsonObject.put("msg", "修改出现异常！");
                 return jsonObject;
             }
         } else {
@@ -93,11 +88,9 @@ public class AdminController {
      * @param req
      * @return
      */
-    @ResponseBody
     @RequestMapping(value = "addCategory.action", method = RequestMethod.POST)
     public Object addCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
-        Category category = new Category();
         if (req.getParameter("typeName") == "") {
             jsonObject.put("code", 0);
             jsonObject.put("msg", "添加失败请检查是否符合规范");
@@ -122,8 +115,7 @@ public class AdminController {
      *
      * @return
      */
-    @ResponseBody
-    @RequestMapping(value = "getAllCategory.action", method = RequestMethod.POST)
+    @RequestMapping(value = "getAllCategory.action", method = RequestMethod.GET)
     public Object getAllCategory() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("allCategory", categoryService.getAllCategory());
@@ -136,8 +128,7 @@ public class AdminController {
      * @param req
      * @return
      */
-    @ResponseBody
-    @RequestMapping(value = "getPageCategory.action", method = RequestMethod.POST)
+    @RequestMapping(value = "getPageCategory.action", method = RequestMethod.GET)
     public Object getPageCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("total", (int) Math.ceil((double) categoryService.countCategory() / 5));
@@ -152,7 +143,6 @@ public class AdminController {
      * @param req
      * @return
      */
-    @ResponseBody
     @RequestMapping(value = "deleteCategory.action", method = RequestMethod.POST)
     public Object getAllCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
@@ -175,7 +165,6 @@ public class AdminController {
      * @param req
      * @return
      */
-    @ResponseBody
     @RequestMapping(value = "editCategory.action", method = RequestMethod.POST)
     public Object editCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
@@ -196,8 +185,7 @@ public class AdminController {
     /**
      * 获取所有数据数量
      */
-    @ResponseBody
-    @RequestMapping(value = "countAll.action", method = RequestMethod.POST)
+    @RequestMapping(value = "countAll.action", method = RequestMethod.GET)
     public Object countAll() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("userCount", userService.countUser());
@@ -205,6 +193,49 @@ public class AdminController {
         jsonObject.put("categoryCount", categoryService.countCategory());
         jsonObject.put("newsCount", newsService.countNews());
         return jsonObject;
+    }
+
+    /**
+     * 以下均为管理员生成相应界面
+     */
+    @RequestMapping(value = "admin/login")
+    public ModelAndView login() {
+        return new ModelAndView("admin/login.html");
+    }
+
+    @RequestMapping(value = "admin/main")
+    public ModelAndView main() {
+        return new ModelAndView("admin/main.html");
+    }
+
+    @RequestMapping(value = "admin/patentControl")
+    public ModelAndView patentControl() {
+        return new ModelAndView("admin/patentControl.html");
+    }
+
+    @RequestMapping(value = "admin/newsControl")
+    public ModelAndView newsControl() {
+        return new ModelAndView("admin/newsControl.html");
+    }
+
+    @RequestMapping(value = "admin/categoryControl")
+    public ModelAndView categoryControl() {
+        return new ModelAndView("admin/categoryControl.html");
+    }
+
+    @RequestMapping(value = "admin/userControl")
+    public ModelAndView userControl() {
+        return new ModelAndView("admin/userControl.html");
+    }
+
+    @RequestMapping(value = "admin/addNews")
+    public ModelAndView addNews() {
+        return new ModelAndView("admin/addNews.html");
+    }
+
+    @RequestMapping(value = "admin/changePassword")
+    public ModelAndView changePassword() {
+        return new ModelAndView("admin/changePassword.html");
     }
 }
 

@@ -1,7 +1,7 @@
 loadUserInfo();
 function login_out() {
     Cookies.remove('adminName',);
-    window.location.href = "/patent/views/admin/login.html";
+    window.location.href = "login";
 }
 
 function loadUserInfo() {
@@ -9,6 +9,6 @@ function loadUserInfo() {
         document.getElementById("adminName").innerHTML = Cookies.get('adminName');
     } else {
         alert("您还未登录，请先登录!");
-        window.location.href = "/patent/views/admin/login.html";
+        window.location.href = "login";
     }
 }

@@ -16,18 +16,23 @@
     <sql id="Base_Column_List">
     id, patent_no, patent_name, category, location, price, owner, details, img, updatetime
   </sql>
-    <!-- new add-->
+    <!-- 新增的-->
     <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String">
-        <bind name="patentName" value="'%'+name+'%'"/>
         select
-        <include refid="Base_Column_List"/>
+        <include refid="Base_Column_List"/>selectIdByName
         from patent
-        where patent_name like #{patentName}
+        where patent_name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')
     </select>
     <select id="getPatentByPage" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select *
         from patent
         limit #{page,jdbcType=INTEGER},15
+    </select>
+    <select id="getPatentByCategory" resultMap="BaseResultMap">
+        select *
+        from patent
+        where category = #{category,jdbcType=VARCHAR}
+        limit #{page,jdbcType=INTEGER},10
     </select>
     <select id="selectIdByName" resultType="java.lang.Integer" parameterType="java.lang.String">
     SELECT id FROM user where patent_name = "${name}" ;
@@ -57,7 +62,12 @@
       updatetime = #{updatetime,jdbcType=DATE}
       where patent_no = #{patentNo,jdbcType=CHAR}
   </update>
-    <!-- new add-->
+    <select id="countPatentOrderByCategory" resultType="java.util.HashMap">
+        SELECT count(*) as total, category
+        FROM patent
+        GROUP BY category
+    </select>
+    <!-- 新增的-->
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
         <include refid="Base_Column_List"/>

@@ -1,7 +1,10 @@
 package com.example.patent.bean;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.Date;
 
+@Repository
 public class Patent {
     private Integer id;
 
@@ -101,5 +104,21 @@ public class Patent {
 
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
+    }
+
+    @Override
+    public String toString() {
+        return "Patent{" +
+                "id=" + id +
+                ", patentNo='" + patentNo + '\'' +
+                ", patentName='" + patentName + '\'' +
+                ", category='" + category + '\'' +
+                ", location='" + location + '\'' +
+                ", price=" + price +
+                ", owner='" + owner + '\'' +
+                ", details='" + details + '\'' +
+                ", img='" + img + '\'' +
+                ", updatetime=" + updatetime +
+                '}';
     }
 }

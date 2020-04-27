@@ -1,7 +1,11 @@
 package com.example.patent.service;
 
+import com.example.patent.bean.Category;
 import com.example.patent.bean.Patent;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public interface PatentService {
@@ -19,4 +23,8 @@ public interface PatentService {
     List<Patent> getPatentByPage(Integer page);
 
     int countPatent();
+
+    List<Map<String, Object>> countPatentOrderByCategory();
+
+    HashMap<String,List<Patent>> getPatentGroupByCategory(List<Category> categories);
 }

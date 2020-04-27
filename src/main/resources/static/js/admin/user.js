@@ -1,34 +1,29 @@
 function showUser(num) {
+    $("#allUser").empty();
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "/patent/getPageUser.action",
         dataType: "json",
+        async: false,
         data: {
             page: num,
         },
         success: function (data) {
             total = data.total;
-            if (total < 5) {
-                all = total;
-            } else if (total > 16) {
-                all = 8;
-            } else {
-                all = total / 2;
-            }
             jsonarray = data.userList;
             var head = "<thead>\n" +
                 "<tr>\n" +
                 "<th>#</th>\n" +
                 "<th>账号</th>\n" +
                 "<th>头像</th>\n" +
-                "<th>真实姓名</th>\n" +
-                "<th>性别</th>\n" +
+                "<th width='70px'>真实姓名</th>\n" +
+                "<th width='50px'>性别</th>\n" +
                 "<th>电话号码</th>\n" +
                 "<th>邮箱</th>\n" +
-                "<th>生日</th>\n" +
-                "<th>所在地</th>\n" +
-                "<th>创建时间</th>\n" +
-                "<th>上次登录时间</th>\n" +
+                "<th width='80px'>生日</th>\n" +
+                "<th width='88px'>所在地</th>\n" +
+                "<th width='80px'>注册时间</th>\n" +
+                "<th width='80px'>上次登陆</th>\n" +
                 "<th>操作</th>\n" +
                 "</tr>\n" +
                 "</thead>" + "<tbody>";
@@ -36,12 +31,14 @@ function showUser(num) {
                 window.sessionStorage.setItem('userList[' + i + ']', JSON.stringify(jsonarray[i]));
                 head = head + "<tr>" + "<th scope=\"row\" style='vertical-align: middle'>" + jsonarray[i].id + "</th>" +
                     "<td style='vertical-align: middle'>" + jsonarray[i].username + "</td>" +
-                    "<td style='vertical-align: middle' ><a onclick='changeImg(" + jsonarray[i].id + ",\"" + jsonarray[i].avatar + "\")'  data-toggle='modal'  data-target='#editUserImg'>" + "<img class='img-fluid rounded-circle shadow' src='../../" + jsonarray[i].avatar + "' style='max-width: 5rem;max-height: 5rem' />" + "</a></td>" +//这里记得改
+                    "<td style='vertical-align: middle' ><a onclick='changeImg(" + jsonarray[i].id + ",\"" + jsonarray[i].avatar + "\")'  data-toggle='modal'  data-target='#editUserImg'>" + "<img class='img-fluid rounded-circle shadow' src='../" + jsonarray[i].avatar + "' style='max-width: 5rem;max-height: 5rem' />" + "</a></td>" +//这里记得改
                     "<td style='vertical-align: middle'>" + jsonarray[i].realname + "</td>";
                 if (jsonarray[i].sex == 1) {
                     head = head + "<td style='vertical-align: middle'>" + "男" + "</td>";
-                } else {
+                } else if (jsonarray[i].sex == 0) {
                     head = head + "<td style='vertical-align: middle'>" + "女" + "</td>";
+                } else {
+                    head = head + "<td style='vertical-align: middle'>" + "未定义" + "</td>";
                 }
                 head = head + "<td style='vertical-align: middle'>" + jsonarray[i].phoneNum + "</td>" +
                     "<td style='vertical-align: middle'>" + jsonarray[i].email + "</td>";
@@ -54,33 +51,20 @@ function showUser(num) {
                     "<td style='vertical-align: middle'>" + jsonarray[i].createTime + "</td>" +
                     "<td style='vertical-align: middle'>" + jsonarray[i].loginTime + "</td>" +
                     "<td style='vertical-align: middle'>\n" + "<button type='button' data-toggle=\"modal\" data-target=\"#editUser\"\n" +
-                    "class=\"btn btn-primary\" class=\"btn btn-primary\" onclick='changeInfo(\"" + i + "\")'>修改资料</button>\n" +
+                    "class=\"btn btn-primary btn-sm \" onclick='changeInfo(\"" + i + "\")'>修改资料</button>\n" +
                     "</td>";
             }
             head = head + "</tbody>";
             $("#allUser").append(head);
-            $("#simplePaging").simplePaging({
-                allPage: total,//总页数
-                showPage: all,//显示页数
-                startPage: 1,//第一页页码数字
-                initPage: num,//加载完毕自动跳转到第n页
-                initPageClick: false,//每次页面加载完毕后，是否触发initPage页的绑定事件
-                first: "首页",//首页显示字符
-                last: "尾页",//尾页显示字符
-                prev: "«",//上一页显示字符
-                next: "»",//下一页显示字符
-                showTurnTo: false,//是否显示跳转按钮，false不显示，true显示
-                animateType: "normal",//过渡模式：动画“animation”、跳动“jumpy”、快速移动“fast”、正常速度移动“normal”、缓慢的速度移动“slow”、异常缓慢的速度移动“verySlow”
-                animationTime: 300,//animateType为animation时，动画过渡时间(ms)
-                callBack: function (num) {
-                    $("#allUser").empty();
-                    $("#simplePaging5").empty();
-                    showCategory(num);
-                }
-            });
         }
     });
+}
 
+function currentPage(currentPage) {
+    /*
+        触发页码数位置： Page/js/jquery.z-pager.js 64行
+    */
+    showUser(currentPage);
 }
 
 function changeInfo(id) {
@@ -92,43 +76,23 @@ function changeInfo(id) {
     } else if (object.sex == 0) {
         $("#female").attr("checked", "true");
     }
-
     $("#phoneNum").val(object.phoneNum);
     $("#email").val(object.email);
-    if (object.birth == null) {
-        var date = new Date();
-        $("#date").datetime({
-            type: "static.js.tools.date",
-            value: [date.getFullYear(), (date.getMonth() + 1), date.getDate()],
-            success: function (res) {
-                console.log(res)
-            }
-        })
-    } else {
-        $("#date").datetime({
-            type: "static.js.tools.date",
-            value: [parseInt(object.birth.substring(0, 4)), parseInt(object.birth.substring(5, 7)), parseInt(object.birth.substring(8, 10))],
-            success: function (res) {
-                console.log(res)
-            }
-        })
-        $("#date").val(object.birth.substring(0, 10));
-    }
-    $("#city").val(object.location);
     $("#hidden_id").val(object.id);
-
-    //var date = (new Date()).pattern("yyyy-MM-dd"); 03-08和3-08不知道区别
+    if (object.birth != null)
+        $("#date").val(object.birth.substring(0, 10));
+    $("#location").val(object.location.toString());
 }
 
 function submitEditUser() {
     $.ajax({
         type: "POST",
         url: "/patent/updateInfo.action",
-        data:{
+        data: {
             id: $("#hidden_id").val(),
             realname: $("#realname").val(),
             sex: $("input[name='sex']:checked").val(),
-            location: $("#city").val(),
+            location: $("#location").val(),
             birth: $("#date").val(),
             phoneNum: $("#phoneNum").val(),
             email: $("#email").val()
@@ -139,14 +103,14 @@ function submitEditUser() {
                 alert(data.msg.toString());
             } else if (data.code.toString() === "1") {
                 alert(data.msg.toString());
-                window.location.href = "/patent/views/admin/userControl.html";
+                window.location.href = "userControl";
             }
         }
     });
 }
 
 function changeImg(id, avatar) {
-    $("#BeforeImg").attr("src", "../../" + avatar);
+    $("#BeforeImg").attr("src", "../" + avatar);
     $("#user_id").val(id);
 }
 
@@ -161,9 +125,25 @@ function getObjectURL(file) {
     }
     return url;
 }
-var num = 1;
+
 $(function () {
-    showUser(num);
+    showUser(1);
+    $("#pager").zPager({
+        totalData: total * 10, //数据总条数
+        pageData: 10, //每页数据条数
+        current: 1, //当前页码数
+        pageStep: 8, //当前可见最多页码个数
+        minPage: 5, //最小页码数，页码小于此数值则不显示上下分页按钮
+        active: 'current', //当前页码样式
+        prevBtn: 'pg-prev', //上一页按钮
+        nextBtn: 'pg-next', //下一页按钮
+        btnBool: true, //是否显示上一页下一页
+        firstBtn: 'pg-first', //第一页按钮
+        lastBtn: 'pg-last', //最后一页按钮
+        btnShow: true, //是否显示第一页和最后一页按钮
+        ajaxSetData: false, //是否使用ajax获取数据 此属性为真时需要url和htmlBox不为空
+        htmlBox: $('#wraper') //ajax数据写入容器
+    });
 });
 
 $("#file").change(

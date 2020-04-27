@@ -1,20 +1,15 @@
 function showCategory(num) {
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "/patent/getPageCategory.action",
         dataType: "json",
+        async: false,
         data: {
             page: num,
         },
         success: function (data) {
             total = data.total;
-            if (total < 5) {
-                all = total;
-            } else if (total > 16) {
-                all = 8;
-            } else {
-                all = total / 2;
-            }
+            $("#allCategory").empty();
             jsonarray = data.Category;
             var head = "<thead>\n" +
                 "<tr>\n" +
@@ -34,26 +29,6 @@ function showCategory(num) {
             head = head + "</tbody>";
             $("#allCategory").append(head);
 
-
-            $("#simplePaging5").simplePaging({
-                allPage: total,//总页数
-                showPage: all,//显示页数
-                startPage: 1,//第一页页码数字
-                initPage: num,//加载完毕自动跳转到第n页
-                initPageClick: false,//每次页面加载完毕后，是否触发initPage页的绑定事件
-                first: "首页",//首页显示字符
-                last: "尾页",//尾页显示字符
-                prev: "«",//上一页显示字符
-                next: "»",//下一页显示字符
-                showTurnTo: false,//是否显示跳转按钮，false不显示，true显示
-                animateType: "normal",//过渡模式：动画“animation”、跳动“jumpy”、快速移动“fast”、正常速度移动“normal”、缓慢的速度移动“slow”、异常缓慢的速度移动“verySlow”
-                animationTime: 300,//animateType为animation时，动画过渡时间(ms)
-                callBack: function (num) {
-                    $("#allCategory").empty();
-                    $("#simplePaging5").empty();
-                    showCategory(num);
-                }
-            });
         }
     });
 }
@@ -72,10 +47,14 @@ function submitAdd() {
                 alert(data.msg.toString());
             } else if (data.code.toString() === "1") {
                 alert(data.msg.toString())
-                window.location.href = "/patent/views/admin/categoryControl.html";
+                window.location.href = "categoryControl";
             }
         }
     });
+}
+function currentPage(currentPage) {
+    // 触发页码数位置： Page/js/jquery.z-pager.js 64行
+    showCategory(currentPage);
 }
 
 function changeName(id, name) {
@@ -99,7 +78,7 @@ function submitEditCategory() {
                 alert(data.msg.toString());
             } else if (data.code.toString() === "1") {
                 alert(data.msg.toString())
-                window.location.href = "/patent/views/admin/categoryControl.html";
+                window.location.href = "categoryControl";
             }
         }
     });
@@ -118,13 +97,28 @@ function dele(id) {
                 alert(data.msg.toString());
             } else if (data.code.toString() === "1") {
                 alert(data.msg.toString());
-                window.location.href = "/patent/views/admin/categoryControl.html";
+                window.location.href = "categoryControl";
             }
         }
     });
 }
 
-var num = 1;
 $(function () {
-    showCategory(num);
+    showCategory(1);
+    $("#pager").zPager({
+        totalData: total * 10, //数据总条数
+        pageData: 10, //每页数据条数
+        current: 1, //当前页码数
+        pageStep: 6, //当前可见最多页码个数
+        minPage: 5, //最小页码数，页码小于此数值则不显示上下分页按钮
+        active: 'current', //当前页码样式
+        prevBtn: 'pg-prev', //上一页按钮
+        nextBtn: 'pg-next', //下一页按钮
+        btnBool: true, //是否显示上一页下一页
+        firstBtn: 'pg-first', //第一页按钮
+        lastBtn: 'pg-last', //最后一页按钮
+        btnShow: true, //是否显示第一页和最后一页按钮
+        ajaxSetData: false, //是否使用ajax获取数据 此属性为真时需要url和htmlBox不为空
+        htmlBox: $('#wraper') //ajax数据写入容器
+    });
 });

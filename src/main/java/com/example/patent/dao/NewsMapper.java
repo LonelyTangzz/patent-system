@@ -1,7 +1,11 @@
 package com.example.patent.dao;
 
 import com.example.patent.bean.News;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface NewsMapper {
@@ -18,4 +22,8 @@ public interface NewsMapper {
     int updateByPrimaryKey(News record);
 
     int countNews();
+
+    List<News> getNewsByPage(@Param("page") Integer page);
+
+    List<Map<String, Object>> countRecentNews();
 }

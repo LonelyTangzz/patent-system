@@ -1,5 +1,10 @@
 package com.example.patent.bean;
 
+import org.springframework.stereotype.Repository;
+
+import java.util.Date;
+
+@Repository
 public class News {
     private Integer id;
 
@@ -8,6 +13,10 @@ public class News {
     private String author;
 
     private String details;
+
+    private Date uptime;
+
+    private String img;
 
     public Integer getId() {
         return id;
@@ -39,5 +48,21 @@ public class News {
 
     public void setDetails(String details) {
         this.details = details == null ? null : details.trim();
+    }
+
+    public Date getUptime() {
+        return uptime;
+    }
+
+    public void setUptime(Date uptime) {
+        this.uptime = uptime;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img == null ? null : img.trim();
     }
 }

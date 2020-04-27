@@ -10,7 +10,7 @@ function submitChange() {
             url: "/patent/changeAdminPwd.action",
             dataType: "json",
             data: {
-                name: localStorage.getItem('adminName'),
+                name: Cookies.get('adminName'),
                 usedPwd: $("#usedPassword").val(),
                 nowPwd: $("#nowPassword").val(),
             },
@@ -18,7 +18,8 @@ function submitChange() {
                 if(data.code==1){
                     $("#text").text(data.msg);
                     alert(data.msg);
-                    window.location.href = "/patent/views/admin/main.html";
+                    Cookies.remove('adminName',);
+                    window.location.href = "login";
                 }else if(data.code ==0){
                     $("#text").text(data.msg);
                     $("#againPassword").val("");
@@ -26,7 +27,7 @@ function submitChange() {
                     $("#usedPassword").val("");
                 }else if(data.code==-1){
                     alert(data.msg);
-                    window.location.href = "/patent/views/admin/changePassword.html";
+                    window.location.href = "changepassword";
                 }
             }
         });

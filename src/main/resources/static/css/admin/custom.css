@@ -36,7 +36,7 @@ ul, ol, dl {
     display: inline-block;
     border: 2px solid #eee;
     padding: 5px;
-    position: relative;
+    position: fixed;
     background: #ffffff;
     z-index: 2000;
 }

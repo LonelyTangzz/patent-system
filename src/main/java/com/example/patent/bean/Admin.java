@@ -1,5 +1,8 @@
 package com.example.patent.bean;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class Admin {
     private Integer id;
 

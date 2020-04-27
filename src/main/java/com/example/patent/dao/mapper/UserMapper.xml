@@ -51,6 +51,14 @@
     select count(*)
     from user
   </select>
+    <select id="countUserByMonth"  resultType="java.util.HashMap">
+    select day(create_time) as register_time , count(*) as total
+    from user
+    where month (create_time) = #{month,jdbcType=VARCHAR}
+    and year(create_time) = #{year,jdbcType=VARCHAR}
+    group by day (create_time)
+     order by day (create_time) asc
+  </select>
     <!--新增-->
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user
