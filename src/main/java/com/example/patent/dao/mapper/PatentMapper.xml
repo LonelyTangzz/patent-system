@@ -32,7 +32,7 @@
         select *
         from patent
         where category = #{category,jdbcType=VARCHAR}
-        limit #{page,jdbcType=INTEGER},10
+        limit #{page,jdbcType=INTEGER},5
     </select>
     <select id="selectIdByName" resultType="java.lang.Integer" parameterType="java.lang.String">
     SELECT id FROM user where patent_name = "${name}" ;

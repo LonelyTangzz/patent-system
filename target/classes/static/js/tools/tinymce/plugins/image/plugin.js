@@ -1389,13 +1389,13 @@
       }
     };
     var normalizeStyle = function (image, normalizeCss) {
-      var attrValue = image.getAttribute('style');
+      var attrValue = image.getAttribute('static.css.user.style');
       var value = normalizeCss(attrValue !== null ? attrValue : '');
       if (value.length > 0) {
-        image.setAttribute('style', value);
+        image.setAttribute('static.css.user.style', value);
         image.setAttribute('data-mce-style', value);
       } else {
-        image.removeAttribute('style');
+        image.removeAttribute('static.css.user.style');
       }
     };
     var setSize = function (name, normalizeCss) {
@@ -1470,7 +1470,7 @@
     };
     var getStyleValue = function (normalizeCss, data) {
       var image = domGlobals.document.createElement('img');
-      setAttrib(image, 'style', data.style);
+      setAttrib(image, 'static.css.user.style', data.style);
       if (getHspace(image) || data.hspace !== '') {
         setHspace(image, data.hspace);
       }
@@ -1483,7 +1483,7 @@
       if (getBorderStyle(image) || data.borderStyle !== '') {
         setBorderStyle(image, data.borderStyle);
       }
-      return normalizeCss(image.getAttribute('style'));
+      return normalizeCss(image.getAttribute('static.css.user.style'));
     };
     var create = function (normalizeCss, data, info) {
       var image = domGlobals.document.createElement('img');
@@ -1507,7 +1507,7 @@
         width: getSize(image, 'width'),
         height: getSize(image, 'height'),
         class: getAttrib(image, 'class'),
-        style: normalizeCss(getAttrib(image, 'style')),
+        style: normalizeCss(getAttrib(image, 'static.css.user.style')),
         caption: hasCaption(image),
         hspace: getHspace(image),
         vspace: getVspace(image),
@@ -1559,8 +1559,8 @@
       updateProp(image, oldData, newData, 'width', setSize('width', normalizeCss));
       updateProp(image, oldData, newData, 'height', setSize('height', normalizeCss));
       updateProp(image, oldData, newData, 'class', setAttrib);
-      updateProp(image, oldData, newData, 'style', normalized(function (image, value) {
-        return setAttrib(image, 'style', value);
+      updateProp(image, oldData, newData, 'static.css.user.style', normalized(function (image, value) {
+        return setAttrib(image, 'static.css.user.style', value);
       }, normalizeCss));
       updateProp(image, oldData, newData, 'hspace', normalized(setHspace, normalizeCss));
       updateProp(image, oldData, newData, 'vspace', normalized(setVspace, normalizeCss));
@@ -1794,7 +1794,7 @@
           {
             type: 'input',
             label: 'Style',
-            name: 'style'
+            name: 'static.css.user.style'
           },
           {
             type: 'grid',
@@ -2305,7 +2305,7 @@
           changeImages(helpers, info, state, api);
         } else if (evt.name === 'alt') {
           state.prevAlt = api.getData().alt;
-        } else if (evt.name === 'style') {
+        } else if (evt.name === 'static.css.user.style') {
           changeStyle(helpers, api);
         } else if (evt.name === 'vspace' || evt.name === 'hspace' || evt.name === 'border' || evt.name === 'borderstyle') {
           changeAStyle(helpers, info, api);

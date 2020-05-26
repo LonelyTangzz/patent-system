@@ -27,4 +27,8 @@ public interface PatentService {
     List<Map<String, Object>> countPatentOrderByCategory();
 
     HashMap<String,List<Patent>> getPatentGroupByCategory(List<Category> categories);
+
+    Patent getPatentById(Integer id);
+
+    List<Patent> getPatentByCategory(String category, Integer page);
 }

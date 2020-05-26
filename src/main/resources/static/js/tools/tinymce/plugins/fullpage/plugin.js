@@ -143,7 +143,7 @@
       elm = headerFragment.getAll('body')[0];
       if (elm) {
         data.langdir = getAttr(elm, 'dir');
-        data.style = getAttr(elm, 'style');
+        data.style = getAttr(elm, 'static.css.user.style');
         data.visited_color = getAttr(elm, 'vlink');
         data.link_color = getAttr(elm, 'link');
         data.active_color = getAttr(elm, 'alink');
@@ -279,7 +279,7 @@
       elm = headerFragment.getAll('body')[0];
       if (elm) {
         setAttr(elm, 'dir', data.langdir);
-        setAttr(elm, 'style', data.style);
+        setAttr(elm, 'static.css.user.style', data.style);
         setAttr(elm, 'vlink', data.visited_color);
         setAttr(elm, 'link', data.link_color);
         setAttr(elm, 'alink', data.active_color);
@@ -449,7 +449,7 @@
         footState.set('\n</body>\n</html>');
       }
       headerFragment = Parser.parseHeader(headState.get());
-      each(headerFragment.getAll('style'), function (node) {
+      each(headerFragment.getAll('static.css.user.style'), function (node) {
         if (node.firstChild) {
           styles += node.firstChild.value;
         }
@@ -457,7 +457,7 @@
       var bodyElm = headerFragment.getAll('body')[0];
       if (bodyElm) {
         dom.setAttribs(editor.getBody(), {
-          style: bodyElm.attr('style') || '',
+          style: bodyElm.attr('static.css.user.style') || '',
           dir: bodyElm.attr('dir') || '',
           vLink: bodyElm.attr('vlink') || '',
           link: bodyElm.attr('link') || '',
@@ -467,7 +467,7 @@
       dom.remove('fullpage_styles');
       var headElm = editor.getDoc().getElementsByTagName('head')[0];
       if (styles) {
-        var styleElm = dom.add(headElm, 'style', { id: 'fullpage_styles' });
+        var styleElm = dom.add(headElm, 'static.css.user.style', { id: 'fullpage_styles' });
         styleElm.appendChild(domGlobals.document.createTextNode(styles));
       }
       var currentStyleSheetsMap = {};

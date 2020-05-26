@@ -661,8 +661,8 @@
     var remove$1 = function (element, property) {
       var dom = element.dom();
       internalRemove(dom, property);
-      if (has$1(element, 'style') && trim(get$1(element, 'style')) === '') {
-        remove(element, 'style');
+      if (has$1(element, 'static.css.user.style') && trim(get$1(element, 'static.css.user.style')) === '') {
+        remove(element, 'static.css.user.style');
       }
     };
     var copy = function (source, target) {

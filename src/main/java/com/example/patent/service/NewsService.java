@@ -18,4 +18,6 @@ public interface NewsService {
     boolean updateNews(News news);
 
     List<Map<String, Object>> countRecentNews();
+
+    News getNewsById(Integer id);
 }

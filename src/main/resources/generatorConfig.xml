@@ -50,7 +50,7 @@
         <!--               enableUpdateByExample="false" enableSelectByExample="false">-->
 
         <!--        </table>-->
-                <table tableName="patent" domainObjectName="Patent" enableDeleteByExample="false" enableCountByExample="false"
+                <table tableName="patentQueue" domainObjectName="PatentQueue" enableDeleteByExample="false" enableCountByExample="false"
                        enableUpdateByExample="false" enableSelectByExample="false">
 
         <!--        </table>-->

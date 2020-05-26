@@ -132,8 +132,8 @@ $(function () {
         totalData: total * 10, //数据总条数
         pageData: 10, //每页数据条数
         current: 1, //当前页码数
-        pageStep: 8, //当前可见最多页码个数
-        minPage: 5, //最小页码数，页码小于此数值则不显示上下分页按钮
+        pageStep: 5, //当前可见最多页码个数
+        minPage: 4, //最小页码数，页码小于此数值则不显示上下分页按钮
         active: 'current', //当前页码样式
         prevBtn: 'pg-prev', //上一页按钮
         nextBtn: 'pg-next', //下一页按钮

@@ -17,7 +17,6 @@ public interface UserService {
 
     int getUserIdByName(String name);
 
-
     boolean updateUserInfo(User user);
 
     int countUser();
@@ -25,4 +24,8 @@ public interface UserService {
     List<User> getPageUser(int num);
 
     List<Map<String, Object>> countUserByMonth(String year,String month);
+
+    String getUserPhoneByName(String username);
+
+    User getUserByName(String username);
 }

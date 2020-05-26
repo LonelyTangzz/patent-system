@@ -985,7 +985,7 @@
       };
       var clobber = function (clobberStyle) {
         return function (element) {
-          var styles = get$1(element, 'style');
+          var styles = get$1(element, 'static.css.user.style');
           var backup = styles === undefined ? 'no-styles' : styles.trim();
           if (backup === clobberStyle) {
             return;
@@ -1010,7 +1010,7 @@
         if (restore !== 'no-styles') {
           setAll(element, dom.parseStyle(restore));
         } else {
-          remove(element, 'style');
+          remove(element, 'static.css.user.style');
         }
         remove(element, attr);
       });

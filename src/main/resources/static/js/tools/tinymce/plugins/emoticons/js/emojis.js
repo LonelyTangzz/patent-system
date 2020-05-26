@@ -5245,7 +5245,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "objects"
   },
   barber: {
-    keywords: [ "hair", "salon", "style" ],
+    keywords: [ "hair", "salon", "static.css.user.style" ],
     "char": "\ud83d\udc88",
     fitzpatrick_scale: false,
     category: "objects"

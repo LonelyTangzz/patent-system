@@ -36,4 +36,5 @@ public interface PatentMapper {
     int updateByNo(Patent record);
 
     List<Map<String, Object>> countPatentOrderByCategory();
+
 }

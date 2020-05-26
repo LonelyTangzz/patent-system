@@ -116,6 +116,24 @@ public class User {
         this.loginTime = loginTime;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", sex=" + sex +
+                ", phoneNum='" + phoneNum + '\'' +
+                ", email='" + email + '\'' +
+                ", birth=" + birth +
+                ", location='" + location + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", createTime=" + createTime +
+                ", loginTime=" + loginTime +
+                ", realname='" + realname + '\'' +
+                '}';
+    }
+
     public String getRealname() {
         return realname;
     }

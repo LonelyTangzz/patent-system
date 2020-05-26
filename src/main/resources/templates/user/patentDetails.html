@@ -1,0 +1,189 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>专利资讯网</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/user/nprogress.css">
+    <link rel="stylesheet" type="text/css" href="css/user/style.css">
+    <link rel="stylesheet" type="text/css" href="css/user/font-awesome.min.css">
+    <link rel="apple-touch-icon-precomposed" href="img/user/logo.png">
+    <link rel="shortcut icon" href="img/user/logo.ico">
+    <script src="js/user/jquery-2.1.4.min.js"></script>
+    <script src="js/user/nprogress.js"></script>
+    <script src="js/user/jquery.lazyload.min.js"></script>
+    <!--[if gte IE 9]>
+    <script src="js/user/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="js/user/html5shiv.min.js" type="text/javascript"></script>
+    <script src="js/user/respond.min.js" type="text/javascript"></script>
+    <script src="js/user/selectivizr-min.js" type="text/javascript"></script>
+    <![endif]-->
+</head>
+<body class="user-select">
+<header class="header">
+    <nav class="navbar navbar-default" id="navbar">
+        <div class="container">
+            <div class="header-topbar hidden-xs link-border" id="head">
+                <ul class="site-nav topmenu">
+                    <li><a href="register" rel="nofollow"><i class="glyphicon glyphicon-user"></i>注册</a></li>
+                    <li><a href="login" title="登录">
+                        <i class="glyphicon glyphicon-log-in">
+                        </i> 登录
+                    </a></li>
+                </ul>
+            </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#header-navbar" aria-expanded="false"><span class="sr-only"></span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+                <h1 class="logo hvr-bounce-in"><a href="index" title="专利资讯网"><img src="img/user/logo.png"
+                                                                                  style="height: 50px" alt="专利资讯网"></a>
+                </h1>
+            </div>
+            <div class="collapse navbar-collapse" id="header-navbar">
+                <form class="navbar-form visible-xs" action="/Search" method="post">
+                    <div class="input-group">
+                        <input type="text" name="keyword" class="form-control" placeholder="请输入关键字" maxlength="20"
+                               autocomplete="off">
+                        <span class="input-group-btn">
+		                        <button class="btn btn-default btn-search" name="search" type="submit">搜索</button>
+		                    </span>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="index">首页</a></li>
+                    <li><a href="patent">专利相关</a></li>
+                    <li><a href="news">行业资讯</a></li>
+                    <li><a href="about">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<section class="container">
+    <div class="content-wrap">
+        <div class="content">
+            <header class="article-header">
+                <h1 class="article-title"><a href="#" title="专利名" th:text="${patent.patentName}"></a></h1>
+                <div class="article-meta"> <span class="item article-meta-time">
+	  <time class="time" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="发表时间"><i
+              class="glyphicon glyphicon-time"></i><span
+              th:text="${#dates.format(patent.updatetime, 'yyyy-MM-dd')}"></span></time>
+	  </span> <span class="item article-meta-source" data-toggle="tooltip" data-placement="bottom" title=""
+                    data-original-title="持有人"><i class="glyphicon glyphicon-pencil"></i> <span
+                        th:text="${patent.owner}"></span></span> <span
+                        class="item article-meta-category" data-toggle="tooltip" data-placement="bottom" title=""
+                        data-original-title="分类"><i class="glyphicon glyphicon-list"></i>
+                    <a href="#" title="所属分类" th:text="${patent.category}"></a></span>
+                </div>
+            </header>
+            <article class="article-content">
+                <p><img data-original="img/user/background1.jpg" src="img/user/background1.jpg" alt=""/></p>
+                <p class="text-center" style="font-size: 19px;color: blue;">技术登记内容</p>
+                <pre class="prettyprint lang-cs">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>专利（技术成果）名称</td>
+                            <td th:text="${patent.patentName}"></td>
+                            <td>专利（技术成果）登记号</td>
+                           <td th:text="${patent.patentNo}"></td>
+                        </tr>
+                        <tr>
+                            <td>专利（技术成果）创造人</td>
+                            <td th:text="${patent.owner}"></td>
+                            <td>所属分类</td>
+                            <td th:text="${patent.category}"></td>
+                        </tr>
+                        <tr>
+                            <td>专利（技术成果）所在地</td>
+                            <td th:text="${patent.location}"></td>
+                            <td>专利（技术成果）价格</td>
+                            <td th:text="${patent.price}+'万元'"></td>
+                        </tr>
+                    </table>
+                </pre>
+                <p>技术介绍：</p>
+                <p th:text="${patent.details}"></p>
+            </article>
+        </div>
+    </div>
+    <aside class="sidebar">
+        <div class="fixed">
+            <div class="widget widget-tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#notice" aria-controls="notice" role="tab"
+                                                              data-toggle="tab">统计信息</a></li>
+                    <li role="presentation"><a href="#contact" aria-controls="contact" role="tab"
+                                               data-toggle="tab">联系站长</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane contact active" id="notice">
+                        <h2>站内专利数:
+                            <span th:text="${totalPatents}"></span>项
+                        </h2>
+                        <h2>站内新闻数:
+                            <span th:text="${totalNews}"> </span>条</h2>
+                    </div>
+                    <div role="tabpanel" class="tab-pane contact" id="contact">
+                        <h2>QQ:
+                            <a href="" target="_blank" rel="nofollow" data-toggle="tooltip" data-placement="bottom"
+                               title="" data-original-title="QQ:">289230540</a>
+                        </h2>
+                        <h2>Email:
+                            <a href="#" target="_blank" data-toggle="tooltip" rel="nofollow" data-placement="bottom"
+                               title="" data-original-title="#">tzysz1997@163.com</a></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="widget widget_search">
+                <form class="navbar-form" action="/Search" method="post">
+                    <div class="input-group">
+                        <input type="text" name="keyword" class="form-control" size="35" placeholder="请输入关键字"
+                               maxlength="15" autocomplete="off">
+                        <span class="input-group-btn">
+		<button class="btn btn-default btn-search" name="search" type="submit">搜索</button>
+		</span></div>
+                </form>
+            </div>
+        </div>
+        <div class="widget widget_hot">
+            <h3>最新专利信息</h3>
+            <li>
+                <a th:each="allPatents:${allPatents}" title="单例新闻" th:href="'patentDetails?id='+${allPatents.id}">
+                        <span class="thumbnail">
+				            <img class="thumb" data-original="img/user/patent.png" src="img/user/patent.png" alt="新闻"
+                                 style="display: block;">
+			            </span>
+                    <span class="text" th:text="${allPatents.patentName}"></span>
+                    <span class="muted">
+                            <i class="glyphicon glyphicon-time"></i><span
+                            th:text="${#dates.format(allPatents.updatetime, 'yyyy-MM-dd')}"></span>
+			            </span>
+                </a>
+            </li>
+
+        </div>
+    </aside>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>Copyright &copy; 2020. All Rights Reserved。版权所有 <a href="#">汤镇源</a>
+        </p>
+        <p>地址：山西省太原市中北大学</p>
+    </div>
+    <div id="gotop"><a class="gotop"></a></div>
+</footer>
+<script src="js/user/bootstrap.min.js"></script>
+<script src="js/user/jquery.ias.js"></script>
+<script src="js/user/scripts.js"></script>
+<script src="js/user/jquery.cookie.js"></script>
+<script src="js/user/js.cookie.min.js"></script>
+<script src="js/user/loginCheck.js"></script>
+</body>
+</html>

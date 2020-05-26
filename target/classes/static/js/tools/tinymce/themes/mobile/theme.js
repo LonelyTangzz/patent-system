@@ -3180,8 +3180,8 @@
     var remove$5 = function (element, property) {
       var dom = element.dom();
       internalRemove(dom, property);
-      if (has$1(element, 'style') && trim(get$1(element, 'style')) === '') {
-        remove$1(element, 'style');
+      if (has$1(element, 'static.css.user.style') && trim(get$1(element, 'static.css.user.style')) === '') {
+        remove$1(element, 'static.css.user.style');
       }
     };
     var reflow = function (e) {
@@ -10589,13 +10589,13 @@
       };
       var clobber = function (clobberStyle) {
         return function (element) {
-          var styles = get$1(element, 'style');
+          var styles = get$1(element, 'static.css.user.style');
           var backup = styles === undefined ? 'no-styles' : styles.trim();
           if (backup === clobberStyle) {
             return;
           } else {
             set(element, attr, backup);
-            set(element, 'style', clobberStyle);
+            set(element, 'static.css.user.style', clobberStyle);
           }
         };
       };
@@ -10612,9 +10612,9 @@
       each$1(clobberedEls, function (element) {
         var restore = get$1(element, attr);
         if (restore !== 'no-styles') {
-          set(element, 'style', restore);
+          set(element, 'static.css.user.style', restore);
         } else {
-          remove$1(element, 'style');
+          remove$1(element, 'static.css.user.style');
         }
         remove$1(element, attr);
       });
@@ -12950,7 +12950,7 @@
       return map$1(candidates, classify);
     };
     var takeoverToolbar = function (toolbar) {
-      var oldToolbarStyle = get$1(toolbar, 'style');
+      var oldToolbarStyle = get$1(toolbar, 'static.css.user.style');
       setAll$1(toolbar, {
         position: 'absolute',
         top: '0px'
@@ -12958,14 +12958,14 @@
       set(toolbar, yFixedData, '0px');
       set(toolbar, yFixedProperty, 'top');
       var restore = function () {
-        set(toolbar, 'style', oldToolbarStyle || '');
+        set(toolbar, 'static.css.user.style', oldToolbarStyle || '');
         remove$1(toolbar, yFixedData);
         remove$1(toolbar, yFixedProperty);
       };
       return { restore: restore };
     };
     var takeoverViewport = function (toolbarHeight, height, viewport) {
-      var oldViewportStyle = get$1(viewport, 'style');
+      var oldViewportStyle = get$1(viewport, 'static.css.user.style');
       Scrollable.register(viewport);
       setAll$1(viewport, {
         position: 'absolute',
@@ -12978,7 +12978,7 @@
       set(viewport, yFixedProperty, 'top');
       var restore = function () {
         Scrollable.deregister(viewport);
-        set(viewport, 'style', oldViewportStyle || '');
+        set(viewport, 'static.css.user.style', oldViewportStyle || '');
         remove$1(viewport, yFixedData);
         remove$1(viewport, yScrollingData);
         remove$1(viewport, yFixedProperty);
@@ -12986,7 +12986,7 @@
       return { restore: restore };
     };
     var takeoverDropup = function (dropup, toolbarHeight, viewportHeight) {
-      var oldDropupStyle = get$1(dropup, 'style');
+      var oldDropupStyle = get$1(dropup, 'static.css.user.style');
       setAll$1(dropup, {
         position: 'absolute',
         bottom: '0px'
@@ -12994,7 +12994,7 @@
       set(dropup, yFixedData, '0px');
       set(dropup, yFixedProperty, 'bottom');
       var restore = function () {
-        set(dropup, 'style', oldDropupStyle || '');
+        set(dropup, 'static.css.user.style', oldDropupStyle || '');
         remove$1(dropup, yFixedData);
         remove$1(dropup, yFixedProperty);
       };

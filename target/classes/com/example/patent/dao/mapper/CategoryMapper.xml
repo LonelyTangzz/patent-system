@@ -23,6 +23,7 @@
     select
     *
     from category
+    ORDER BY id ASC
     limit #{page,jdbcType=INTEGER},5
   </select>
   <select id="countCategory" resultType="java.lang.Integer">

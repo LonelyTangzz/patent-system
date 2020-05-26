@@ -30,7 +30,7 @@
     </select>
 <!--   countRecentNews暂未做测试 -->
     <select id="countRecentNews" resultType="java.util.HashMap">
-        SELECT uptime, count(*) as total FROM news where  DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= uptime GROUP BY uptime ORDER BY uptime ASC
+        SELECT uptime, count(*) as total FROM news where  DATE_SUB(CURDATE(), INTERVAL 6 DAY) &lt;= uptime GROUP BY uptime ORDER BY uptime ASC
     </select>
     <!-- 新增-->
 

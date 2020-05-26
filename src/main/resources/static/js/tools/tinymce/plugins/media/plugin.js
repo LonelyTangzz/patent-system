@@ -1082,7 +1082,7 @@
             if (attrs[i].name.indexOf('on') === 0) {
               return;
             }
-            if (attrs[i].name === 'style') {
+            if (attrs[i].name === 'static.css.user.style') {
               attrs[i].value = editor.dom.serializeStyle(editor.dom.parseStyle(attrs[i].value), name);
             }
           }
@@ -1109,7 +1109,7 @@
       placeHolder.attr({
         'width': node.attr('width') || '300',
         'height': node.attr('height') || (name === 'audio' ? '30' : '150'),
-        'style': node.attr('style'),
+        'style': node.attr('static.css.user.style'),
         'src': global$8.transparentSrc,
         'data-mce-object': name,
         'class': 'mce-object mce-object-' + name
@@ -1124,7 +1124,7 @@
       previewWrapper = new global$7('span', 1);
       previewWrapper.attr({
         'contentEditable': 'false',
-        'style': node.attr('style'),
+        'style': node.attr('static.css.user.style'),
         'data-mce-object': name,
         'class': 'mce-preview-object mce-object-' + name
       });
@@ -1133,7 +1133,7 @@
       previewNode.attr({
         src: node.attr('src'),
         allowfullscreen: node.attr('allowfullscreen'),
-        style: node.attr('style'),
+        style: node.attr('static.css.user.style'),
         class: node.attr('class'),
         width: node.attr('width'),
         height: node.attr('height'),
@@ -1156,7 +1156,7 @@
       while (ai--) {
         attrName = attribs[ai].name;
         attrValue = attribs[ai].value;
-        if (attrName !== 'width' && attrName !== 'height' && attrName !== 'style') {
+        if (attrName !== 'width' && attrName !== 'height' && attrName !== 'static.css.user.style') {
           if (attrName === 'data' || attrName === 'src') {
             attrValue = editor.convertURL(attrValue, attrName);
           }
@@ -1268,7 +1268,7 @@
                 });
               }
             }
-            realElm.attr({ style: node.attr('style') });
+            realElm.attr({ style: node.attr('static.css.user.style') });
             attribs = node.attributes;
             ai = attribs.length;
             while (ai--) {

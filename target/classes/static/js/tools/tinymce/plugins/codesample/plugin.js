@@ -815,7 +815,7 @@
                 Prism.languages.css['atrule'].inside.rest = Prism.languages.css;
                 var markup = Prism.languages.markup;
                 if (markup) {
-                  markup.tag.addInlined('style', 'css');
+                  markup.tag.addInlined('static.css.user.style', 'css');
                   Prism.languages.insertBefore('inside', 'attr-value', {
                     'style-attr': {
                       pattern: /\s*style=("|')(?:\\[\s\S]|(?!\1)[^\\])*\1/i,

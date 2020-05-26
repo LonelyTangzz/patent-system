@@ -3,6 +3,7 @@ package com.example.patent.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.example.patent.bean.Patent;
 import com.example.patent.service.CategoryService;
+import com.example.patent.service.NewsService;
 import com.example.patent.service.PatentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -25,12 +26,14 @@ public class PatentController {
     private PatentService patentService;
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private NewsService newsService;
 
     Patent patent = new Patent();
 
     /**
      * 上传专利
-     * -------已调试，还有专利附件未添加上传
+     * ---测试通过
      *
      * @param req
      * @return
@@ -111,7 +114,7 @@ public class PatentController {
 
     /**
      * 分页查询所有专利
-     * ------已调试
+     * ------测试通过
      *
      * @return
      */
@@ -125,7 +128,8 @@ public class PatentController {
     }
 
     /**
-     * 查询专利信息--finish
+     * 查询专利信息
+     * ----测试通过
      *
      * @param req
      * @return
@@ -146,8 +150,8 @@ public class PatentController {
     }
 
     /**
-     * 删除专利信息--未调试，没敢删
-     *
+     * 删除专利信息
+     * ------测试通过
      * @param req
      * @return
      */
@@ -169,7 +173,8 @@ public class PatentController {
 
     /**
      * 修改专利信息
-     * ----------调试通过
+     * -----admin
+     * ----调试通过
      *
      * @param req
      * @return
@@ -201,8 +206,8 @@ public class PatentController {
     }
 
     /**
-     * ----finish
-     * 返回专利种类以及该专利种类下专利数
+     * 返回专利种类以及该专利种类下专利数---admin
+     * -------测试通过
      *
      * @return
      * @author: admin
@@ -215,6 +220,25 @@ public class PatentController {
     }
 
     /**
+     * 单例专利详情
+     * -----测试通过
+     *
+     * @param req
+     * @return
+     */
+    @RequestMapping(value = "patentDetails", method = RequestMethod.GET)
+    public ModelAndView details(HttpServletRequest req) {
+        ModelAndView mv = new ModelAndView();
+        Integer id = Integer.parseInt(req.getParameter("id"));
+        mv.setViewName("user/patentDetails.html");
+        mv.addObject("patent", patentService.getPatentById(id));
+        mv.addObject("allPatents", patentService.getPatentByPage(0));
+        mv.addObject("totalNews", newsService.countNews());
+        mv.addObject("totalPatents", patentService.countPatent());
+        return mv;
+    }
+
+    /**
      * 配置
      */
     @Configuration
@@ -223,5 +247,39 @@ public class PatentController {
         public void addResourceHandlers(ResourceHandlerRegistry registry) {
             registry.addResourceHandler("/patentImg/**").addResourceLocations("file:E:/IntellJ Idea/patent-system/patentImg/");
         }
+    }
+
+    /**
+     * 用户专利功能页面
+     * ----测试通过
+     *
+     * @return
+     */
+    @RequestMapping(value = "patent")
+    public ModelAndView patent(HttpServletRequest req) {
+        int page;
+        if (req.getParameter("page") == null)
+            page = 0;
+        else
+            page = Integer.parseInt(req.getParameter("page"));
+        ModelAndView mv = new ModelAndView("user/patent.html");
+        mv.addObject("categories", patentService.countPatentOrderByCategory());
+        mv.addObject("patents", patentService.getPatentByPage(page));
+        return mv;
+    }
+    /**
+     * 分行业显示部分专利
+     * ----测试通过
+     *
+     * @return
+     */
+    @RequestMapping(value = "patentSort")
+    public ModelAndView patentSort(HttpServletRequest req) {
+        String category = req.getParameter("name");
+        Integer page = Integer.parseInt(req.getParameter("page"));
+        ModelAndView mv = new ModelAndView("user/patentSort.html");
+        mv.addObject("patents",patentService.getPatentByCategory(category,page));
+        mv.addObject("categories", patentService.countPatentOrderByCategory());
+        return mv;
     }
 }

@@ -99,4 +99,14 @@ public class PatentServiceImpl implements PatentService {
         }
         return result;
     }
+
+    @Override
+    public Patent getPatentById(Integer id) {
+        return patentMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public List<Patent> getPatentByCategory(String category, Integer page) {
+        return patentMapper.getPatentByCategory(category,page);
+    }
 }

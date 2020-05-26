@@ -1422,15 +1422,15 @@
         }
         if (!rule.attributes.style) {
           rule.attributes.style = {};
-          rule.attributesOrder.push('style');
+          rule.attributesOrder.push('static.css.user.style');
         }
       });
       var domParser = global$7({}, schema);
-      domParser.addAttributeFilter('style', function (nodes) {
+      domParser.addAttributeFilter('static.css.user.style', function (nodes) {
         var i = nodes.length, node;
         while (i--) {
           node = nodes[i];
-          node.attr('style', filterStyles(editor, validStyles, node, node.attr('style')));
+          node.attr('static.css.user.style', filterStyles(editor, validStyles, node, node.attr('static.css.user.style')));
           if (node.name === 'span' && node.parent && !node.attributes.length) {
             node.unwrap();
           }

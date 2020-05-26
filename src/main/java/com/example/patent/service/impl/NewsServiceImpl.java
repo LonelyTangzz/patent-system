@@ -43,4 +43,9 @@ public class NewsServiceImpl implements NewsService {
     public List<Map<String, Object>> countRecentNews() {
         return newsMapper.countRecentNews();
     }
+
+    @Override
+    public News getNewsById(Integer id) {
+        return newsMapper.selectByPrimaryKey(id);
+    }
 }

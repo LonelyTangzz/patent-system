@@ -91,18 +91,58 @@ public class UserServiceImpl implements UserService {
         return userMapper.getPageUser(num);
     }
 
+    /**
+     * 更新用户信息
+     *
+     * @param user
+     * @return
+     */
     @Override
     public boolean updateUserInfo(User user) {
         return userMapper.updateByPrimaryKeySelective(user) > 0 ? true : false;
     }
 
+    /**
+     * 统计用户数量
+     *
+     * @return
+     */
     @Override
     public int countUser() {
         return userMapper.countUser();
     }
 
+    /**
+     * 根据当前月份统计新增用户
+     *
+     * @param year
+     * @param month
+     * @return
+     */
     @Override
     public List<Map<String, Object>> countUserByMonth(String year, String month) {
         return userMapper.countUserByMonth(Integer.parseInt(year), Integer.parseInt(month));
+    }
+
+    /**
+     * 忘记密码时获取用户密码
+     *
+     * @param username
+     * @return
+     */
+    @Override
+    public String getUserPhoneByName(String username) {
+        return userMapper.selectByPrimaryKey(userMapper.selectIdByName(username)).getPhoneNum();
+    }
+
+    /**
+     * 根据用户名获取用户信息
+     *
+     * @param username
+     * @return
+     */
+    @Override
+    public User getUserByName(String username) {
+        return userMapper.selectByPrimaryKey(userMapper.selectIdByName(username));
     }
 }

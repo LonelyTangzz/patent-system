@@ -3008,8 +3008,8 @@
     var remove$6 = function (element, property) {
       var dom = element.dom();
       internalRemove(dom, property);
-      if (has$1(element, 'style') && trim(get$2(element, 'style')) === '') {
-        remove$1(element, 'style');
+      if (has$1(element, 'static.css.user.style') && trim(get$2(element, 'static.css.user.style')) === '') {
+        remove$1(element, 'static.css.user.style');
       }
     };
     var reflow = function (e) {
@@ -10303,7 +10303,7 @@
       var textRender = Option.from(info.meta).fold(function () {
         return renderText;
       }, function (meta) {
-        return has(meta, 'style') ? curry(renderStyledText, meta.style) : renderText;
+        return has(meta, 'static.css.user.style') ? curry(renderStyledText, meta.style) : renderText;
       });
       if (info.presets === 'color') {
         return renderColorStructure(info.ariaLabel, info.value, icon, providersBackstage);

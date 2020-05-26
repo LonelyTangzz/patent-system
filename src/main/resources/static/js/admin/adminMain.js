@@ -165,8 +165,9 @@ function loadNewsData() {
                     if (data.result[j].uptime == getDay(i - 6)) {
                         total[i] = data.result[j].total;
                         j++;
-                    } else
+                    } else {
                         total[i] = 0;
+                    }
                 } else
                     total[i] = 0;
             }

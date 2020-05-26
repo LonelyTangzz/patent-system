@@ -65,4 +65,16 @@ public class News {
     public void setImg(String img) {
         this.img = img == null ? null : img.trim();
     }
+
+    @Override
+    public String toString() {
+        return "News{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", details='" + details + '\'' +
+                ", uptime=" + uptime +
+                ", img='" + img + '\'' +
+                '}';
+    }
 }
