@@ -8,292 +8,194 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ec4b00-07a3-4fd1-b82f-9587df78b89b" name="Default Changelist" comment="完成新闻部分功能，更换分页插件，添加文本编辑器">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/patent_system_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/patent_system_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_core_3_7_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_dysmsapi_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20170516.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/common/SendSms.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/tools/TestSms.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/user/iconfont.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/user/normalize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/user/nprogress.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/TaurusNormal.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/TaurusNormal.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/TaurusNormal.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/user/iconfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/user/iconfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/user/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/user/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/background1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/background2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/backtop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/loading1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/news-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/news.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/occupying.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/patent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/changePassword.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/html5shiv.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/jquery-1.11.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/jquery-2.1.4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/jquery.cookie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/jquery.ias.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/jquery.lazyload.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/js.cookie.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/loginCheck.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/nprogress.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/personInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/respond.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/selectivizr-min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/aboutUs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/addPatent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/changePassword.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/news.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/newsDetails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/patent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/patentDetails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/patentSort.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/personInfo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/resetPassword.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/verifyInfo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/user/iconfont.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/user/normalize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/user/nprogress.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/TaurusNormal.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/TaurusNormal.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/TaurusNormal.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/user/iconfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/user/iconfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/user/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/user/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/user/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/user/background1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/user/background2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/user/backtop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/user/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/user/loading1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/user/news-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/user/news.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/user/occupying.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/user/patent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/html5shiv.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/jquery-1.11.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/jquery-2.1.4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/jquery.cookie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/jquery.ias.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/jquery.lazyload.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/js.cookie.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/loginCheck.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/nprogress.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/respond.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/user/selectivizr-min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/newsDetails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/patentDetails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/resetPassword.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/user/verifyInfo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_16_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/PatentApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/bean/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/bean/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/bean/News.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/bean/Patent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/bean/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/common/MD5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/common/SendSms.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/config/ErrorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/controller/ErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/controller/NewsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/controller/PatentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/dao/AdminMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/dao/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/dao/NewsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/dao/PatentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/dao/mapper/AdminMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/dao/mapper/CategoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/dao/mapper/NewsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/dao/mapper/PatentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/dao/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/service/NewsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/service/PatentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/service/impl/NewsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/service/impl/PatentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/tools/ServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/tools/TestMD5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tang/patent/tools/TestSms.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/tang/patent/PatentApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_47.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_47.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_core_3_7_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_core_3_7_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_dysmsapi_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_dysmsapi_1_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_10_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_10_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_10_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_10_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_10_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_10_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_46.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_46.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_12_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_12_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_12_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_12_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_13_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_13_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_18_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_18_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20170516.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20170516.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_5_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_5_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_5_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_5_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_5_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_5_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_generator_mybatis_generator_core_1_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_generator_mybatis_generator_core_1_3_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_2_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_2_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patent-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/patent-system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/News.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/common/TestMD5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/tools/TestMD5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/NewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/PatentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/PatentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/PatentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/PatentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/NewsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/NewsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/PatentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/PatentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/NewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/PatentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/PatentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/NewsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/NewsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/PatentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/PatentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/PatentApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/News.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Patent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/bean/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/common/MD5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/common/SendSms.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/config/ErrorConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/config/WebMvcConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/ErrorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/NewsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/PatentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/AdminMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/CategoryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/NewsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/PatentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/AdminMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/CategoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/NewsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/PatentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/CategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/NewsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/PatentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/AdminServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/CategoryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/NewsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/PatentServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/tools/ServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/tools/TestMD5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patent/tools/TestSms.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-3.1.1.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/test.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/user/flexslider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/user/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/user/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/user/owl.carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/user/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/user/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/logo.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/logo.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/user/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/a1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/a2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/f1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/f2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/f3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/f4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/juxing.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/mg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/mg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/mg3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/mg4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/mg6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/mg7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/move-top.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/p1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/p2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/p33.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/pic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/pic1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/pic2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/search-tab-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/user/tech.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/adminMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/adminMain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/jquery-1.9.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/jquery-1.9.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/news.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/patent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/patent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/codesample/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/codesample/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/codesample/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/codesample/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/emoticons/js/emojis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/emoticons/js/emojis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/emoticons/js/emojis.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/emoticons/js/emojis.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/fullpage/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/fullpage/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/fullpage/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/fullpage/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/fullscreen/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/fullscreen/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/fullscreen/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/fullscreen/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/image/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/image/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/image/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/image/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/media/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/media/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/media/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/media/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/paste/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/paste/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/paste/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/paste/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/table/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/table/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/table/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/plugins/table/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/themes/mobile/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/themes/mobile/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/themes/mobile/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/themes/mobile/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/themes/silver/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/themes/silver/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/themes/silver/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/themes/silver/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/tinymce.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tools/tinymce/tinymce.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/bootstrap-3.1.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/easing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/jquery.flexisel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/move-top.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/owl.carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/responsiveslides.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/categoryControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/categoryControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/templates.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/patent/PatentApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/NewsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/NewsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/PatentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/PatentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/bootstrap-3.1.1.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/test.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/user/flexslider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/user/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/user/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/user/owl.carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/user/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/user/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/logo.ico" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/user/logo.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/user/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/a1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/a2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/f1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/f2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/f3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/f4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/juxing.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/mg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/mg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/mg3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/mg4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/mg6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/mg7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/move-top.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/p1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/p2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/p33.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/page_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/page_bg_hover.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/pic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/pic1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/pic2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/search-tab-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user/tech.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/admin/adminMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/admin/adminMain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/admin/jquery-1.9.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/admin/jquery-1.9.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/admin/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/admin/news.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/admin/patent.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/admin/patent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/admin/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/admin/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/codesample/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/codesample/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/codesample/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/codesample/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/emoticons/js/emojis.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/emoticons/js/emojis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/emoticons/js/emojis.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/emoticons/js/emojis.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/fullpage/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/fullpage/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/fullpage/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/fullpage/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/fullscreen/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/fullscreen/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/fullscreen/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/fullscreen/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/image/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/image/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/image/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/image/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/media/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/media/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/media/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/media/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/paste/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/paste/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/paste/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/paste/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/table/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/table/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/table/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/plugins/table/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/themes/mobile/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/themes/mobile/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/themes/mobile/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/themes/mobile/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/themes/silver/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/themes/silver/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/themes/silver/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/themes/silver/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/tinymce.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tools/tinymce/tinymce.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user/bootstrap-3.1.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user/easing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user/jquery.flexisel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user/move-top.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user/owl.carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user/responsiveslides.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/categoryControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/categoryControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/AdminMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/CategoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/NewsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/PatentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/patent/dao/mapper/UserMapper.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/../Books-Management-System/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,38 +227,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/personInfo.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+            <state relative-caret-position="462">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1583#1584#0" expanded="true" />
+                <element signature="e#1629#1630#0" expanded="true" />
+                <element signature="e#1709#1710#0" expanded="true" />
+                <element signature="e#1759#1760#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/controller/UserController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/PatentApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5933">
-              <caret line="349" column="22" selection-start-line="349" selection-start-column="22" selection-end-line="349" selection-end-column="22" />
+            <state relative-caret-position="286">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -365,10 +256,54 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/common/SendSms.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="89" column="47" lean-forward="true" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
+            <state relative-caret-position="220">
+              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/dao/mapper/UserMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1672">
+              <caret line="76" column="4" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/service/impl/AdminServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/controller/AdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="178" column="38" selection-start-line="178" selection-start-column="38" selection-end-line="178" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1088#1089#0" expanded="true" />
+                <element signature="e#1136#1137#0" expanded="true" />
+                <element signature="e#1210#1211#0" expanded="true" />
+                <element signature="e#1256#1257#0" expanded="true" />
+                <element signature="e#1336#1337#0" expanded="true" />
+                <element signature="e#1386#1387#0" expanded="true" />
+                <element signature="e#1472#1473#0" expanded="true" />
+                <element signature="e#1526#1527#0" expanded="true" />
+                <element signature="e#1600#1601#0" expanded="true" />
+                <element signature="e#1646#1647#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -381,15 +316,14 @@
         <option value="FxmlFile" />
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>background</find>
       <find>background-image</find>
       <find>img/</find>
       <find>id=&quot;password&quot;</find>
@@ -419,6 +353,7 @@
       <find>updateUserInfo</find>
       <find>addPatent</find>
       <find>getPatentByCategory</find>
+      <find>modCount</find>
     </findStrings>
     <replaceStrings>
       <replace>../../fonts</replace>
@@ -459,59 +394,27 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-3.1.1.min.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/user/iconfont.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/user/register.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/service/NewsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/NewsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/categoryControl.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/CategoryMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/register.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/resetPassword.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/verifyInfo.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/patentDetails.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/newsDetails.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/user/loginCheck.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/user/personInfo.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/NewsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/admin/adminMain.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/login.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/login.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/user/style.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/bean/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/aboutUs.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/user/changePassword.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/changePassword.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/bean/News.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Category.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Admin.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/PatentQueueMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/dao/PatentQueueMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/PatentQueueServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/service/PatentQueueService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/addPatent.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/dao/PatentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/service/PatentService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/PatentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/controller/PatentController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/controller/NewsController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/patent.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/patentSort.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/news.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/personInfo.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/admin/user.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/admin/patent.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/admin/news.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/common/SendSms.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/PatentApplication.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/example/patent/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Test.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/bean/Tes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/tools/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/dao/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/patent/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/patent/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tang/patent/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/../patent-system-api/src/main/java/com/tang/patent/api/UserApi.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tang/patent/dao/AdminMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tang/patent/service/impl/AdminServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tang/patent/PatentApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tang/patent/controller/AdminController.java" />
       </list>
     </option>
+  </component>
+  <component name="JRebelWorkspace">
+    <option name="jrebelEnabledAutocompile" value="true" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -522,9 +425,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="E:\repository\repository" />
         <option name="mavenHome" value="D:/Java/Maven/apache-maven-3.6.1" />
-        <option name="userSettingsFile" value="D:\Java\Maven\apache-maven-3.6.1\conf\settings.xml" />
+        <option name="userSettingsFile" value="D:\Java\Maven\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -550,19 +452,19 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="-35" />
+    <option name="y" value="-35" />
+    <option name="width" value="1950" />
+    <option name="height" value="1075" />
   </component>
+  <component name="ProjectId" id="1eNw2vfk4eStAGoau9IUFVwpveQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -603,43 +505,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="patent" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="patent" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="patent" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="patent" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="patent" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -652,92 +517,17 @@
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patent-system" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -750,7 +540,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/img/user" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -764,25 +555,28 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jxr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\js\user" />
-      <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\css\user" />
-      <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\img\test" />
-      <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\css\admin" />
-      <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\img\user" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.patent.config" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\img\user" />
       <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static" />
       <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\js\user" />
       <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\fonts\user" />
       <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\css\user" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.patent.config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\js\user" />
+      <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\css\user" />
+      <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\img\test" />
+      <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\css\admin" />
+      <recent name="E:\IntellJ Idea\patent-system\src\main\resources\static\img\user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -820,6 +614,24 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.patent.PatentApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="patent-system" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tang.patent.PatentApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="patent-system" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tang.patent.PatentApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -1014,6 +826,36 @@
       <workItem from="1589853333681" duration="1304000" />
       <workItem from="1589874727158" duration="1045000" />
       <workItem from="1590498674825" duration="755000" />
+      <workItem from="1594175162133" duration="411000" />
+      <workItem from="1594175885603" duration="564000" />
+      <workItem from="1594887925592" duration="2890000" />
+      <workItem from="1594949647955" duration="720000" />
+      <workItem from="1594950386385" duration="4872000" />
+      <workItem from="1594964212068" duration="2273000" />
+      <workItem from="1595689647718" duration="54000" />
+      <workItem from="1595736143267" duration="677000" />
+      <workItem from="1595933965870" duration="991000" />
+      <workItem from="1595982655692" duration="3397000" />
+      <workItem from="1595986470214" duration="54000" />
+      <workItem from="1595986546424" duration="46000" />
+      <workItem from="1595986614652" duration="1585000" />
+      <workItem from="1596014443033" duration="705000" />
+      <workItem from="1596166039736" duration="833000" />
+      <workItem from="1596173485551" duration="3297000" />
+      <workItem from="1596248162545" duration="7962000" />
+      <workItem from="1599987023277" duration="421000" />
+      <workItem from="1602988298283" duration="5494000" />
+      <workItem from="1603075674570" duration="2126000" />
+      <workItem from="1603077843938" duration="614000" />
+      <workItem from="1603079683324" duration="3078000" />
+      <workItem from="1603089748303" duration="2035000" />
+      <workItem from="1603091840541" duration="88000" />
+      <workItem from="1603091954921" duration="1947000" />
+      <workItem from="1604807587148" duration="2003000" />
+      <workItem from="1604884178241" duration="1247000" />
+      <workItem from="1604971791335" duration="1001000" />
+      <workItem from="1604972811853" duration="2325000" />
+      <workItem from="1606534854260" duration="1213000" />
     </task>
     <task id="LOCAL-00001" summary="git push">
       <created>1583898794737</created>
@@ -1072,7 +914,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1059794000" />
+    <option name="totallyTimeSpent" value="54512000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1085,80 +927,50 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49447513" visible="true" weight="0.27882037" />
-      <window_info id="Structure" order="1" sideWeight="0.5055249" side_tool="true" weight="0.39812332" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.15530904" visible="true" weight="0.24362417" />
+      <window_info id="Web" order="1" sideWeight="0.50423014" side_tool="true" weight="0.2652106" />
+      <window_info active="true" id="JRebel Setup Guide" order="2" sideWeight="0.844691" side_tool="true" weight="0.2652106" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="4" />
       <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5055249" side_tool="true" weight="0.39812332" />
-      <window_info id="Web" order="7" sideWeight="0.5055249" side_tool="true" weight="0.39812332" />
+      <window_info id="Favorites" order="6" sideWeight="0.50423014" side_tool="true" weight="0.2652106" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49731904" weight="0.3569405" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3213752" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39518413" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3296355" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7659906" weight="0.32905984" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3988604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32577905" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.32719547" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50268096" side_tool="true" weight="0.32577905" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.31303117" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32577905" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32719547" />
-      <window_info anchor="bottom" id="Problems" order="14" weight="0.32577905" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32577905" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3296355" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.3296355" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49932885" weight="0.32905984" />
+      <window_info anchor="bottom" id="Problems" order="12" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="15" sideWeight="0.49932885" visible="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Tail" order="16" />
+      <window_info anchor="bottom" id="JRebel Executor" order="17" sideWeight="0.6791946" weight="0.32905984" />
+      <window_info anchor="bottom" id="JRebel Console" order="18" sideWeight="0.50067115" side_tool="true" visible="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="MyBatis Log" order="19" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.3297587" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.3295302" />
       <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.3297587" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" weight="0.3297587" />
-      <window_info anchor="right" x="0" y="0" width="337" height="638" id="Documentation" order="10" side_tool="true" weight="0.3297587" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Bean Validation" order="7" weight="0.3299532" />
+      <window_info anchor="right" id="Word Book" order="8" weight="0.3299532" />
+      <window_info anchor="right" id="JRebel" order="9" sideWeight="0.50423014" weight="0.2652106" />
+      <window_info anchor="right" id="aiXcoder" order="10" />
+      <window_info anchor="right" id="Mybatis datasource" order="11" side_tool="true" />
+      <window_info anchor="right" id="Key Promoter X" order="12" />
+      <window_info anchor="right" id="Json Parser" order="13" />
+      <window_info anchor="right" id="RestServices" order="14" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49447513" visible="true" weight="0.20643431" />
-      <window_info id="Structure" order="1" sideWeight="0.5055249" side_tool="true" weight="0.39812332" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5055249" side_tool="true" weight="0.39812332" />
-      <window_info id="Web" order="7" sideWeight="0.5055249" side_tool="true" weight="0.39812332" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Run" order="1" sideWeight="0.49731904" visible="true" weight="0.3569405" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3213752" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39518413" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32577905" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.32719547" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50268096" side_tool="true" weight="0.32577905" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.31390134" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32577905" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32719547" />
-      <window_info anchor="bottom" id="Problems" order="14" weight="0.32577905" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32577905" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.3297587" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.3297587" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" weight="0.3297587" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1209,6 +1021,12 @@
     <MESSAGE value="完成新闻部分功能，更换分页插件，添加文本编辑器" />
     <option name="LAST_COMMIT_MESSAGE" value="完成新闻部分功能，更换分页插件，添加文本编辑器" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="181" y="0" key="SettingsEditor" timestamp="1594175565664">
+      <screen x="0" y="0" width="1326" height="706" />
+    </state>
+    <state x="181" y="0" key="SettingsEditor/0.0.1326.706@0.0.1326.706" timestamp="1594175565664" />
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
@@ -1217,404 +1035,175 @@
     <SUITE FILE_PATH="coverage/patent$PatentApplication.ic" NAME="PatentApplication Coverage Results" MODIFIED="1582105968668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/admin/style.default.css">
+    <entry file="jar://D:/Java/jdk-10/lib/src.zip!/java.base/java/util/Collection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1213">
-          <caret line="1380" selection-start-line="1380" selection-end-line="1383" selection-end-column="1" />
+        <state relative-caret-position="88">
+          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/bean/User.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/patent/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="126" column="44" lean-forward="true" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
+        <state relative-caret-position="162">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/user/style.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/bean/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="2327" column="1" selection-start-line="2327" selection-start-column="1" selection-end-line="2327" selection-end-column="1" />
+        <state relative-caret-position="234">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
+    <entry file="jar://D:/Java/jdk-10/lib/src.zip!/java.base/java/util/Arrays.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="202" column="22" selection-start-line="202" selection-start-column="22" selection-end-line="202" selection-end-column="22" />
+        <state relative-caret-position="64908">
+          <caret line="3715" column="28" selection-start-line="3715" selection-start-column="28" selection-end-line="3715" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/userControl.html">
+    <entry file="jar://D:/Java/jdk-10/lib/src.zip!/java.base/java/util/AbstractList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2359">
-          <caret line="222" column="62" lean-forward="true" selection-start-line="222" selection-start-column="62" selection-end-line="222" selection-end-column="62" />
+        <state relative-caret-position="3226">
+          <caret line="627" column="28" selection-start-line="627" selection-start-column="28" selection-end-line="627" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/tools/Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/bean/Tes.java" />
+    <entry file="jar://D:/Java/jdk-10/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="263" column="9" lean-forward="true" selection-start-line="263" selection-start-column="9" selection-end-line="263" selection-end-column="9" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#9099#9100#0" expanded="true" />
+            <element signature="e#9136#9137#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/patentControl.html">
+    <entry file="jar://D:/Java/jdk-10/lib/src.zip!/java.base/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="157" column="79" lean-forward="true" selection-start-line="157" selection-start-column="79" selection-end-line="157" selection-end-column="79" />
+        <state relative-caret-position="310">
+          <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.30/tomcat-embed-core-9.0.30.jar!/javax/servlet/ServletRequest.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/dao/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/user/personInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/user/loginCheck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/user/changePassword.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/bean/Patent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-990">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/bean/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/bean/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/bean/News.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/dao/mapper/PatentQueueMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/dao/PatentQueueMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/PatentQueueServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/service/PatentQueueService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        <state relative-caret-position="242">
+          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/../patent-system-api/src/main/java/com/tang/patent/api/UserApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="39" />
+        <state relative-caret-position="264">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/dao/PatentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/dao/NewsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/controller/NewsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/dao/AdminMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="43" lean-forward="true" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2182#2183#0" expanded="true" />
-            <element signature="e#2268#2269#0" expanded="true" />
+            <element signature="e#1583#1584#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#1709#1710#0" expanded="true" />
+            <element signature="e#1759#1760#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/phrase.rnc">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/PatentApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="345" column="16" selection-start-line="345" selection-start-column="16" selection-end-line="345" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/service/impl/PatentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="109" column="61" selection-start-line="109" selection-start-column="61" selection-end-line="109" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="5288" column="1" selection-start-line="5288" selection-start-column="1" selection-end-line="5288" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="193" column="47" selection-start-line="193" selection-start-column="36" selection-end-line="193" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/aboutUs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/changePassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-310">
-          <caret line="78" column="30" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="30" />
+        <state relative-caret-position="286">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#3;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/addPatent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="76" column="14" lean-forward="true" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/newsDetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="151" column="47" lean-forward="true" selection-start-line="151" selection-start-column="47" selection-end-line="151" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#span#0;n#a#0;n#li#0;n#div#1;n#aside#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/patentDetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2894" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1738" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/resetPassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1619" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/verifyInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1874" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/patentSort.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-783">
-          <caret line="79" column="70" selection-start-line="79" selection-start-column="70" selection-end-line="79" selection-end-column="70" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#article#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="186" column="24" lean-forward="true" selection-start-line="186" selection-start-column="24" selection-end-line="186" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#span#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#aside#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/service/PatentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="32" column="68" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/patent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="73" selection-start-line="73" selection-end-line="88" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#article#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/dao/PatentMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        <state relative-caret-position="220">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/news.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/dao/mapper/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" column="18" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#article#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1672">
+          <caret line="76" column="4" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/admin/news.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/service/impl/AdminServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="164" column="38" lean-forward="true" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#!!top" expanded="true" />
-            <element signature="e#65#71#0" expanded="true" />
-            <element signature="e#71#77#0" expanded="true" />
-            <element signature="e#77#83#0" expanded="true" />
-            <element signature="e#83#89#0" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/admin/patent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="190" column="19" selection-start-line="190" selection-start-column="19" selection-end-line="190" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/admin/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/controller/PatentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="284" column="1" lean-forward="true" selection-start-line="284" selection-start-column="1" selection-end-line="284" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/controller/NewsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="145" column="18" lean-forward="true" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/personInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5933">
-          <caret line="349" column="22" selection-start-line="349" selection-start-column="22" selection-end-line="349" selection-end-column="22" />
+        <state relative-caret-position="88">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/patent/common/SendSms.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tang/patent/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="89" column="47" lean-forward="true" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        <state relative-caret-position="242">
+          <caret line="178" column="38" selection-start-line="178" selection-start-column="38" selection-end-line="178" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1088#1089#0" expanded="true" />
+            <element signature="e#1136#1137#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+            <element signature="e#1386#1387#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#1526#1527#0" expanded="true" />
+            <element signature="e#1600#1601#0" expanded="true" />
+            <element signature="e#1646#1647#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1624,6 +1213,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>book:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1670,11 +1260,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>patent-system</last-edited>
+          <last-edited>patent-system-api</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
