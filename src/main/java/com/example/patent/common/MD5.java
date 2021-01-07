@@ -50,7 +50,7 @@ public class MD5 {
     /*
      * digestHexStr是MD5的唯一一个公共成员，是最新一次计算结果的 16进制ASCII表示.
      */
-    public String digestHexStr;
+    private String digestHexStr;
 
     /*
      * digest,是最新一次计算结果的2进制内部表示，表示128bit的MD5值.
@@ -73,6 +73,9 @@ public class MD5 {
 
     }
 
+    /**
+     * 单例模式使用md5工具
+     */
     private static final MD5 md5 = new MD5();
 
     public static MD5 getInstance() {
@@ -80,7 +83,7 @@ public class MD5 {
     }
 
     // 这是MD5这个类的标准构造函数，JavaBean要求有一个public的并且没有参数的构造函数
-    public MD5() {
+    private MD5() {
         md5Init();
 
         return;

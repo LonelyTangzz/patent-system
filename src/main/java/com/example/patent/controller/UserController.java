@@ -42,8 +42,6 @@ public class UserController {
     @Autowired
     User user;
 
-    MD5 md5 = new MD5();
-
     public static int newcode;
 
     /**
@@ -58,7 +56,7 @@ public class UserController {
     public ModelAndView register(User user, HttpServletRequest req) {
         ModelAndView mv = new ModelAndView();
         user.setPhoneNum(req.getParameter("phoneNum"));
-        user.setPassword(md5.getMD5ofStr(user.getPassword()));
+        user.setPassword(MD5.getInstance().getMD5ofStr(user.getPassword()));
         user.setAvatar("/avatarPic/img_avatar.png");
         if (req.getParameter("phoneNum") == "") {
             mv.setViewName("user/register.html");
@@ -88,7 +86,7 @@ public class UserController {
     @RequestMapping(value = "login.action", method = RequestMethod.POST)
     public ModelAndView login(HttpServletRequest req) {
         ModelAndView mv = new ModelAndView();
-        if (userService.checkAccount(req.getParameter("username"), md5.getMD5ofStr(req.getParameter("password")))) {
+        if (userService.checkAccount(req.getParameter("username"), MD5.getInstance().getMD5ofStr(req.getParameter("password")))) {
             User user = new User();
             user.setId(userService.getUserIdByName(req.getParameter("username")));
             user.setLoginTime(new Date());
@@ -121,7 +119,7 @@ public class UserController {
         String befoPassword = req.getParameter("befoPassword");
         String nowPassword = req.getParameter("nowPassword");
         String username = req.getParameter("username");
-        if (userService.checkAccount(username, md5.getMD5ofStr(befoPassword))) {
+        if (userService.checkAccount(username, MD5.getInstance().getMD5ofStr(befoPassword))) {
             userService.updatePassword(username, nowPassword);
             jsonObject.put("code", 1);
             jsonObject.put("msg", "修改成功！");
@@ -308,7 +306,7 @@ public class UserController {
     public ModelAndView changePassword(HttpServletRequest req) {
         ModelAndView mv = new ModelAndView();
         if (Integer.parseInt(req.getParameter("verifyCode")) == newcode) {
-            if (userService.updatePassword(req.getParameter("username"), md5.getMD5ofStr(req.getParameter("password")))) {
+            if (userService.updatePassword(req.getParameter("username"), MD5.getInstance().getMD5ofStr(req.getParameter("password")))) {
                 mv.setViewName("user/login.html");
                 mv.addObject("msg", "重置成功");
             } else {

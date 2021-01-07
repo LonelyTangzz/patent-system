@@ -2,12 +2,14 @@ package com.example.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.patent.entity.basic.BaseResp;
+import com.example.patent.entity.basic.Constants;
 import com.example.patent.entity.basic.ResponseResult;
 import com.example.patent.entity.basic.ResultType;
 import com.example.patent.entity.bean.Category;
 import com.example.patent.entity.param.PasswordChangeParams;
 import com.example.patent.service.*;
 import org.springframework.util.StringUtils;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -41,14 +43,14 @@ public class AdminController extends BaseController {
      * 管理员登录
      * -------测试通过
      *
-     * @param name
-     * @param password
-     * @return
+     * @param username 用户名
+     * @param password 密码
+     * @return 操作结果
      */
-    @RequestMapping(value = "/admin.action", method = RequestMethod.POST)
-    public ResponseResult login(@RequestParam @NotBlank String name, @RequestParam @NotBlank String password) {
+    @RequestMapping(value = "/login" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
+    public ResponseResult login(@RequestParam @NotBlank String username, @RequestParam @NotBlank String password) {
 
-        BaseResp baseResp = adminService.verityPassword(name, password);
+        BaseResp baseResp = adminService.verityPassword(username, password);
         return setResult(baseResp);
     }
 
@@ -58,8 +60,8 @@ public class AdminController extends BaseController {
      * @param passwordChangeParams 密码信息
      * @return
      */
-    @RequestMapping(value = "/changeAdminPwd.action", method = RequestMethod.POST)
-    public ResponseResult changeAdminPassWord(@RequestBody PasswordChangeParams passwordChangeParams) {
+    @RequestMapping(value = "/changeAdminPwd" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
+    public ResponseResult changeAdminPassWord(@RequestBody @Validated PasswordChangeParams passwordChangeParams) {
         BaseResp baseResp = adminService.changePasswd(passwordChangeParams);
         return setResult(baseResp);
     }
@@ -71,7 +73,7 @@ public class AdminController extends BaseController {
      * @param req
      * @return
      */
-    @RequestMapping(value = "/addCategory.action", method = RequestMethod.POST)
+    @RequestMapping(value = "/addCategory" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
     public Object addCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         if (req.getParameter("typeName") == "") {
@@ -98,7 +100,7 @@ public class AdminController extends BaseController {
      *
      * @return
      */
-    @RequestMapping(value = "/getAllCategory.action", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllCategory" + Constants.ACTION_SUFFIX, method = RequestMethod.GET)
     public Object getAllCategory() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("allCategory", categoryService.getAllCategory());
@@ -111,7 +113,7 @@ public class AdminController extends BaseController {
      * @param req
      * @return
      */
-    @RequestMapping(value = "/getPageCategory.action", method = RequestMethod.GET)
+    @RequestMapping(value = "/getPageCategory" + Constants.ACTION_SUFFIX, method = RequestMethod.GET)
     public Object getPageCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("total", (int) Math.ceil((double) categoryService.countCategory() / 5));
@@ -126,7 +128,7 @@ public class AdminController extends BaseController {
      * @param req
      * @return
      */
-    @RequestMapping(value = "/deleteCategory.action", method = RequestMethod.POST)
+    @RequestMapping(value = "/deleteCategory" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
     public Object getAllCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         boolean res = categoryService.deleteCategory(Integer.parseInt(req.getParameter("id")));
@@ -148,7 +150,7 @@ public class AdminController extends BaseController {
      * @param req
      * @return
      */
-    @RequestMapping(value = "/editCategory.action", method = RequestMethod.POST)
+    @RequestMapping(value = "/editCategory" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
     public Object editCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         category.setId(Integer.parseInt(req.getParameter("id")));
@@ -168,7 +170,7 @@ public class AdminController extends BaseController {
     /**
      * 获取所有数据数量
      */
-    @RequestMapping(value = "/countAll.action", method = RequestMethod.GET)
+    @RequestMapping(value = "/countAll" + Constants.ACTION_SUFFIX, method = RequestMethod.GET)
     public Object countAll() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("userCount", userService.countUser());

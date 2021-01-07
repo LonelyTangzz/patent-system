@@ -16,4 +16,6 @@ public class Constants {
     public static final String PATENT_PREFIX="";
 
     public static final String NEWS_PREFIX="";
+    
+    public static final String ACTION_SUFFIX=".action";
 }

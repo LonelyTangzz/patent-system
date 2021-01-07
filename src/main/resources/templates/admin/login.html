@@ -58,18 +58,18 @@
 <!-- JavaScript files-->
 <script type="text/javascript">
     function summitLogin() {
-        var name = $("#username").val();
+        var username = $("#username").val();
         var password = document.getElementById("password").value;
-        if (name == '') {
+        if (username == '') {
             $("#info").text("提示:账号不能为空");
         } else if (password == '') {
             $("#info").text("提示:密码不能为空");
         } else {
             $.ajax({
                 type: "POST",
-                url: "/patent/admin/admin.action",
+                url: "/patent/admin/login.action",
                 data: {
-                    name: name,
+                    username: username,
                     password: password
                 },
                 dataType: "json",
