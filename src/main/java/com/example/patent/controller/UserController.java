@@ -2,8 +2,8 @@ package com.example.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.aliyuncs.exceptions.ClientException;
-import com.example.patent.bean.Patent;
-import com.example.patent.bean.User;
+import com.example.patent.entity.bean.Patent;
+import com.example.patent.entity.bean.User;
 import com.example.patent.common.MD5;
 import com.example.patent.common.SendSms;
 import com.example.patent.service.CategoryService;
@@ -112,6 +112,7 @@ public class UserController {
     /**
      * 用户修改密码
      * ---测试通过
+     *
      * @return
      */
     @RequestMapping(value = "submitPassword.action", method = RequestMethod.POST)
@@ -439,8 +440,9 @@ public class UserController {
         Cookie cookie[] = req.getCookies();
         String username = new String();
         for (int i = 0; i < cookie.length; i++) {
-            if (cookie[i].getName().equals("username"))
+            if (cookie[i].getName().equals("username")) {
                 username = cookie[i].getValue();
+            }
         }
         if (username.equals("")) {
             mv.setViewName("user/login.html");

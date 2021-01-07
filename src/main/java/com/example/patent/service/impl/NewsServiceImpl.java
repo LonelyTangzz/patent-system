@@ -1,6 +1,6 @@
 package com.example.patent.service.impl;
 
-import com.example.patent.bean.News;
+import com.example.patent.entity.bean.News;
 import com.example.patent.dao.NewsMapper;
 import com.example.patent.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;

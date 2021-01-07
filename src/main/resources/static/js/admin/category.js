@@ -1,7 +1,7 @@
 function showCategory(num) {
     $.ajax({
         type: "GET",
-        url: "/patent/getPageCategory.action",
+        url: "/patent/admin/getPageCategory.action",
         dataType: "json",
         async: false,
         data: {
@@ -37,7 +37,7 @@ function submitAdd() {
     var typeName = $("#typeName").val();
     $.ajax({
         type: "POST",
-        url: "/patent/addCategory.action",
+        url: "/patent/admin/addCategory.action",
         data: {
             typeName: typeName
         },
@@ -67,7 +67,7 @@ function submitEditCategory() {
     var name = $("#nowName").val();
     $.ajax({
         type: "POST",
-        url: "/patent/editCategory.action",
+        url: "/patent/admin/editCategory.action",
         data: {
             id: id,
             name: name

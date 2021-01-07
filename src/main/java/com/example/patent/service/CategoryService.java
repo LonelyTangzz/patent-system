@@ -1,6 +1,6 @@
 package com.example.patent.service;
 
-import com.example.patent.bean.Category;
+import com.example.patent.entity.bean.Category;
 
 import java.util.List;
 

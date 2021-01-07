@@ -20,11 +20,10 @@ public class SendSms {
     // 产品域名,开发者无需替换
     static final String domain = "dysmsapi.aliyuncs.com";
 
-    // TODO 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)
-    static final String accessKeyId = "替换成自己的accessKey";           // TODO 改这里
-    static final String accessKeySecret = "替换成自己的accessSecret"; // TODO 改这里
+    static final String accessKeyId = "LTAI4G8eapip13RowK6MJcWo";
+    static final String accessKeySecret = "SrEIysEtyudq7W3vuFRbi8JqARFLLG";
 
-    public  boolean register(String telephone, String code) throws ClientException {
+    public boolean register(String telephone, String code) throws ClientException {
 
         // 可自助调整超时时间
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
@@ -40,9 +39,9 @@ public class SendSms {
         // 必填:待发送手机号
         request.setPhoneNumbers(telephone);
         // 必填:短信签名-可在短信控制台中找到
-        request.setSignName("自己的短信模板签名"); // TODO 改这里
+        request.setSignName("专利资讯网");
         // 必填:短信模板-可在短信控制台中找到
-        request.setTemplateCode("自己的短信模板"); // TODO 改这里
+        request.setTemplateCode("SMS_188993563");
         // 可选:模板中的变量替换JSON串,如模板内容为"亲爱的用户,您的验证码为${code}"时,此处的值为
         request.setTemplateParam("{\"code\":\"" + code + "\"}");
 
@@ -63,7 +62,7 @@ public class SendSms {
         }
     }
 
-    public  boolean forgetPassword(String telephone, String code) throws ClientException {
+    public boolean forgetPassword(String telephone, String code) throws ClientException {
         // 可自助调整超时时间
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
         System.setProperty("sun.net.client.defaultReadTimeout", "10000");

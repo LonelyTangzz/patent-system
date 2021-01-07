@@ -1,11 +1,10 @@
 package com.example.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.patent.bean.Patent;
+import com.example.patent.entity.bean.Patent;
 import com.example.patent.service.CategoryService;
 import com.example.patent.service.NewsService;
 import com.example.patent.service.PatentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
@@ -20,16 +20,23 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+/**
+ * @name: PatentController
+ * @author: tangzy
+ * @since: 2020/1/7
+ * @version: 1.0
+ * @description: 专利控制层
+ */
 @RestController
 public class PatentController {
-    @Autowired
+    @Resource
     private PatentService patentService;
-    @Autowired
+    @Resource
     private CategoryService categoryService;
-    @Autowired
+    @Resource
     private NewsService newsService;
-
-    Patent patent = new Patent();
+    @Resource
+    Patent patent;
 
     /**
      * 上传专利
@@ -39,7 +46,7 @@ public class PatentController {
      * @return
      */
     @RequestMapping(value = "patentAdd.action", method = RequestMethod.POST)
-    public Object patent_add(HttpServletRequest req) throws ParseException {
+    public Object patentAdd(HttpServletRequest req) throws ParseException {
         JSONObject jsonObject = new JSONObject();
         Patent patent = new Patent();
         patent.setPatentNo(req.getParameter("patent_no"));
@@ -152,6 +159,7 @@ public class PatentController {
     /**
      * 删除专利信息
      * ------测试通过
+     *
      * @param req
      * @return
      */
@@ -258,15 +266,17 @@ public class PatentController {
     @RequestMapping(value = "patent")
     public ModelAndView patent(HttpServletRequest req) {
         int page;
-        if (req.getParameter("page") == null)
+        if (req.getParameter("page") == null) {
             page = 0;
-        else
+        } else {
             page = Integer.parseInt(req.getParameter("page"));
+        }
         ModelAndView mv = new ModelAndView("user/patent.html");
         mv.addObject("categories", patentService.countPatentOrderByCategory());
         mv.addObject("patents", patentService.getPatentByPage(page));
         return mv;
     }
+
     /**
      * 分行业显示部分专利
      * ----测试通过
@@ -278,7 +288,7 @@ public class PatentController {
         String category = req.getParameter("name");
         Integer page = Integer.parseInt(req.getParameter("page"));
         ModelAndView mv = new ModelAndView("user/patentSort.html");
-        mv.addObject("patents",patentService.getPatentByCategory(category,page));
+        mv.addObject("patents", patentService.getPatentByCategory(category, page));
         mv.addObject("categories", patentService.countPatentOrderByCategory());
         return mv;
     }

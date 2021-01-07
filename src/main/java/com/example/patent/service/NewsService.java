@@ -1,6 +1,6 @@
 package com.example.patent.service;
 
-import com.example.patent.bean.News;
+import com.example.patent.entity.bean.News;
 
 import java.util.List;
 import java.util.Map;

@@ -1,84 +1,67 @@
 package com.example.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.patent.bean.Category;
-import com.example.patent.common.MD5;
+import com.example.patent.entity.basic.BaseResp;
+import com.example.patent.entity.basic.ResponseResult;
+import com.example.patent.entity.basic.ResultType;
+import com.example.patent.entity.bean.Category;
+import com.example.patent.entity.param.PasswordChangeParams;
 import com.example.patent.service.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.constraints.NotBlank;
 
+/**
+ * @name: AdminController
+ * @author: tangzy
+ * @since: 2021/1/7
+ * @version: 1.0
+ * @description: 管理员控制层
+ */
 @RestController
-public class AdminController {
-    @Autowired
+@RequestMapping("admin")
+public class AdminController extends BaseController {
+    @Resource
     private AdminService adminService;
-    @Autowired
+    @Resource
     private UserService userService;
-    @Autowired
+    @Resource
     private PatentService patentService;
-    @Autowired
+    @Resource
     private CategoryService categoryService;
-    @Autowired
+    @Resource
     private NewsService newsService;
-    @Autowired
+    @Resource
     private Category category;
 
-    MD5 md5 = new MD5();
     /**
      * 管理员登录
      * -------测试通过
      *
-     * @param req
+     * @param name
+     * @param password
      * @return
      */
-    @RequestMapping(value = "admin.action", method = RequestMethod.POST)
-    public Object login(HttpServletRequest req) {
-        JSONObject jsonObject = new JSONObject();
-        String name = req.getParameter("name");
-        boolean res = adminService.veritypasswd(name, md5.getMD5ofStr(req.getParameter("password")));
-        if (res) {
-            jsonObject.put("code", 1);
-            jsonObject.put("msg", "登录成功跳转中");
-            jsonObject.put("name", name);
-            return jsonObject;
-        } else {
-            jsonObject.put("code", 0);
-            jsonObject.put("msg", "用户名或密码错误");
-            return jsonObject;
-        }
+    @RequestMapping(value = "/admin.action", method = RequestMethod.POST)
+    public ResponseResult login(@RequestParam @NotBlank String name, @RequestParam @NotBlank String password) {
+
+        BaseResp baseResp = adminService.verityPassword(name, password);
+        return setResult(baseResp);
     }
 
     /**
      * 修改密码
      *
-     * @param req
+     * @param passwordChangeParams 密码信息
      * @return
      */
-    @RequestMapping(value = "changeAdminPwd.action", method = RequestMethod.POST)
-    public Object changeAdminPwd(HttpServletRequest req) {
-        JSONObject jsonObject = new JSONObject();
-        String name = req.getParameter("name");
-        boolean res = adminService.veritypasswd(name, md5.getMD5ofStr(req.getParameter("usedPwd")));
-        if (res) {
-            res = adminService.changePasswd(name, md5.getMD5ofStr(req.getParameter("nowPwd")));
-            if (res) {
-                jsonObject.put("code", 1);
-                jsonObject.put("msg", "修改成功！");
-                return jsonObject;
-            } else {
-                jsonObject.put("code", -1);
-                jsonObject.put("msg", "修改出现异常！");
-                return jsonObject;
-            }
-        } else {
-            jsonObject.put("code", 0);
-            jsonObject.put("msg", "密码错误请重试！");
-            return jsonObject;
-        }
+    @RequestMapping(value = "/changeAdminPwd.action", method = RequestMethod.POST)
+    public ResponseResult changeAdminPassWord(@RequestBody PasswordChangeParams passwordChangeParams) {
+        BaseResp baseResp = adminService.changePasswd(passwordChangeParams);
+        return setResult(baseResp);
     }
 
     /**
@@ -88,7 +71,7 @@ public class AdminController {
      * @param req
      * @return
      */
-    @RequestMapping(value = "addCategory.action", method = RequestMethod.POST)
+    @RequestMapping(value = "/addCategory.action", method = RequestMethod.POST)
     public Object addCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         if (req.getParameter("typeName") == "") {
@@ -115,7 +98,7 @@ public class AdminController {
      *
      * @return
      */
-    @RequestMapping(value = "getAllCategory.action", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllCategory.action", method = RequestMethod.GET)
     public Object getAllCategory() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("allCategory", categoryService.getAllCategory());
@@ -128,7 +111,7 @@ public class AdminController {
      * @param req
      * @return
      */
-    @RequestMapping(value = "getPageCategory.action", method = RequestMethod.GET)
+    @RequestMapping(value = "/getPageCategory.action", method = RequestMethod.GET)
     public Object getPageCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("total", (int) Math.ceil((double) categoryService.countCategory() / 5));
@@ -143,7 +126,7 @@ public class AdminController {
      * @param req
      * @return
      */
-    @RequestMapping(value = "deleteCategory.action", method = RequestMethod.POST)
+    @RequestMapping(value = "/deleteCategory.action", method = RequestMethod.POST)
     public Object getAllCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         boolean res = categoryService.deleteCategory(Integer.parseInt(req.getParameter("id")));
@@ -165,7 +148,7 @@ public class AdminController {
      * @param req
      * @return
      */
-    @RequestMapping(value = "editCategory.action", method = RequestMethod.POST)
+    @RequestMapping(value = "/editCategory.action", method = RequestMethod.POST)
     public Object editCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         category.setId(Integer.parseInt(req.getParameter("id")));
@@ -185,7 +168,7 @@ public class AdminController {
     /**
      * 获取所有数据数量
      */
-    @RequestMapping(value = "countAll.action", method = RequestMethod.GET)
+    @RequestMapping(value = "/countAll.action", method = RequestMethod.GET)
     public Object countAll() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("userCount", userService.countUser());
@@ -195,47 +178,5 @@ public class AdminController {
         return jsonObject;
     }
 
-    /**
-     * 以下均为管理员生成相应界面
-     */
-    @RequestMapping(value = "admin/login")
-    public ModelAndView login() {
-        return new ModelAndView("admin/login.html");
-    }
-
-    @RequestMapping(value = "admin/main")
-    public ModelAndView main() {
-        return new ModelAndView("admin/main.html");
-    }
-
-    @RequestMapping(value = "admin/patentControl")
-    public ModelAndView patentControl() {
-        return new ModelAndView("admin/patentControl.html");
-    }
-
-    @RequestMapping(value = "admin/newsControl")
-    public ModelAndView newsControl() {
-        return new ModelAndView("admin/newsControl.html");
-    }
-
-    @RequestMapping(value = "admin/categoryControl")
-    public ModelAndView categoryControl() {
-        return new ModelAndView("admin/categoryControl.html");
-    }
-
-    @RequestMapping(value = "admin/userControl")
-    public ModelAndView userControl() {
-        return new ModelAndView("admin/userControl.html");
-    }
-
-    @RequestMapping(value = "admin/addNews")
-    public ModelAndView addNews() {
-        return new ModelAndView("admin/addNews.html");
-    }
-
-    @RequestMapping(value = "admin/changePassword")
-    public ModelAndView changePassword() {
-        return new ModelAndView("admin/changePassword.html");
-    }
 }
 

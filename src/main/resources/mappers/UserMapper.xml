@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.patent.dao.UserMapper">
-    <resultMap id="BaseResultMap" type="com.example.patent.bean.User">
+    <resultMap id="BaseResultMap" type="com.example.patent.entity.bean.User">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="username" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
@@ -26,13 +26,13 @@
         where id = #{id,jdbcType=INTEGER}
     </select>
     <!--新增-->
-    <select id="checkAccount" resultType="java.lang.Integer" parameterType="com.example.patent.bean.User">
+    <select id="checkAccount" resultType="java.lang.Integer" parameterType="com.example.patent.entity.bean.User">
     SELECT count(*) FROM user where username = #{username,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR} ;
   </select>
     <select id="selectIdByName" resultType="java.lang.Integer" parameterType="java.lang.String">
     SELECT id FROM user where username = "${username}" ;
   </select>
-    <update id="updateUserImg" parameterType="com.example.patent.bean.User">
+    <update id="updateUserImg" parameterType="com.example.patent.entity.bean.User">
         update user
         <set>
             <if test="avatar != null">
@@ -64,7 +64,7 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="com.example.patent.bean.User">
+    <insert id="insert" parameterType="com.example.patent.entity.bean.User">
     insert into user (id, username, password, 
       sex, phone_num, email, birth, 
       location, avatar, create_time, 
@@ -74,7 +74,7 @@
       #{location,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{loginTime,jdbcType=TIMESTAMP}, #{realname,jdbcType=VARCHAR})
   </insert>
-    <insert id="insertSelective" parameterType="com.example.patent.bean.User">
+    <insert id="insertSelective" parameterType="com.example.patent.entity.bean.User">
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -153,7 +153,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.example.patent.bean.User">
+    <update id="updateByPrimaryKeySelective" parameterType="com.example.patent.entity.bean.User">
         update user
         <set>
             <if test="username != null">
@@ -192,7 +192,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.example.patent.bean.User">
+    <update id="updateByPrimaryKey" parameterType="com.example.patent.entity.bean.User">
     update user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},

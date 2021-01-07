@@ -1,6 +1,6 @@
 package com.example.patent.service.impl;
 
-import com.example.patent.bean.User;
+import com.example.patent.entity.bean.User;
 import com.example.patent.dao.UserMapper;
 import com.example.patent.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

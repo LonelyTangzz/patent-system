@@ -5,9 +5,9 @@ server:
 spring:
   datasource:
 #    使用的是远程阿里云服务器，自己写上自己的公网ip并配置
-    url: jdbc:mysql://公网ip:3306/patent?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/patent?characterEncoding=utf-8&useSSL=false
     username: root
-    password: Tcw270153399!
+    password: 999999
     driver-class-name: com.mysql.jdbc.Driver
   jackson:
     date-format: yyyy-MM-dd HH:mm
@@ -22,5 +22,5 @@ spring:
       content-type: text/html
     mode: HTML
 mybatis:
-  mapper-locations: classpath:com/example/patent/dao/mapper/*.xml
-  type-aliases-package: com.example.patent.bean
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.example.patent.entity.bean

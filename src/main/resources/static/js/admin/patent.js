@@ -1,7 +1,7 @@
 function loadType() {
     $.ajax({
         type: "GET",
-        url: "/patent/getAllCategory.action",
+        url: "/patent/admin/getAllCategory.action",
         dataType: "json",
         success: function (data) {
             categoryCount = data.allCategory;

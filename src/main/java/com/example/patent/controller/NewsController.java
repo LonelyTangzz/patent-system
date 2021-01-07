@@ -1,7 +1,7 @@
 package com.example.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.patent.bean.News;
+import com.example.patent.entity.bean.News;
 import com.example.patent.service.NewsService;
 import com.example.patent.service.PatentService;
 import org.springframework.beans.factory.annotation.Autowired;

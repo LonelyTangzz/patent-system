@@ -1,7 +1,7 @@
 package com.example.patent.service;
 
-import com.example.patent.bean.Category;
-import com.example.patent.bean.Patent;
+import com.example.patent.entity.bean.Category;
+import com.example.patent.entity.bean.Patent;
 
 import java.util.HashMap;
 import java.util.List;

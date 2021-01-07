@@ -1,7 +1,7 @@
 package com.example.patent.service.impl;
 
-import com.example.patent.bean.Category;
-import com.example.patent.bean.Patent;
+import com.example.patent.entity.bean.Category;
+import com.example.patent.entity.bean.Patent;
 import com.example.patent.dao.PatentMapper;
 import com.example.patent.service.PatentService;
 import org.springframework.beans.factory.annotation.Autowired;

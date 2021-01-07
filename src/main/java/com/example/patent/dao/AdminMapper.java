@@ -1,12 +1,12 @@
 package com.example.patent.dao;
 
-import com.example.patent.bean.Admin;
+import com.example.patent.entity.bean.Admin;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-@Repository
+@Mapper
 public interface AdminMapper {
-    int deleteByPrimaryKey(Integer id);
+
 
     int insert(Admin record);
 

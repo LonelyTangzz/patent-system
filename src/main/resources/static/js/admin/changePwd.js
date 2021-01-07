@@ -5,29 +5,26 @@ function submitChange() {
         $("#nowPassword").val("");
     } else {
         $("#text").text("");
+        var d = {"name":Cookies.get('adminName').toString(),"usedPassword":$("#usedPassword").val(),"nowPassword":$("#nowPassword").val()}
+        var jsnStr = JSON.stringify(d);
         $.ajax({
             type: "POST",
-            url: "/patent/changeAdminPwd.action",
+            url: "/patent/admin/changeAdminPwd.action",
             dataType: "json",
-            data: {
-                name: Cookies.get('adminName'),
-                usedPwd: $("#usedPassword").val(),
-                nowPwd: $("#nowPassword").val(),
-            },
+            contentType: "application/json;charset=utf-8",
+            data:jsnStr,
             success: function (data) {
-                if(data.code==1){
+                if(data.status==1){
                     $("#text").text(data.msg);
                     alert(data.msg);
                     Cookies.remove('adminName',);
                     window.location.href = "login";
-                }else if(data.code ==0){
+                }else if(data.status ==0){
+                    alert(data.msg);
                     $("#text").text(data.msg);
                     $("#againPassword").val("");
                     $("#nowPassword").val("");
                     $("#usedPassword").val("");
-                }else if(data.code==-1){
-                    alert(data.msg);
-                    window.location.href = "changepassword";
                 }
             }
         });

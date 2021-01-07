@@ -1,4 +1,4 @@
-package com.example.patent.bean;
+package com.example.patent.entity.bean;
 
 import org.springframework.stereotype.Repository;
 

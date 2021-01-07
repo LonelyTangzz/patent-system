@@ -24,7 +24,7 @@
         </javaTypeResolver>
 
         <!-- 实体类生成的位置 -->
-        <javaModelGenerator targetPackage="com.example.patent.bean" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.example.patent.entity.bean" targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>

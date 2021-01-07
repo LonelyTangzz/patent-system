@@ -1,13 +1,14 @@
 package com.example.patent.dao;
 
-import com.example.patent.bean.User;
+import com.example.patent.entity.bean.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
 
-@Repository
+@Mapper
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 

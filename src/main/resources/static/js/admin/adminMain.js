@@ -217,7 +217,7 @@ function loadNewsData() {
 function init() {
     $.ajax({
         type: "GET",
-        url: "/patent/countAll.action",
+        url: "/patent/admin/countAll.action",
         dataType: "json",
         success: function (data) {
             $("#patentCount").text(data.patentCount + "项");

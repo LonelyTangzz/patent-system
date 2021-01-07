@@ -1,11 +1,12 @@
 package com.example.patent.dao;
 
-import com.example.patent.bean.Category;
+import com.example.patent.entity.bean.Category;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Mapper
 public interface CategoryMapper {
     int deleteByPrimaryKey(Integer id);
 
