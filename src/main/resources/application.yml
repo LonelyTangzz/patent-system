@@ -21,7 +21,8 @@ spring:
     servlet:
       content-type: text/html
     mode: HTML
-mybatis:
+mybatis-plus:
+  dialect: mysql
   mapper-locations: classpath:mappers/*.xml
   type-aliases-package: com.example.patent.entity.bean
 logging:
