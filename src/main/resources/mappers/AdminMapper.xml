@@ -14,7 +14,7 @@
     </sql>
     <!--自己写的-->
     <select id="verifyPassword" resultType="java.lang.Integer">
-        SELECT count(*)
+        SELECT id
         FROM admin
         where username = #{username}
           and password = #{password}

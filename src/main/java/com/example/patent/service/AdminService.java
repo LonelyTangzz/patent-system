@@ -2,6 +2,7 @@ package com.example.patent.service;
 
 import com.example.patent.entity.basic.BaseResp;
 import com.example.patent.entity.param.PasswordChangeParams;
+import com.example.patent.entity.vo.UserInfoVo;
 
 /**
  * 用户管理业务层
@@ -15,7 +16,7 @@ public interface AdminService {
      * @param password 密码
      * @return 操作结果
      */
-    BaseResp verityPassword(String name, String password);
+    BaseResp<UserInfoVo> verityPassword(String name, String password);
 
     /**
      * 修改密码

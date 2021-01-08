@@ -4,11 +4,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.patent.entity.basic.BaseResp;
 import com.example.patent.entity.basic.Constants;
 import com.example.patent.entity.basic.ResponseResult;
-import com.example.patent.entity.basic.ResultType;
 import com.example.patent.entity.bean.Category;
 import com.example.patent.entity.param.PasswordChangeParams;
+import com.example.patent.entity.vo.UserInfoVo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.example.patent.service.*;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,9 +49,10 @@ public class AdminController extends BaseController {
      * @return 操作结果
      */
     @RequestMapping(value = "/login" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
-    public ResponseResult login(@RequestParam @NotBlank String username, @RequestParam @NotBlank String password) {
-
-        BaseResp baseResp = adminService.verityPassword(username, password);
+    public ResponseResult<UserInfoVo> login(@RequestParam @NotBlank String username, @RequestParam @NotBlank String password) {
+        Logger logger =LoggerFactory.getLogger("com.example.patent.controller.AdminController");
+//        logger.debug("wuhu!");
+        BaseResp<UserInfoVo> baseResp = adminService.verityPassword(username, password);
         return setResult(baseResp);
     }
 
@@ -60,7 +62,7 @@ public class AdminController extends BaseController {
      * @param passwordChangeParams 密码信息
      * @return
      */
-    @RequestMapping(value = "/changeAdminPwd" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
+    @RequestMapping(value = "/password/change" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
     public ResponseResult changeAdminPassWord(@RequestBody @Validated PasswordChangeParams passwordChangeParams) {
         BaseResp baseResp = adminService.changePasswd(passwordChangeParams);
         return setResult(baseResp);

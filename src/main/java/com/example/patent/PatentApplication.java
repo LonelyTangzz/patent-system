@@ -1,11 +1,12 @@
 package com.example.patent;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.example.patent.dao")
+@MapperScan(value = "com.example.patent.dao",annotationClass = Mapper.class)
 public class PatentApplication {
 
     public static void main(String[] args) {

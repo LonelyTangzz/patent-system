@@ -1,5 +1,7 @@
 package com.example.patent.service.impl;
 
+import com.example.patent.entity.vo.UserInfoVo;
+import com.google.common.collect.Lists;
 import com.example.patent.common.MD5;
 import com.example.patent.dao.AdminMapper;
 import com.example.patent.entity.basic.BaseResp;
@@ -11,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.List;
+//import java.util.List;
 
 
 /**
@@ -34,16 +36,13 @@ class AdminServiceImpl implements AdminService {
      * @return 操作结果
      */
     @Override
-    public BaseResp verityPassword(String name, String password) {
-        BaseResp baseResp = new BaseResp();
+    public BaseResp<UserInfoVo> verityPassword(String name, String password) {
+        BaseResp<UserInfoVo> baseResp = new BaseResp<>();
         //将传入密码进行md5加密后与数据库中存储值进行比较
         String realPwd = MD5.getInstance().getMD5ofStr(password);
-        if (adminMapper.verifyPassword(name, realPwd) > 0) {
-            List<Admin> adminList = new ArrayList<>(1);
-            Admin admin = new Admin();
-            admin.setUsername(name);
-            adminList.add(admin);
-            baseResp.setRespData(adminList);
+        Integer id = adminMapper.verifyPassword(name, realPwd);
+        if (id != null) {
+            baseResp.setRespData(Lists.newArrayList(new UserInfoVo(id, name)));
         } else {
             baseResp.setResultType(ResultType.VERIFY_FAIL);
         }
