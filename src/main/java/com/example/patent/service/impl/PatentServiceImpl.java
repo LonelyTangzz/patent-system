@@ -11,6 +11,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @name PatentServiceImpl
+ * @author tangzy
+ * @since 2021/1/9
+ * @version 1.0
+ * @description: 专利业务服务层
+ */
 @Service
 public class PatentServiceImpl implements PatentService {
     @Autowired

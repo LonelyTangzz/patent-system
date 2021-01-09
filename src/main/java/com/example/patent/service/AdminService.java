@@ -6,6 +6,7 @@ import com.example.patent.entity.vo.UserInfoVo;
 
 /**
  * 用户管理业务层
+ * @author MrTang
  */
 public interface AdminService {
 

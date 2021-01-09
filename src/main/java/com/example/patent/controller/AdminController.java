@@ -39,6 +39,7 @@ public class AdminController extends BaseController {
      * 打印日志用
      */
     LoggerUtils logger = new LoggerUtils(this.getClass().getName());
+
     @Resource
     private AdminService adminService;
     @Resource

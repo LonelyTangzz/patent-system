@@ -9,6 +9,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @name NewsServiceImpl
+ * @author tangzy
+ * @since 2021/1/9
+ * @version 1.0
+ * @description: 新闻业务服务层
+ */
 @Service
 public class NewsServiceImpl implements NewsService {
     @Autowired

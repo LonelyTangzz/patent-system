@@ -6,14 +6,11 @@ import com.example.patent.common.MD5;
 import com.example.patent.dao.AdminMapper;
 import com.example.patent.entity.basic.BaseResp;
 import com.example.patent.entity.basic.ResultType;
-import com.example.patent.entity.bean.Admin;
 import com.example.patent.entity.param.PasswordChangeParams;
 import com.example.patent.service.AdminService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-//import java.util.List;
 
 
 /**

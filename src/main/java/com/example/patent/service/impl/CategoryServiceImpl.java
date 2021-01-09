@@ -8,6 +8,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @name CategoryServiceImpl
+ * @author tangzy
+ * @since 2021/1/9
+ * @version 1.0
+ * @description: 分类管理业务层
+ */
 @Service
 public class CategoryServiceImpl implements CategoryService {
     @Autowired

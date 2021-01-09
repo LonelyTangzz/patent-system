@@ -8,6 +8,7 @@
 
 ![登录界面](https://github.com/LonelyTangzz/patent-system/blob/master/preview/login.png)
 
+
 主管理界面：
 
 ![管理界面](https://github.com/LonelyTangzz/patent-system/blob/master/preview/main.png)
