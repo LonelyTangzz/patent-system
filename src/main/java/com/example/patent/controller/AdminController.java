@@ -8,6 +8,7 @@ import com.example.patent.entity.bean.Category;
 import com.example.patent.entity.param.PasswordChangeParams;
 import com.example.patent.entity.vo.UserInfoVo;
 import com.example.patent.logger.LoggerUtils;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +33,7 @@ import java.net.UnknownHostException;
  * @description: 管理员控制层
  */
 @Slf4j
+@Api(value = "adminApi",tags = "管理员控制层")
 @RestController
 @RequestMapping("admin")
 public class AdminController extends BaseController {

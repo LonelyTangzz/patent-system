@@ -20,6 +20,7 @@ import java.util.List;
  * @name: BaseController
  * @description: 基础控制层
  */
+
 @Configuration
 @RestController
 public class BaseController {

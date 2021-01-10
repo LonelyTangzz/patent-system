@@ -3,6 +3,7 @@ package com.example.patent.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * @name: ErrorController
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @version: 1.0
  * @description: 错误页面配置器
  */
+@ApiIgnore
 @Controller
 public class ErrorController {
     private static final String ERROR_PAGE = "page-404.html";
