@@ -22,6 +22,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -433,13 +435,13 @@ public class UserController {
     }
 
     @RequestMapping(value = "personInfo")
-    public ModelAndView personInfo(HttpServletRequest req) {
+    public ModelAndView personInfo(HttpServletRequest req) throws UnsupportedEncodingException {
         ModelAndView mv = new ModelAndView();
         Cookie cookie[] = req.getCookies();
         String username = new String();
         for (int i = 0; i < cookie.length; i++) {
             if (cookie[i].getName().equals("username")) {
-                username = cookie[i].getValue();
+                username = URLDecoder.decode(cookie[i].getValue(), "utf-8");
             }
         }
         if (username.equals("")) {

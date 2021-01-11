@@ -10,8 +10,6 @@ import com.example.patent.entity.vo.UserInfoVo;
 import com.example.patent.logger.LoggerUtils;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.example.patent.service.*;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
