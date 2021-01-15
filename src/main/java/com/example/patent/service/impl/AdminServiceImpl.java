@@ -4,10 +4,10 @@ import com.example.patent.entity.vo.UserInfoVo;
 import com.google.common.collect.Lists;
 import com.example.patent.common.MD5;
 import com.example.patent.dao.AdminMapper;
-import com.example.patent.entity.basic.BaseResp;
-import com.example.patent.entity.basic.ResultType;
 import com.example.patent.entity.param.PasswordChangeParams;
 import com.example.patent.service.AdminService;
+import com.tang.basic.BaseResp;
+import com.tang.basic.ResultType;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

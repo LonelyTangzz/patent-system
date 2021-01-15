@@ -1,13 +1,14 @@
 package com.example.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.patent.entity.basic.BaseResp;
-import com.example.patent.entity.basic.Constants;
-import com.example.patent.entity.basic.ResponseResult;
+import com.example.patent.entity.constants.Constants;
 import com.example.patent.entity.bean.Category;
 import com.example.patent.entity.param.PasswordChangeParams;
 import com.example.patent.entity.vo.UserInfoVo;
 import com.example.patent.logger.LoggerUtils;
+import com.tang.basic.BaseController;
+import com.tang.basic.BaseResp;
+import com.tang.basic.ResponseResult;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import com.example.patent.service.*;

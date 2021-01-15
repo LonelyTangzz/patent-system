@@ -1,8 +1,8 @@
 package com.example.patent.service;
 
-import com.example.patent.entity.basic.BaseResp;
 import com.example.patent.entity.param.PasswordChangeParams;
 import com.example.patent.entity.vo.UserInfoVo;
+import com.tang.basic.BaseResp;
 
 /**
  * 用户管理业务层

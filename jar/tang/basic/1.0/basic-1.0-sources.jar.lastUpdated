@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jan 16 00:32:35 CST 2021
+@default-nexus-http\://10.0.110.68\:8083/nexus/content/groups/public/.lastUpdated=1610728355335
+http\://10.0.110.68\:8083/nexus/content/groups/public/.error=Could not transfer artifact com.tang\:basic\:jar\:sources\:1.0 from/to nexus (http\://10.0.110.68\:8083/nexus/content/groups/public/)\: Connect to 10.0.110.68\:8083 [/10.0.110.68] failed\: Connection timed out\: connect

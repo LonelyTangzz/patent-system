@@ -1,4 +1,4 @@
-package com.example.patent.entity.basic;
+package com.example.patent.entity.constants;
 
 /**
  * @author tangzy.
