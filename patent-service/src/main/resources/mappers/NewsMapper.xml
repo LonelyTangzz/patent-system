@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tang.patent.dao.NewsMapper">
+    <resultMap id="BaseResultMap" type="com.tang.patent.entity.News">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="author" property="author" jdbcType="VARCHAR"/>
+        <result column="details" property="details" jdbcType="VARCHAR"/>
+        <result column="uptime" property="uptime" jdbcType="DATE"/>
+        <result column="img" property="img" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, title, author, details, uptime,img
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from news
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <!-- 新增-->
+    <select id="countNews" resultType="java.lang.Integer">
+    select count(*)
+    from news
+  </select>
+    <select id="getNewsByPage" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select *
+        from news
+        limit #{page,jdbcType=INTEGER},10
+    </select>
+<!--   countRecentNews暂未做测试 -->
+    <select id="countRecentNews" resultType="java.util.HashMap">
+        SELECT uptime, count(*) as total FROM news where  DATE_SUB(CURDATE(), INTERVAL 6 DAY) &lt;= uptime GROUP BY uptime ORDER BY uptime ASC
+    </select>
+    <!-- 新增-->
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from news
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.tang.patent.entity.News">
+    insert into news (id, title, author, 
+      details)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
+      #{details,jdbcType=VARCHAR}), #{uptime,jdbcType=DATE}, #{img,jdbcType=VARCHAR}
+  </insert>
+    <insert id="insertSelective" parameterType="com.tang.patent.entity.News">
+        insert into news
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="author != null">
+                author,
+            </if>
+            <if test="details != null">
+                details,
+            </if>
+            <if test="uptime != null">
+                uptime,
+            </if>
+            <if test="img != null">
+                img,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="author != null">
+                #{author,jdbcType=VARCHAR},
+            </if>
+            <if test="details != null">
+                #{details,jdbcType=VARCHAR},
+            </if>
+            <if test="uptime != null">
+                #{uptime,jdbcType=DATE},
+            </if>
+            <if test="img != null">
+                img,
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.tang.patent.entity.News">
+        update news
+        <set>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="author != null">
+                author = #{author,jdbcType=VARCHAR},
+            </if>
+            <if test="details != null">
+                details = #{details,jdbcType=VARCHAR},
+            </if>
+            <if test="uptime != null">
+                uptime = #{uptime,jdbcType=DATE},
+            </if>
+            <if test="img != null">
+                img = #{img,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.tang.patent.entity.News">
+    update news
+    set title = #{title,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      details = #{details,jdbcType=VARCHAR},
+      uptime = #{uptime,jdbcType=DATE},
+      img = #{img,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
