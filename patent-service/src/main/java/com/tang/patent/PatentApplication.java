@@ -4,6 +4,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
 /**
  * @name PatentApplication
  * @author tangzy
@@ -16,7 +18,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PatentApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PatentApplication.class, args);
+        ConfigurableApplicationContext run = SpringApplication.run(PatentApplication.class, args);
     }
 
 }

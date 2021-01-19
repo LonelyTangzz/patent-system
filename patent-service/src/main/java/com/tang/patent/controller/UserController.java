@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,6 +40,8 @@ public class UserController {
     private NewsService newsService;
     @Autowired
     User user;
+    @Resource
+    SendSms sendSms;
 
     public static int newcode;
 
@@ -250,12 +253,9 @@ public class UserController {
      */
     @RequestMapping(value = "verifyPhone", method = RequestMethod.POST)
     public boolean verifyPhone(HttpServletRequest req) throws ClientException {
-        SendSms sendSms = new SendSms();
         String phoneNum = req.getParameter("phoneNum");
         sendSms.register(phoneNum);
-//        return sendSms.register(phoneNum);
-        //todo 记得改这里
-        return true;
+        return sendSms.register(phoneNum);
     }
 
     /**
@@ -289,9 +289,7 @@ public class UserController {
     public boolean resetPassword(HttpServletRequest req) throws ClientException {
         String phoneNum = req.getParameter("phoneNum");
         SendSms sendSms = new SendSms();
-        //随机码生成
-//        return sendSms.forgetPassword(phoneNum);
-        return true; //todo 记得改这里
+        return sendSms.forgetPassword(phoneNum);
     }
 
     /**

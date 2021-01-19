@@ -1,8 +1,20 @@
 server:
   port: 8080
 spring:
+  # redis配置
+  redis:
+    mode: single
+    host: 47.115.40.50
+    port: 6379
+    password: 999999
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
   datasource:
-#    使用的是远程阿里云服务器，自己写上自己的公网ip并配置
+    #    使用的是远程阿里云服务器，自己写上自己的公网ip并配置
     url: jdbc:mysql://47.115.40.50:3306/patent?characterEncoding=utf-8&useSSL=false
     username: root
     password: 999999

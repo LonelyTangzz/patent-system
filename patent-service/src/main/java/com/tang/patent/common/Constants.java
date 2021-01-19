@@ -18,4 +18,6 @@ public class Constants {
     public static final String NEWS_PREFIX="";
     
     public static final String ACTION_SUFFIX=".action";
+
+    public static final String SMS_PREFIX="smsTel:";
 }
