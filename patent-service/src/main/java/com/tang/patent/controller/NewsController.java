@@ -1,7 +1,7 @@
 package com.tang.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.tang.patent.entity.News;
+import com.tang.patent.entity.bean.News;
 import com.tang.patent.service.NewsService;
 import com.tang.patent.service.PatentService;
 import org.springframework.beans.factory.annotation.Autowired;

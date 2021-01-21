@@ -2,8 +2,8 @@ package com.tang.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.aliyuncs.exceptions.ClientException;
-import com.tang.patent.entity.Patent;
-import com.tang.patent.entity.User;
+import com.tang.patent.entity.bean.Patent;
+import com.tang.patent.entity.bean.User;
 import com.tang.patent.tools.MD5;
 import com.tang.patent.tools.SendSms;
 import com.tang.patent.service.CategoryService;
@@ -254,7 +254,6 @@ public class UserController {
     @RequestMapping(value = "verifyPhone", method = RequestMethod.POST)
     public boolean verifyPhone(HttpServletRequest req) throws ClientException {
         String phoneNum = req.getParameter("phoneNum");
-        sendSms.register(phoneNum);
         return sendSms.register(phoneNum);
     }
 
@@ -288,7 +287,6 @@ public class UserController {
     @RequestMapping(value = "resetPassword", method = RequestMethod.POST)
     public boolean resetPassword(HttpServletRequest req) throws ClientException {
         String phoneNum = req.getParameter("phoneNum");
-        SendSms sendSms = new SendSms();
         return sendSms.forgetPassword(phoneNum);
     }
 

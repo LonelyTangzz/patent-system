@@ -3,7 +3,7 @@ package com.tang.patent.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.tang.api.AdminApi;
 import com.tang.patent.common.Constants;
-import com.tang.patent.entity.Category;
+import com.tang.patent.entity.bean.Category;
 import com.tang.params.PasswordChangeParams;
 import com.tang.vos.UserInfoVo;
 import com.tang.patent.logger.LoggerUtils;
@@ -13,14 +13,9 @@ import com.tang.basic.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
 import com.tang.patent.service.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.RequestAttributes;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 /**
  * @name: AdminController
@@ -47,8 +42,6 @@ public class AdminController extends BaseController implements AdminApi {
     private CategoryService categoryService;
     @Resource
     private NewsService newsService;
-    @Resource
-    private Category category;
 
     /**
      * 管理员登录
@@ -95,6 +88,7 @@ public class AdminController extends BaseController implements AdminApi {
             jsonObject.put("msg", "添加失败请检查是否符合规范");
             return jsonObject;
         }
+        Category category = new Category();
         category.setCategory(req.getParameter("typeName"));
         boolean res = categoryService.insert(category);
         if (res) {
@@ -167,6 +161,7 @@ public class AdminController extends BaseController implements AdminApi {
     @RequestMapping(value = "/editCategory" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
     public Object editCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
+        Category category = new Category();
         category.setId(Integer.parseInt(req.getParameter("id")));
         category.setCategory(req.getParameter("name"));
         boolean res = categoryService.updateCategory(category);
@@ -181,6 +176,7 @@ public class AdminController extends BaseController implements AdminApi {
         }
     }
 
+
     /**
      * 获取所有数据数量
      */
@@ -193,21 +189,5 @@ public class AdminController extends BaseController implements AdminApi {
         jsonObject.put("newsCount", newsService.countNews());
         return jsonObject;
     }
-
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public void requestTest() {
-        String ipAddress = null;
-        RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();
-        ipAddress = request.getRemoteAddr();
-        InetAddress inet = null;
-        try {
-            inet = InetAddress.getLocalHost();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-        ipAddress = inet.getHostAddress();
-    }
-
 }
 

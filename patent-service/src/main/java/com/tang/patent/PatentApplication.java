@@ -18,7 +18,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class PatentApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext run = SpringApplication.run(PatentApplication.class, args);
+        SpringApplication.run(PatentApplication.class, args);
     }
 
 }

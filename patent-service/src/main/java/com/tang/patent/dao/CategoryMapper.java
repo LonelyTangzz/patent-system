@@ -1,6 +1,6 @@
 package com.tang.patent.dao;
 
-import com.tang.patent.entity.Category;
+import com.tang.patent.entity.bean.Category;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

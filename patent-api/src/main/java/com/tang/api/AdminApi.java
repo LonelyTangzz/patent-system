@@ -48,4 +48,5 @@ public interface AdminApi {
     @RequestMapping(value = "/password/change.action", method = RequestMethod.POST)
     ResponseResult changeAdminPassWord(@RequestBody @Validated PasswordChangeParams passwordChangeParams);
 
+
 }

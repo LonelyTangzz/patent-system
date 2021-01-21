@@ -7,12 +7,16 @@ import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.tang.patent.common.Constants;
+import com.tang.patent.dao.SmsLogMapper;
+import com.tang.patent.entity.bean.SmsLog;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -27,6 +31,8 @@ public class SendSms {
 
     @Resource
     StringRedisTemplate stringRedisTemplate;
+    @Resource
+    SmsLogMapper smsLogMapper;
 
     /**
      * 产品名称:云通信短信API产品,开发者无需替换
@@ -58,11 +64,18 @@ public class SendSms {
      * @throws ClientException 客户端异常
      */
     public Boolean register(String telephone) throws ClientException {
-        return sendSmsTemplate(telephone, REGISTER_TEMPLATE);
+        return sendSmsTemplate(telephone, REGISTER_TEMPLATE, "REGISTER");
     }
 
+    /**
+     * 重置密码
+     *
+     * @param telephone 手机号
+     * @return 操作结果
+     * @throws ClientException 客户端异常
+     */
     public Boolean forgetPassword(String telephone) throws ClientException {
-        return sendSmsTemplate(telephone, FORGET_PASSWORD_TEMPLATE);
+        return sendSmsTemplate(telephone, FORGET_PASSWORD_TEMPLATE, "RESET");
     }
 
     /**
@@ -73,7 +86,7 @@ public class SendSms {
      * @return 操作结果
      * @throws ClientException 短信发送异常
      */
-    private Boolean sendSmsTemplate(String telephone, String templateCode) throws ClientException {
+    private Boolean sendSmsTemplate(String telephone, String templateCode, String action) throws ClientException {
         // 可自助调整超时时间
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
         System.setProperty("sun.net.client.defaultReadTimeout", "10000");
@@ -94,14 +107,9 @@ public class SendSms {
         // 必填:短信签名-可在短信控制台中找到
         request.setSignName("专利资讯网");
         // 必填:短信模板-可在短信控制台中找到
-        //SMS_189018362为用户忘记密码Code
-        //SMS_188993563为用户注册时Code
         request.setTemplateCode(templateCode);
         // 可选:模板中的变量替换JSON串,如模板内容为"亲爱的用户,您的验证码为${code}"时,此处的值为
         request.setTemplateParam("{\"code\":\"" + code + "\"}");
-
-        // 选填-上行短信扩展码(无特殊需求用户请忽略此字段)
-        // request.setSmsUpExtendCode("90997");
 
         // 可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者
         request.setOutId("yourOutId");
@@ -109,9 +117,12 @@ public class SendSms {
         // hint 此处可能会抛出异常，注意catch
         SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
         if (sendSmsResponse.getCode() != null && sendSmsResponse.getCode().equals("OK")) {
-            //这里stringRedisTemplate一直注入失败
             ValueOperations<String, String> valueOperations = stringRedisTemplate.opsForValue();
+            //存储验证码至redis缓存
             valueOperations.set(Constants.SMS_PREFIX.concat(telephone), code, 5, TimeUnit.MINUTES);
+            SmsLog smsLog = new SmsLog(IdWorker.getId(), telephone, action, new Date());
+            //记录操作到数据库
+            smsLogMapper.insertMessageLog(smsLog);
             System.out.println("短信发送成功！");
             return true;
         } else {

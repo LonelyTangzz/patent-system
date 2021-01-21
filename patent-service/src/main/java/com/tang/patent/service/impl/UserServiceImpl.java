@@ -1,6 +1,6 @@
 package com.tang.patent.service.impl;
 
-import com.tang.patent.entity.User;
+import com.tang.patent.entity.bean.User;
 import com.tang.patent.dao.UserMapper;
 import com.tang.patent.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

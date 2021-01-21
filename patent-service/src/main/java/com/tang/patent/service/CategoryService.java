@@ -1,6 +1,6 @@
 package com.tang.patent.service;
 
-import com.tang.patent.entity.Category;
+import com.tang.patent.entity.bean.Category;
 
 import java.util.List;
 

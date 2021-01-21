@@ -1,6 +1,6 @@
 package com.tang.patent.service.impl;
 
-import com.tang.patent.entity.Category;
+import com.tang.patent.entity.bean.Category;
 import com.tang.patent.dao.CategoryMapper;
 import com.tang.patent.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

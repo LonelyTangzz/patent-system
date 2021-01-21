@@ -2,7 +2,7 @@
 function loadCategoryType() {
     $.ajax({
         type: "GET",
-        url: "/patent/loadCategoryType.action",
+        url: "/loadCategoryType.action",
         dataType: "json",
         success: function (data) {
             //取出类型和相应类型下的专利数
@@ -58,7 +58,7 @@ function loadCategoryType() {
 function loadLocalMonthData(year, month, date) {
     $.ajax({
         type: "GET",
-        url: "/patent/getUserTimeByMonth.action",
+        url: "/getUserTimeByMonth.action",
         data: {
             year: year,
             month: month,
@@ -151,7 +151,7 @@ function doHandleMonth(month) {
 function loadNewsData() {
     $.ajax({
         type: "GET",
-        url: "/patent/countRecentNews.action",
+        url: "/countRecentNews.action",
         dataType: "json",
         success: function (data) {
             //封装后台数据
@@ -217,7 +217,7 @@ function loadNewsData() {
 function init() {
     $.ajax({
         type: "GET",
-        url: "/patent/admin/countAll.action",
+        url: "/admin/countAll.action",
         dataType: "json",
         success: function (data) {
             $("#patentCount").text(data.patentCount + "项");

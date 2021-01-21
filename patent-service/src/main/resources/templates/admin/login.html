@@ -67,7 +67,7 @@
         } else {
             $.ajax({
                 type: "POST",
-                url: "/patent/admin/login.action",
+                url: "login.action",
                 data: {
                     username: username,
                     password: password
@@ -81,7 +81,7 @@
                         Cookies.set('adminName', data.data[0].username, {expires: 1});
                         //Cookies.remove('adminName');
                         //localStorage.setItem('adminName', data.name);
-                        window.location.href = "/patent/admin/main";
+                        window.location.href = "main";
                     }
                 }
             });

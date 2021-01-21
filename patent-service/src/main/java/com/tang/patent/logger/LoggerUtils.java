@@ -23,11 +23,11 @@ public class LoggerUtils implements Serializable {
     }
 
     public void startLog() {
-        logger.info("开始任务");
+        logger.info("Task Start.......");
     }
 
     public void endLog() {
-        logger.info("结束任务");
+        logger.info("Task End.......");
     }
 
 }

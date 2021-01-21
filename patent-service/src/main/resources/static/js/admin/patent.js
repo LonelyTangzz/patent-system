@@ -1,7 +1,7 @@
 function loadType() {
     $.ajax({
         type: "GET",
-        url: "/patent/admin/getAllCategory.action",
+        url: "/admin/getAllCategory.action",
         dataType: "json",
         success: function (data) {
             categoryCount = data.allCategory;
@@ -16,7 +16,7 @@ function getPatentByPage(num) {
     $("#allPatent").empty();
     $.ajax({
         type: "GET",
-        url: "/patent/getPatentByPage.action",
+        url: "/getPatentByPage.action",
         dataType: "json",
         async: false,
         data: {
@@ -67,7 +67,7 @@ function submitAddPatent() {
     //这里还要添加判断条件 记得填
     $.ajax({
         type: "POST",
-        url: "/patent/patentAdd.action",
+        url: "/patentAdd.action",
         dataType: "json",
         data: {
             patent_no: $("#patent_no").val(),
@@ -123,7 +123,7 @@ function patentDetails(id) {
 function changePatent() {
     $.ajax({
         type: "POST",
-        url: "/patent/changePatent.action",
+        url: "/changePatent.action",
         dataType: "json",
         data: {
             patent_no: $("#edit_patent_no").val(),
@@ -165,7 +165,7 @@ function editPatent(id) {
 function delePatent(id) {
     $.ajax({
         type: "POST",
-        url: "/patent/delePatent.action",
+        url: "/delePatent.action",
         dataType: "json",
         data: {
             id: id,

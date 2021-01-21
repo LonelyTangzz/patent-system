@@ -1,7 +1,7 @@
 package com.tang.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.tang.patent.entity.Patent;
+import com.tang.patent.entity.bean.Patent;
 import com.tang.patent.service.CategoryService;
 import com.tang.patent.service.NewsService;
 import com.tang.patent.service.PatentService;
@@ -32,8 +32,6 @@ public class PatentController {
     private CategoryService categoryService;
     @Resource
     private NewsService newsService;
-    @Resource
-    Patent patent;
 
     /**
      * 上传专利
@@ -187,6 +185,7 @@ public class PatentController {
     @RequestMapping(value = "changePatent.action", method = RequestMethod.POST)
     public Object updateInfo(HttpServletRequest req) throws ParseException {
         JSONObject jsonObject = new JSONObject();
+        Patent patent = new Patent();
         patent.setPatentNo(req.getParameter("patent_no"));
         patent.setPatentName(req.getParameter("patent_name"));
         //类别添加

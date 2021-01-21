@@ -2,7 +2,7 @@ function getNewsByPage(num) {
     $("#allNews").empty();
     $.ajax({
         type: "GET",
-        url: "/patent/getNewsByPage.action",
+        url: "/getNewsByPage.action",
         dataType: "json",
         async: false,
         data: {
@@ -38,7 +38,7 @@ function getNewsByPage(num) {
 function deleNews(id) {
     $.ajax({
         type: "POST",
-        url: "/patent/deleNews.action",
+        url: "/deleNews.action",
         dataType: "json",
         data: {
             id: id
@@ -65,7 +65,7 @@ function submitEditNews(id) {
     } else {
         $.ajax({
             type: "POST",
-            url: "/patent/updateNews.action",
+            url: "/updateNews.action",
             dataType: "json",
             data: {
                 id: parseInt(id),

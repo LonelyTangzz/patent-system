@@ -1,7 +1,7 @@
 package com.tang.patent.service.impl;
 
-import com.tang.patent.entity.Category;
-import com.tang.patent.entity.Patent;
+import com.tang.patent.entity.bean.Category;
+import com.tang.patent.entity.bean.Patent;
 import com.tang.patent.dao.PatentMapper;
 import com.tang.patent.service.PatentService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -9,7 +9,7 @@ function submitChange() {
         var jsnStr = JSON.stringify(d);
         $.ajax({
             type: "POST",
-            url: "/patent/admin/password/change.action",
+            url: "/admin/password/change.action",
             dataType: "json",
             contentType: "application/json;charset=utf-8",
             data:jsnStr,

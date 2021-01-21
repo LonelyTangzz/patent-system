@@ -1,7 +1,7 @@
 package com.tang.patent.service;
 
 
-import com.tang.patent.entity.User;
+import com.tang.patent.entity.bean.User;
 
 import java.util.List;
 import java.util.Map;

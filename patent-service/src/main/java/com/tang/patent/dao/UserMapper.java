@@ -1,6 +1,6 @@
 package com.tang.patent.dao;
 
-import com.tang.patent.entity.User;
+import com.tang.patent.entity.bean.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

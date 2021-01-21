@@ -1,7 +1,7 @@
 package com.tang.patent.service;
 
-import com.tang.patent.entity.Category;
-import com.tang.patent.entity.Patent;
+import com.tang.patent.entity.bean.Category;
+import com.tang.patent.entity.bean.Patent;
 
 import java.util.HashMap;
 import java.util.List;

@@ -8,7 +8,7 @@ function summitAddNews() {
         $("#text").text("请输入作者！");
     } else {
         $.ajax({
-            url: "/patent/addNews.action",
+            url: "/addNews.action",
             type: "POST",
             dataType: "json",
             data: {

@@ -2,7 +2,7 @@ function showUser(num) {
     $("#allUser").empty();
     $.ajax({
         type: "GET",
-        url: "/patent/getPageUser.action",
+        url: "/getPageUser.action",
         dataType: "json",
         async: false,
         data: {
@@ -87,7 +87,7 @@ function changeInfo(id) {
 function submitEditUser() {
     $.ajax({
         type: "POST",
-        url: "/patent/updateInfo.action",
+        url: "/updateInfo.action",
         data: {
             id: $("#hidden_id").val(),
             realname: $("#realname").val(),

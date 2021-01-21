@@ -1,6 +1,6 @@
 package com.tang.patent.service;
 
-import com.tang.patent.entity.News;
+import com.tang.patent.entity.bean.News;
 
 import java.util.List;
 import java.util.Map;

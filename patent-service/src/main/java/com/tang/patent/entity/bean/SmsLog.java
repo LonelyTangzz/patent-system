@@ -1,9 +1,11 @@
-package com.tang.patent.entity;
+package com.tang.patent.entity.bean;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,11 +18,13 @@ import java.util.Date;
  * @description: 短信发送日志实体类
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @TableName("sms_log")
 public class SmsLog implements Serializable {
 
     @TableId("pkId")
-    private Integer pkId;
+    private Long pkId;
 
     @TableField("phone")
     private String phone;

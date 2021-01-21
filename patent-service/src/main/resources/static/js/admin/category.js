@@ -1,7 +1,7 @@
 function showCategory(num) {
     $.ajax({
         type: "GET",
-        url: "/patent/admin/getPageCategory.action",
+        url: "/admin/getPageCategory.action",
         dataType: "json",
         async: false,
         data: {
@@ -37,7 +37,7 @@ function submitAdd() {
     var typeName = $("#typeName").val();
     $.ajax({
         type: "POST",
-        url: "/patent/admin/addCategory.action",
+        url: "/admin/addCategory.action",
         data: {
             typeName: typeName
         },
@@ -67,7 +67,7 @@ function submitEditCategory() {
     var name = $("#nowName").val();
     $.ajax({
         type: "POST",
-        url: "/patent/admin/editCategory.action",
+        url: "/admin/editCategory.action",
         data: {
             id: id,
             name: name
@@ -87,7 +87,7 @@ function submitEditCategory() {
 function dele(id) {
     $.ajax({
         type: "POST",
-        url: "/patent/deleteCategory.action",
+        url: "/deleteCategory.action",
         data: {
             id: id
         },

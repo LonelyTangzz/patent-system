@@ -1,14 +1,12 @@
-package com.tang.patent.entity;
+package com.tang.patent.entity.bean;
 
 import lombok.Data;
 import lombok.ToString;
-import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 
 @Data
 @ToString
-@Repository
 public class Admin {
 
     private Integer id;

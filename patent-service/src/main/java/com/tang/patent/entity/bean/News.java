@@ -1,4 +1,4 @@
-package com.tang.patent.entity;
+package com.tang.patent.entity.bean;
 
 import org.springframework.stereotype.Repository;
 

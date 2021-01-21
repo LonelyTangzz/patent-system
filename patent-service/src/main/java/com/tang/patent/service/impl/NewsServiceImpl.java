@@ -1,6 +1,6 @@
 package com.tang.patent.service.impl;
 
-import com.tang.patent.entity.News;
+import com.tang.patent.entity.bean.News;
 import com.tang.patent.dao.NewsMapper;
 import com.tang.patent.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
