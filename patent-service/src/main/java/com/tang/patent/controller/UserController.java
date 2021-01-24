@@ -2,8 +2,15 @@ package com.tang.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.aliyuncs.exceptions.ClientException;
+import com.tang.api.UserApi;
+import com.tang.basic.BaseController;
+import com.tang.basic.BaseResp;
+import com.tang.basic.ResponseResult;
+import com.tang.basic.ResultType;
+import com.tang.params.user.RegisterParams;
 import com.tang.patent.entity.bean.Patent;
 import com.tang.patent.entity.bean.User;
+import com.tang.patent.logger.LoggerUtils;
 import com.tang.patent.tools.MD5;
 import com.tang.patent.tools.SendSms;
 import com.tang.patent.service.CategoryService;
@@ -19,6 +26,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.io.*;
 import java.net.URLDecoder;
 import java.text.ParseException;
@@ -27,9 +36,18 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+/**
+ * @author tangzy
+ * @version 1.0
+ * @name UserController
+ * @description: 用户层控制器
+ * @since 2021/1/24
+ */
 @RestController
-public class UserController {
+public class UserController extends BaseController implements UserApi {
     @Autowired
     private UserService userService;
     @Autowired
@@ -40,41 +58,95 @@ public class UserController {
     private NewsService newsService;
     @Autowired
     User user;
-    @Resource
-    SendSms sendSms;
-
-    public static int newcode;
 
     /**
-     * 注册入口
-     * ------测试通过
-     *
-     * @param user 用户
-     * @return
-     * @author: user
+     * 打印日志用
      */
-    @RequestMapping(value = "register.action", method = RequestMethod.POST)
-    public ModelAndView register(User user, HttpServletRequest req) {
-        ModelAndView mv = new ModelAndView();
-        user.setPhoneNum(req.getParameter("phoneNum"));
-        user.setPassword(MD5.getInstance().getMD5ofStr(user.getPassword()));
-        user.setAvatar("/avatarPic/img_avatar.png");
-        if (req.getParameter("phoneNum") == "") {
-            mv.setViewName("user/register.html");
-            mv.addObject("msg", "请不要传空值！");
-        } else if (Integer.parseInt(req.getParameter("verifyCode")) != newcode) {
-            mv.setViewName("user/register.html");
-            mv.addObject("msg", "验证码错误！");
-        } else if (userService.addUser(user)) {
-            mv.addObject("username", req.getParameter("name"));
-            mv.addObject("msg", "注册成功！");
-            mv.setViewName("user/login.html");
-        } else {
-            mv.setViewName("user/register.html");
-            mv.addObject("msg", "注册出现异常，请重试！");
-        }
-        return mv;
+    LoggerUtils logger = new LoggerUtils(this.getClass().getName());
+
+
+    /**
+     * 用户注册入口
+     *
+     * @param registerParams 用户注册入参
+     * @return 操作结果
+     */
+    @Override
+    public ResponseResult register(RegisterParams registerParams) {
+        logger.startLog();
+        BaseResp baseResp = userService.registerUser(registerParams);
+        logger.endLog();
+        return setResult(baseResp);
     }
+
+    /**
+     * 获取验证短信接口
+     *
+     * @param phoneNum 电话号码
+     * @param type     短信使用类型
+     * @return 返回结果
+     */
+    @Override
+    public ResponseResult getVerifyCode(String phoneNum, String type) {
+        logger.startLog();
+        BaseResp baseResp = new BaseResp(ResultType.INSERT_FAIL);
+        if (checkPhoneFormat(phoneNum)) {
+            baseResp = userService.getVerifyCode(phoneNum, type);
+        }
+        logger.endLog();
+        return setResult(baseResp);
+    }
+
+    /**
+     * 校验手机号是否正确
+     *
+     * @param phoneNum 手机号码
+     * @return 正确与否
+     */
+    private Boolean checkPhoneFormat(String phoneNum) {
+        // ^ 匹配输入字符串开始的位置
+        // \d 匹配一个或多个数字，其中 \ 要转义，所以是 \\d
+        // $ 匹配输入字符串结尾的位置
+        String regExp = "^((13[0-9])|(14[5,7,9])|(15[0-3,5-9])|(166)|(17[3,5,6,7,8])" +
+                "|(18[0-9])|(19[8,9]))\\d{8}$";
+        Pattern p = Pattern.compile(regExp);
+        Matcher m = p.matcher(phoneNum);
+        return m.matches();
+    }
+    // todo need to change
+//    /**
+//     * 注册绑定手机号时发送验证码
+//     * ----测试通过
+//     *
+//     * @param req
+//     * @throws ClientException
+//     */
+//    @RequestMapping(value = "verifyPhone", method = RequestMethod.POST)
+//    public boolean verifyPhone(HttpServletRequest req) throws ClientException {
+//        String phoneNum = req.getParameter("phoneNum");
+//        return sendSms.register(phoneNum);
+//    }
+//    public ModelAndView register(User user, HttpServletRequest req) {
+//        ModelAndView mv = new ModelAndView();
+//        user.setPhoneNum(req.getParameter("phoneNum"));
+//        user.setPassword(MD5.getInstance().getMD5ofStr(user.getPassword()));
+//        user.setAvatar("/avatarPic/img_avatar.png");
+//        if (req.getParameter("phoneNum") == "") {
+//            mv.setViewName("user/register.html");
+//            mv.addObject("msg", "请不要传空值！");
+//        } else if (Integer.parseInt(req.getParameter("verifyCode")) != newcode) {
+//            mv.setViewName("user/register.html");
+//            mv.addObject("msg", "验证码错误！");
+//        } else if (userService.addUser(user)) {
+//            mv.addObject("username", req.getParameter("name"));
+//            mv.addObject("msg", "注册成功！");
+//            mv.setViewName("user/login.html");
+//        } else {
+//            mv.setViewName("user/register.html");
+//            mv.addObject("msg", "注册出现异常，请重试！");
+//        }
+//        return mv;
+//    }
 
     /**
      * 登录信息入口
@@ -245,19 +317,6 @@ public class UserController {
     }
 
     /**
-     * 注册绑定手机号时发送验证码
-     * ----测试通过
-     *
-     * @param req
-     * @throws ClientException
-     */
-    @RequestMapping(value = "verifyPhone", method = RequestMethod.POST)
-    public boolean verifyPhone(HttpServletRequest req) throws ClientException {
-        String phoneNum = req.getParameter("phoneNum");
-        return sendSms.register(phoneNum);
-    }
-
-    /**
      * 忘记密码时第一个步骤
      * ----测试通过
      */
@@ -276,45 +335,47 @@ public class UserController {
         return mv;
     }
 
-    /**
-     * 忘记密码时第二个步骤
-     * ---测试通过
-     *
-     * @param req
-     * @return
-     * @author: user
-     */
-    @RequestMapping(value = "resetPassword", method = RequestMethod.POST)
-    public boolean resetPassword(HttpServletRequest req) throws ClientException {
-        String phoneNum = req.getParameter("phoneNum");
-        return sendSms.forgetPassword(phoneNum);
-    }
+    //todo 与注册短信合为一个接口
+//    /**
+//     * 忘记密码时第二个步骤
+//     * ---测试通过
+//     *
+//     * @param req
+//     * @return
+//     * @author: user
+//     */
+//    @RequestMapping(value = "resetPassword", method = RequestMethod.POST)
+//    public boolean resetPassword(HttpServletRequest req) throws ClientException {
+//        String phoneNum = req.getParameter("phoneNum");
+//        return sendSms.forgetPassword(phoneNum);
+//    }
 
-    /**
-     * 忘记密码时第三个步骤
-     * ---测试通过
-     *
-     * @param req
-     * @return
-     * @author: user
-     */
-    @RequestMapping("changePassword")
-    public ModelAndView changePassword(HttpServletRequest req) {
-        ModelAndView mv = new ModelAndView();
-        if (Integer.parseInt(req.getParameter("verifyCode")) == newcode) {
-            if (userService.updatePassword(req.getParameter("username"), MD5.getInstance().getMD5ofStr(req.getParameter("password")))) {
-                mv.setViewName("user/login.html");
-                mv.addObject("msg", "重置成功");
-            } else {
-                mv.setViewName("user/verifyInfo.html");
-                mv.addObject("msg", "修改出现异常");
-            }
-        } else {
-            mv.setViewName("user/verifyInfo.html");
-            mv.addObject("msg", "验证码错误");
-        }
-        return mv;
-    }
+    // todo 记得补回来
+//    /**
+//     * 忘记密码时第三个步骤
+//     * ---测试通过
+//     *
+//     * @param req
+//     * @return
+//     * @author: user
+//     */
+//    @RequestMapping("changePassword")
+//    public ModelAndView changePassword(HttpServletRequest req) {
+//        ModelAndView mv = new ModelAndView();
+//        if (Integer.parseInt(req.getParameter("verifyCode")) == newcode) {
+//            if (userService.updatePassword(req.getParameter("username"), MD5.getInstance().getMD5ofStr(req.getParameter("password")))) {
+//                mv.setViewName("user/login.html");
+//                mv.addObject("msg", "重置成功");
+//            } else {
+//                mv.setViewName("user/verifyInfo.html");
+//                mv.addObject("msg", "修改出现异常");
+//            }
+//        } else {
+//            mv.setViewName("user/verifyInfo.html");
+//            mv.addObject("msg", "验证码错误");
+//        }
+//        return mv;
+//    }
 
     /**
      * 上传头像-------用户通道
@@ -444,4 +505,5 @@ public class UserController {
     public ModelAndView addPatent(HttpServletResponse resp) {
         return new ModelAndView("user/addPatent.html");
     }
+
 }

@@ -1,27 +1,95 @@
 package com.tang.patent.service.impl;
 
+import com.tang.basic.BaseResp;
+import com.tang.basic.ResultType;
+import com.tang.params.user.RegisterParams;
+import com.tang.patent.common.Constants;
 import com.tang.patent.entity.bean.User;
 import com.tang.patent.dao.UserMapper;
 import com.tang.patent.service.UserService;
+import com.tang.patent.tools.MD5;
+import com.tang.patent.tools.SendSms;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 /**
- * @name UserServiceImpl
  * @author tangzy
- * @since 2021/1/9
  * @version 1.0
+ * @name UserServiceImpl
  * @description: 用户服务层
+ * @since 2021/1/9
  */
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
+    @Resource
     private UserMapper userMapper;
+    @Resource
+    private SendSms sendSms;
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
+
     User user = new User();
+
+    /**
+     * 用户注册业务
+     *
+     * @param registerParams 注册入参
+     * @return 操作结果
+     */
+    @Override
+    public BaseResp registerUser(RegisterParams registerParams) {
+        BaseResp resp = new BaseResp();
+        if (!stringRedisTemplate.opsForValue().get(Constants.SMS_PREFIX.concat(registerParams.getPhoneNum())).equals(registerParams.getVerifyCode())) {
+            resp.setResultType(ResultType.INSERT_FAIL);
+            return resp;
+        }
+        User user = new User();
+        BeanUtils.copyProperties(registerParams, user);
+        user.setPassword(MD5.getInstance().getMD5ofStr(user.getPassword()));
+        user.setAvatar("/avatarPic/img_avatar.png");
+        user.setCreateTime(new Date());
+        user.setLoginTime(new Date());
+//        if (userMapper.insert(user) <= 0) {
+//            resp.setResultType(ResultType.INSERT_FAIL);
+//        }
+        return resp;
+    }
+
+    /**
+     * 用户获取短信业务
+     *
+     * @param phoneNum 手机号
+     * @param type     短信获取类型
+     * @return 操作结果
+     */
+    @Override
+    public BaseResp getVerifyCode(String phoneNum, String type) {
+        BaseResp resp = new BaseResp();
+        try {
+            switch (type) {
+                case Constants.SMS_REGISTER: {
+                    sendSms.register(phoneNum);
+                    break;
+                }
+                case Constants.SMS_RESET: {
+                    sendSms.forgetPassword(phoneNum);
+                    break;
+                }
+                default:
+                    throw new Exception();
+            }
+        } catch (Exception e) {
+            resp.setResultType(ResultType.INSERT_FAIL);
+        }
+        return resp;
+    }
 
     /**
      * 用户登录

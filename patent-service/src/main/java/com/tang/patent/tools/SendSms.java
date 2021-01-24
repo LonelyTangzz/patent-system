@@ -44,7 +44,7 @@ public class SendSms {
     private static final String DOMAIN = "dysmsapi.aliyuncs.com";
 
     /**
-     * 个人账户及secret
+     * 个人账户许可及密钥
      */
     private static final String ACCESS_KEY_ID = "LTAI4G8eapip13RowK6MJcWo";
     private static final String ACCESS_KEY_SECRET = "SrEIysEtyudq7W3vuFRbi8JqARFLLG";

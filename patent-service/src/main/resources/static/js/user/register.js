@@ -1,19 +1,20 @@
-function getVerify() {
+function getVerifyCode() {
     $.ajax({
         type: "POST",
-        url: "verifyPhone",
+        url: "getVerifyCode",
         dataType: "json",
         data: {
-            phoneNum: $("#phoneNum").val()
+            phoneNum: $("#phoneNum").val(),
+            type: "0"
         },
         success: function (data) {
-            if (data) {
-                $("#verifyButton").text("发送成功");
-                $("#verifyButton").href("");
+            var button = document.getElementById("verifyButton");
+            if (data.status == 1) {
+                button.innerText="发送成功";
             } else {
-                $("#verifyButton").text("发送失败");
+                button.innerText="发送失败";
             }
-            $("#verifyButton").href("#");
+            button.href="";
         }
     });
 }

@@ -131,10 +131,11 @@
         if ([[${phoneNum}]] == $("#phoneNum").val()) {
             $.ajax({
                 type: "POST",
-                url: "resetPassword",
+                url: "getVerifyCode",
                 dataType: "json",
                 data: {
-                    phoneNum: $("#phoneNum").val()
+                    phoneNum: $("#phoneNum").val(),
+                    type: "1"
                 },
                 success: function (data) {
                     if (data) {
