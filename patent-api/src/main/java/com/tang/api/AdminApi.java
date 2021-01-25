@@ -1,10 +1,11 @@
 package com.tang.api;
 
 import com.tang.basic.ResponseResult;
-import com.tang.params.PasswordChangeParams;
-import com.tang.vos.UserInfoVo;
+import com.tang.params.admin.PasswordChangeParams;
+import com.tang.vos.admin.AdminInfoVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +37,7 @@ public interface AdminApi {
      */
     @ApiOperation(value = "管理员登录", notes = "管理登录操作")
     @RequestMapping(value = "/login.action", method = RequestMethod.POST)
-    ResponseResult<UserInfoVo> login(@RequestParam @NotBlank String username, @RequestParam @NotBlank String password);
+    ResponseResult<AdminInfoVo> login(@RequestParam @NotBlank @ApiParam("用户账号") String username, @RequestParam @NotBlank @ApiParam("密码") String password);
 
     /**
      * 修改密码

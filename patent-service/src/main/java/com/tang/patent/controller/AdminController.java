@@ -4,8 +4,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.tang.api.AdminApi;
 import com.tang.patent.common.Constants;
 import com.tang.patent.entity.bean.Category;
-import com.tang.params.PasswordChangeParams;
-import com.tang.vos.UserInfoVo;
+import com.tang.params.admin.PasswordChangeParams;
+import com.tang.vos.admin.AdminInfoVo;
 import com.tang.patent.logger.LoggerUtils;
 import com.tang.basic.BaseController;
 import com.tang.basic.BaseResp;
@@ -52,9 +52,9 @@ public class AdminController extends BaseController implements AdminApi {
      * @return 操作结果
      */
     @Override
-    public ResponseResult<UserInfoVo> login(String username, String password) {
+    public ResponseResult<AdminInfoVo> login(String username, String password) {
         logger.startLog();
-        BaseResp<UserInfoVo> baseResp = adminService.verityPassword(username, password);
+        BaseResp<AdminInfoVo> baseResp = adminService.verityPassword(username, password);
         logger.endLog();
         return setResult(baseResp);
     }

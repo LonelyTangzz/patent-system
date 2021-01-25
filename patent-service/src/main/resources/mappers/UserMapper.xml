@@ -27,7 +27,7 @@
     </select>
     <!--新增-->
     <select id="checkAccount" resultType="java.lang.Integer" parameterType="com.tang.patent.entity.bean.User">
-    SELECT count(*) FROM user where username = #{username,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR} ;
+    SELECT count(id) FROM user WHERE username = #{username,jdbcType=VARCHAR} AND password = #{password,jdbcType=VARCHAR}
   </select>
     <select id="selectIdByName" resultType="java.lang.Integer" parameterType="java.lang.String">
     SELECT id FROM user where username = "${username}" ;

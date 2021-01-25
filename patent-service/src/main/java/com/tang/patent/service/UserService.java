@@ -32,9 +32,14 @@ public interface UserService {
      */
     BaseResp getVerifyCode(String phoneNum,String type);
 
+    /**
+     * 验证账号密码是否正确
+     * @param name 账号
+     * @param password 密码
+     * @return 是否正确
+     */
     boolean checkAccount(String name, String password);
 
-    boolean addUser(User user);
 
     boolean updatePassword(String name, String password);
 

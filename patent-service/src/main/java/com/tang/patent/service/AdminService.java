@@ -1,7 +1,7 @@
 package com.tang.patent.service;
 
-import com.tang.params.PasswordChangeParams;
-import com.tang.vos.UserInfoVo;
+import com.tang.params.admin.PasswordChangeParams;
+import com.tang.vos.admin.AdminInfoVo;
 import com.tang.basic.BaseResp;
 
 /**
@@ -17,7 +17,7 @@ public interface AdminService {
      * @param password 密码
      * @return 操作结果
      */
-    BaseResp<UserInfoVo> verityPassword(String name, String password);
+    BaseResp<AdminInfoVo> verityPassword(String name, String password);
 
     /**
      * 修改密码

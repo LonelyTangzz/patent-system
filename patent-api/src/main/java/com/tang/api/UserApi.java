@@ -4,8 +4,11 @@ import com.tang.basic.ResponseResult;
 import com.tang.params.user.RegisterParams;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
@@ -39,5 +42,15 @@ public interface UserApi {
      */
     @ApiOperation(value = "获取短信接口")
     @RequestMapping(value = "getVerifyCode", method = RequestMethod.POST)
-    ResponseResult getVerifyCode(@NotBlank @RequestParam("phoneNum") String phoneNum, @NotBlank @RequestParam("type") String type);
+    ResponseResult getVerifyCode(@NotBlank @RequestParam @ApiParam("手机号") String phoneNum, @NotBlank @RequestParam @ApiParam("获取短信的操作类型") String type);
+
+    /**
+     * 用户登录
+     *
+     * @param username 用户账号
+     * @param password 用户密码
+     * @return 操作结果
+     */
+    @RequestMapping(value = "login.action", method = RequestMethod.POST)
+    ModelAndView login(@NotBlank @RequestParam @ApiParam("用户账号") String username, @NotBlank @RequestParam @ApiParam("用户密码") String password);
 }

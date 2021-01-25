@@ -149,23 +149,22 @@ public class UserController extends BaseController implements UserApi {
 //    }
 
     /**
-     * 登录信息入口
-     * ------测试通过
+     * 用户登录
      *
-     * @param req
-     * @return
-     * @author: user
+     * @param username 用户账号
+     * @param password 用户密码
+     * @return 操作结果
      */
-    @RequestMapping(value = "login.action", method = RequestMethod.POST)
-    public ModelAndView login(HttpServletRequest req) {
+    @Override
+    public ModelAndView login(String username, String password) {
         ModelAndView mv = new ModelAndView();
-        if (userService.checkAccount(req.getParameter("username"), MD5.getInstance().getMD5ofStr(req.getParameter("password")))) {
+        if (userService.checkAccount(username, password)) {
             User user = new User();
-            user.setId(userService.getUserIdByName(req.getParameter("username")));
+            user.setId(userService.getUserIdByName(username));
             user.setLoginTime(new Date());
             userService.updateUserInfo(user);
             mv.setViewName("index.html");
-            mv.addObject("username", req.getParameter("username"));
+            mv.addObject("username", username);
             mv.addObject("msg", "登录成功");
             mv.addObject("categories", categoryService.getAllCategory());
             mv.addObject("allPatents", patentService.getPatentByPage(0));
@@ -424,6 +423,16 @@ public class UserController extends BaseController implements UserApi {
         }
     }
 
+    /**
+     * 修改用户信息
+     *
+     * @param user
+     * @param req
+     * @param resp
+     * @param birthChange
+     * @throws IOException
+     * @throws ParseException
+     */
     @RequestMapping(value = "changeInfo", method = RequestMethod.POST)
     public void changeInfo(User user, HttpServletRequest req, HttpServletResponse resp, String birthChange) throws IOException, ParseException {
         if (birthChange != "" && birthChange != null) {

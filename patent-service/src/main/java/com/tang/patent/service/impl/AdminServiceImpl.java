@@ -1,10 +1,10 @@
 package com.tang.patent.service.impl;
 
-import com.tang.vos.UserInfoVo;
+import com.tang.vos.admin.AdminInfoVo;
 import com.google.common.collect.Lists;
 import com.tang.patent.tools.MD5;
 import com.tang.patent.dao.AdminMapper;
-import com.tang.params.PasswordChangeParams;
+import com.tang.params.admin.PasswordChangeParams;
 import com.tang.patent.service.AdminService;
 import com.tang.basic.BaseResp;
 import com.tang.basic.ResultType;
@@ -33,13 +33,13 @@ class AdminServiceImpl implements AdminService {
      * @return 操作结果
      */
     @Override
-    public BaseResp<UserInfoVo> verityPassword(String name, String password) {
-        BaseResp<UserInfoVo> baseResp = new BaseResp<>();
+    public BaseResp<AdminInfoVo> verityPassword(String name, String password) {
+        BaseResp<AdminInfoVo> baseResp = new BaseResp<>();
         //将传入密码进行md5加密后与数据库中存储值进行比较
         String realPwd = MD5.getInstance().getMD5ofStr(password);
         Integer id = adminMapper.verifyPassword(name, realPwd);
         if (id != null) {
-            baseResp.setRespData(Lists.newArrayList(new UserInfoVo(id, name)));
+            baseResp.setRespData(Lists.newArrayList(new AdminInfoVo(id, name)));
         } else {
             baseResp.setResultType(ResultType.VERIFY_FAIL);
         }

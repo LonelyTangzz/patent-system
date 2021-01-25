@@ -1,4 +1,4 @@
-package com.tang.params;
+package com.tang.params.admin;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

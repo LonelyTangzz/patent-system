@@ -53,12 +53,13 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         BeanUtils.copyProperties(registerParams, user);
         user.setPassword(MD5.getInstance().getMD5ofStr(user.getPassword()));
+        //todo 这里的url得改
         user.setAvatar("/avatarPic/img_avatar.png");
         user.setCreateTime(new Date());
         user.setLoginTime(new Date());
-//        if (userMapper.insert(user) <= 0) {
-//            resp.setResultType(ResultType.INSERT_FAIL);
-//        }
+        if (userMapper.insert(user) <= 0) {
+            resp.setResultType(ResultType.INSERT_FAIL);
+        }
         return resp;
     }
 
@@ -72,6 +73,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public BaseResp getVerifyCode(String phoneNum, String type) {
         BaseResp resp = new BaseResp();
+        //发送短信的业务代码交给sendSms工具类处理 type:0-注册短信,1-重置密码短信
         try {
             switch (type) {
                 case Constants.SMS_REGISTER: {
@@ -101,21 +103,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean checkAccount(String name, String password) {
         user.setUsername(name);
-        user.setPassword(password);
+        user.setPassword(MD5.getInstance().getMD5ofStr(password));
         user.setLoginTime(new Date());
-        return userMapper.checkAccount(user) > 0 ? true : false;
-    }
-
-    /**
-     * 用户注册
-     *
-     * @return
-     */
-    @Override
-    public boolean addUser(User user) {
-        user.setCreateTime(new Date());
-        user.setLoginTime(new Date());
-        return userMapper.insert(user) > 0 ? true : false;
+        return userMapper.checkAccount(user) > 0;
     }
 
     /**
@@ -130,7 +120,7 @@ public class UserServiceImpl implements UserService {
         int id = userMapper.selectIdByName(name);
         user.setPassword(password);
         user.setId(id);
-        return userMapper.updateByPrimaryKeySelective(user) > 0 ? true : false;
+        return userMapper.updateByPrimaryKeySelective(user) > 0;
     }
 
     /**
@@ -152,7 +142,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean updateUserAvatar(User user) {
-        return userMapper.updateUserImg(user) > 0 ? true : false;
+        return userMapper.updateUserImg(user) > 0;
     }
 
     /**
@@ -174,7 +164,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean updateUserInfo(User user) {
-        return userMapper.updateByPrimaryKeySelective(user) > 0 ? true : false;
+        return userMapper.updateByPrimaryKeySelective(user) > 0;
     }
 
     /**
