@@ -1,3 +1,4 @@
+//用户获取验证码方法
 function getVerifyCode() {
     $.ajax({
         type: "POST",
@@ -16,5 +17,26 @@ function getVerifyCode() {
             }
             button.href="";
         }
+    });
+}
+//用户登陆方法
+function login(){
+    $.ajax({
+       type: "POST",
+       url: "register.action",
+       dataType: "json",
+       data: {
+           username: $("#username").val(),
+           password: $("#password").val(),
+           phoneNum: $("#phoneNum").val(),
+           verifyCode:$("#verifyCode").val(),
+       },
+       success: function (data){
+           if(data.status==1){
+               window.location.href="login";
+           }else {
+               $("#respond").text(data.msg);
+           }
+       }
     });
 }

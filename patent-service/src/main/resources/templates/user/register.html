@@ -72,28 +72,27 @@
 <section class="container">
     <div class="login-box">
         <div class="signup">
-            <form action="register.action" method="post" >
-                <div class="form-group">
-                        <input id="username" name="username" type="text" placeholder="您的账号">
-                </div>
-                <div class="form-group">
-                    <input id="password" name="password" type="password" placeholder="密码（字母、数字，至少6位）">
-                </div>
-                    <div class="signup-form form-group">
-                        <input type="text" placeholder="手机" id="phoneNum" name="phoneNum">
-                        <a href="javascript:getVerifyCode()" id="verifyButton">短信验证</a>
-                    </div>
-                <div class="form-group">
+            <div class="form-group">
+                <input id="username" name="username" type="text" placeholder="您的账号">
+            </div>
+            <div class="form-group">
+                <input id="password" name="password" type="password" placeholder="密码（字母、数字，至少6位）">
+            </div>
+            <div class="signup-form form-group">
+                <input type="text" placeholder="手机" id="phoneNum" name="phoneNum">
+                <button class="signup-form"><a href="javascript:getVerifyCode()" id="verifyButton">短信验证</a></button>
+            </div>
+            <div class="form-group">
                 <input type="text" placeholder="验证码" id="verifyCode" name="verifyCode">
-                </div>
-                <span class="error-notic" th:if="${msg}!=null" th:text="${msg}"></span>
-                <p class="view-clause">点击注册，即同意我们的 <a href="#">用户隐私条款</a></p>
-                <div class="form-group">
-                    <button type="submit" class="tran pr">
-                        <a class="tran">注册</a>
-                    </button>
-                </div>
-            </form>
+            </div>
+            <span class="error-notic" th:if="${msg}!=null" th:text="${msg}"></span>
+            <p class="view-clause">点击注册，即同意我们的 <a href="#">用户隐私条款</a></p>
+            <p class="view-clause" style="color: red" id="respond"></p>
+            <div class="form-group">
+                <button type="submit" class="tran pr">
+                    <a class="tran" onclick="login()">注册</a>
+                </button>
+            </div>
             <div class="from-line"></div>
             <div class="form-group">
                 <a href="login" class="move-login a-tag tran blue-border">已有帐号？登录<i

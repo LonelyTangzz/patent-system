@@ -35,7 +35,6 @@ public class UserServiceImpl implements UserService {
     @Resource
     private StringRedisTemplate stringRedisTemplate;
 
-    User user = new User();
 
     /**
      * 用户注册业务
@@ -46,7 +45,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public BaseResp registerUser(RegisterParams registerParams) {
         BaseResp resp = new BaseResp();
-        if (!stringRedisTemplate.opsForValue().get(Constants.SMS_PREFIX.concat(registerParams.getPhoneNum())).equals(registerParams.getVerifyCode())) {
+        if (!stringRedisTemplate.opsForValue().get(Constants.SMS_PREFIX.concat(registerParams.getPhoneNum())).equals(registerParams.getVerifyCode().toUpperCase())) {
             resp.setResultType(ResultType.INSERT_FAIL);
             return resp;
         }
@@ -57,7 +56,7 @@ public class UserServiceImpl implements UserService {
         user.setAvatar("/avatarPic/img_avatar.png");
         user.setCreateTime(new Date());
         user.setLoginTime(new Date());
-        if (userMapper.insert(user) <= 0) {
+        if (userMapper.insertSelective(user) <= 0) {
             resp.setResultType(ResultType.INSERT_FAIL);
         }
         return resp;
@@ -102,6 +101,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean checkAccount(String name, String password) {
+        User user = new User();
         user.setUsername(name);
         user.setPassword(MD5.getInstance().getMD5ofStr(password));
         user.setLoginTime(new Date());
@@ -117,6 +117,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean updatePassword(String name, String password) {
+        User user = new User();
         int id = userMapper.selectIdByName(name);
         user.setPassword(password);
         user.setId(id);
