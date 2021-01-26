@@ -13,12 +13,27 @@ spring:
         max-wait: -1
         max-idle: 8
         min-idle: 0
+  #连接池配置
   datasource:
-    #    使用的是远程阿里云服务器，自己写上自己的公网ip并配置
-    url: jdbc:mysql://47.115.40.50:3306/patent?characterEncoding=utf-8&useSSL=false
-    username: root
-    password: 999999
-    driver-class-name: com.mysql.jdbc.Driver
+    name: mysql
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://47.115.40.50:3306/patent?characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 999999
+      driver-class-name: com.mysql.jdbc.Driver
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: false
+      max-pool-prepared-statement-per-connection-size: 20
   jackson:
     date-format: yyyy-MM-dd HH:mm
     time-zone: GMT+8
