@@ -10,7 +10,7 @@ function getVerifyCode() {
         },
         success: function (data) {
             var button = document.getElementById("verifyButton");
-            if (data.status == 1) {
+            if (data.status == 0) {
                 button.innerText="发送成功";
             } else {
                 button.innerText="发送失败";
@@ -32,7 +32,7 @@ function login(){
            verifyCode:$("#verifyCode").val(),
        },
        success: function (data){
-           if(data.status==1){
+           if(data.status==0){
                window.location.href="login";
            }else {
                $("#respond").text(data.msg);

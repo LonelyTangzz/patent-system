@@ -1,28 +1,32 @@
 package com.tang.patent.service.impl;
 
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.tang.patent.entity.bean.Category;
 import com.tang.patent.dao.CategoryMapper;
 import com.tang.patent.service.CategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @name CategoryServiceImpl
  * @author tangzy
- * @since 2021/1/9
  * @version 1.0
+ * @name CategoryServiceImpl
  * @description: 分类管理业务层
+ * @since 2021/1/9
  */
 @Service
 public class CategoryServiceImpl implements CategoryService {
-    @Autowired
+    @Resource
     private CategoryMapper categoryMapper;
 
     @Override
-    public Boolean insert(Category category) {
-        return categoryMapper.insert(category) > 0 ? true : false;
+    public Boolean insert(String categoryName) {
+        Category category = new Category();
+        category.setCategory(categoryName);
+        category.setId(IdWorker.getId());
+        return categoryMapper.insert(category) > 0;
     }
 
     @Override
@@ -38,12 +42,14 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Boolean deleteCategory(Integer id) {
-        return categoryMapper.deleteByPrimaryKey(id) > 0 ? true : false;
+//        return categoryMapper.deleteByPrimaryKey(id) > 0;
+        return true;
     }
 
     @Override
     public Boolean updateCategory(Category category) {
-        return categoryMapper.updateByPrimaryKey(category) > 0 ? true : false;
+//        return categoryMapper.updateByPrimaryKey(category) > 0;
+        return true;
     }
 
     @Override

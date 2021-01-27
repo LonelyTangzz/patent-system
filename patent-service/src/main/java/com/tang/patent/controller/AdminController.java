@@ -90,7 +90,7 @@ public class AdminController extends BaseController implements AdminApi {
         }
         Category category = new Category();
         category.setCategory(req.getParameter("typeName"));
-        boolean res = categoryService.insert(category);
+        boolean res = categoryService.insert(category.getCategory());
         if (res) {
             jsonObject.put("code", 1);
             jsonObject.put("msg", "添加成功");
@@ -162,7 +162,7 @@ public class AdminController extends BaseController implements AdminApi {
     public Object editCategory(HttpServletRequest req) {
         JSONObject jsonObject = new JSONObject();
         Category category = new Category();
-        category.setId(Integer.parseInt(req.getParameter("id")));
+        category.setId(Long.parseLong(req.getParameter("id")));
         category.setCategory(req.getParameter("name"));
         boolean res = categoryService.updateCategory(category);
         if (res) {

@@ -12,8 +12,11 @@ import lombok.ToString;
 public class Category {
 
     @TableId("id")
-    private Integer id;
+    private Long id;
 
     @TableField("category")
     private String category;
+
+    @TableField("flag")
+    private Boolean flag;
 }

@@ -45,6 +45,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public BaseResp registerUser(RegisterParams registerParams) {
         BaseResp resp = new BaseResp();
+        //toUpperCase将小写字母全体转大写
         if (!stringRedisTemplate.opsForValue().get(Constants.SMS_PREFIX.concat(registerParams.getPhoneNum())).equals(registerParams.getVerifyCode().toUpperCase())) {
             resp.setResultType(ResultType.INSERT_FAIL);
             return resp;
@@ -53,7 +54,7 @@ public class UserServiceImpl implements UserService {
         BeanUtils.copyProperties(registerParams, user);
         user.setPassword(MD5.getInstance().getMD5ofStr(user.getPassword()));
         //todo 这里的url得改
-        user.setAvatar("/avatarPic/img_avatar.png");
+        user.setAvatar("../avatarPic/img_avatar.png");
         user.setCreateTime(new Date());
         user.setLoginTime(new Date());
         if (userMapper.insertSelective(user) <= 0) {
@@ -93,7 +94,7 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 用户登录
+     * 用户登录,验证用户信息
      *
      * @param name     账号
      * @param password 密码

@@ -14,12 +14,12 @@ function submitChange() {
             contentType: "application/json;charset=utf-8",
             data:jsnStr,
             success: function (data) {
-                if(data.status==1){
+                if(data.status==0){
                     $("#text").text(data.msg);
                     alert(data.msg);
                     Cookies.remove('adminName',);
                     window.location.href = "login";
-                }else if(data.status ==0){
+                }else if(data.status ==1){
                     alert(data.msg);
                     $("#text").text(data.msg);
                     $("#againPassword").val("");

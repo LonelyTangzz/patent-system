@@ -7,7 +7,7 @@ import java.util.List;
 public interface CategoryService {
     String findCategory(Integer id);
 
-    Boolean insert(Category category);
+    Boolean insert(String categoryName);
 
     List<Category> getAllCategory();
 

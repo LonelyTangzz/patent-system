@@ -34,12 +34,12 @@ function showCategory(num) {
 }
 
 function submitAdd() {
-    var typeName = $("#typeName").val();
+    var categoryName = $("#categoryName").val();
     $.ajax({
         type: "POST",
-        url: "/admin/addCategory.action",
+        url: "/category/add",
         data: {
-            typeName: typeName
+            categoryName: categoryName
         },
         dataType: "json",
         success: function (data) {
