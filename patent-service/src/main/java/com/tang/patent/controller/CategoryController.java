@@ -2,13 +2,18 @@ package com.tang.patent.controller;
 
 import com.tang.api.CategoryApi;
 import com.tang.basic.BaseController;
+import com.tang.basic.BaseResp;
 import com.tang.basic.ResponseResult;
+import com.tang.patent.entity.bean.Category;
 import com.tang.patent.logger.LoggerUtils;
 import com.tang.patent.service.CategoryService;
+import com.tang.vos.category.CategoryGetByPageVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author tangzy.
@@ -36,6 +41,62 @@ public class CategoryController extends BaseController implements CategoryApi {
      */
     @Override
     public ResponseResult addCategory(String categoryName) {
-        return null;
+        logger.startLog();
+        BaseResp baseResp = categoryService.insert(categoryName);
+        logger.endLog();
+        return setResult(baseResp);
+    }
+
+    /**
+     * 分页获取类别信息
+     *
+     * @param pageNum 页码
+     * @return 该页信息
+     */
+    @Override
+    public ResponseResult<CategoryGetByPageVo> getCategoryByPage(Integer pageNum) {
+        logger.startLog();
+        BaseResp<CategoryGetByPageVo> baseResp = new BaseResp<>();
+        List<CategoryGetByPageVo> list = new ArrayList<>();
+        CategoryGetByPageVo categoryGetByPageVo = new CategoryGetByPageVo();
+        //将总数除以每页最大可显示数向上取整
+        categoryGetByPageVo.setTotalPage((int) Math.ceil((double) categoryService.countCategory() / 5));
+        categoryGetByPageVo.setCategoryList(categoryService.getPageCategory(pageNum));
+        list.add(categoryGetByPageVo);
+        baseResp.setRespData(list);
+        logger.endLog();
+        return setResult(baseResp);
+    }
+
+    /**
+     * 修改类别信息操作
+     *
+     * @param pkId         类别主键
+     * @param categoryName 类别名
+     * @return 操作结果
+     */
+    @Override
+    public ResponseResult editCategory(Long pkId, String categoryName) {
+        logger.startLog();
+        Category category = new Category();
+        category.setPkId(pkId);
+        category.setCategoryName(categoryName);
+        BaseResp baseResp = categoryService.updateCategory(category);
+        logger.endLog();
+        return setResult(baseResp);
+    }
+
+    /**
+     * 删除类别操作
+     *
+     * @param pkId 类别主键
+     * @return 操作结果
+     */
+    @Override
+    public ResponseResult deleteCategory(Long pkId) {
+        logger.startLog();
+        BaseResp baseResp = categoryService.deleteCategory(pkId);
+        logger.endLog();
+        return setResult(baseResp);
     }
 }

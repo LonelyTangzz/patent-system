@@ -11,11 +11,11 @@ import lombok.ToString;
 @TableName("category")
 public class Category {
 
-    @TableId("id")
-    private Long id;
+    @TableId("pkId")
+    private Long pkId;
 
-    @TableField("category")
-    private String category;
+    @TableField("categoryName")
+    private String categoryName;
 
     @TableField("flag")
     private Boolean flag;

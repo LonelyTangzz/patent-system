@@ -1,21 +1,62 @@
 package com.tang.patent.service;
 
+import com.tang.basic.BaseResp;
 import com.tang.patent.entity.bean.Category;
+import com.tang.vos.category.CategoryGetByPageVo;
+import com.tang.vos.category.CategoryVo;
 
 import java.util.List;
 
+/**
+ * @name: CategoryService
+ * @author: tangzy
+ * @since: 2021/1/28
+ * @version: 1.0
+ * @description: 类别业务层
+ */
 public interface CategoryService {
+
     String findCategory(Integer id);
 
-    Boolean insert(String categoryName);
+    /**
+     * 新增分类
+     *
+     * @param categoryName 分类名
+     * @return 操作结果
+     */
+    BaseResp insert(String categoryName);
+
 
     List<Category> getAllCategory();
 
-    Boolean deleteCategory(Integer id);
+    /**
+     * 删除分类(软删除)
+     *
+     * @param pkId 类主键
+     * @return 操作结果
+     */
+    BaseResp deleteCategory(Long pkId);
 
-    Boolean updateCategory(Category category);
+    /**
+     * 修改类别信息
+     *
+     * @param category 类别信息
+     * @return 操作结果
+     */
+    BaseResp updateCategory(Category category);
 
-    int countCategory();
+    /**
+     * 获取类别总数
+     *
+     * @return 类别总数
+     */
+    Integer countCategory();
 
-    List<Category> getPageCategory(Integer page);
+    /**
+     * 分页获取类别信息
+     *
+     * @param page 页码
+     * @return 类别信息
+     */
+    List<CategoryVo> getPageCategory(Integer page);
 }

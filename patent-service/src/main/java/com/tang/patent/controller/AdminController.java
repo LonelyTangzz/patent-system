@@ -74,35 +74,6 @@ public class AdminController extends BaseController implements AdminApi {
     }
 
     /**
-     * 添加行业类型
-     * --------通过
-     *
-     * @param req
-     * @return
-     */
-    @RequestMapping(value = "/addCategory" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
-    public Object addCategory(HttpServletRequest req) {
-        JSONObject jsonObject = new JSONObject();
-        if (req.getParameter("typeName") == "") {
-            jsonObject.put("code", 0);
-            jsonObject.put("msg", "添加失败请检查是否符合规范");
-            return jsonObject;
-        }
-        Category category = new Category();
-        category.setCategory(req.getParameter("typeName"));
-        boolean res = categoryService.insert(category.getCategory());
-        if (res) {
-            jsonObject.put("code", 1);
-            jsonObject.put("msg", "添加成功");
-            return jsonObject;
-        } else {
-            jsonObject.put("code", 0);
-            jsonObject.put("msg", "添加失败请检查是否符合规范");
-            return jsonObject;
-        }
-    }
-
-    /**
      * 获取所有行业分类
      * ----------通过
      *
@@ -114,68 +85,6 @@ public class AdminController extends BaseController implements AdminApi {
         jsonObject.put("allCategory", categoryService.getAllCategory());
         return jsonObject;
     }
-
-    /**
-     * 分页查询行业分类
-     *
-     * @param req
-     * @return
-     */
-    @RequestMapping(value = "/getPageCategory" + Constants.ACTION_SUFFIX, method = RequestMethod.GET)
-    public Object getPageCategory(HttpServletRequest req) {
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("total", (int) Math.ceil((double) categoryService.countCategory() / 5));
-        jsonObject.put("Category", categoryService.getPageCategory((Integer.parseInt(req.getParameter("page")) - 1) * 5));
-        return jsonObject;
-    }
-
-    /**
-     * 删除选择的行业分类
-     * --------通过
-     *
-     * @param req
-     * @return
-     */
-    @RequestMapping(value = "/deleteCategory" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
-    public Object getAllCategory(HttpServletRequest req) {
-        JSONObject jsonObject = new JSONObject();
-        boolean res = categoryService.deleteCategory(Integer.parseInt(req.getParameter("id")));
-        if (res) {
-            jsonObject.put("code", 1);
-            jsonObject.put("msg", "删除成功");
-            return jsonObject;
-        } else {
-            jsonObject.put("code", 0);
-            jsonObject.put("msg", "删除出现异常");
-            return jsonObject;
-        }
-    }
-
-    /**
-     * 修改分类
-     * --------通过
-     *
-     * @param req
-     * @return
-     */
-    @RequestMapping(value = "/editCategory" + Constants.ACTION_SUFFIX, method = RequestMethod.POST)
-    public Object editCategory(HttpServletRequest req) {
-        JSONObject jsonObject = new JSONObject();
-        Category category = new Category();
-        category.setId(Long.parseLong(req.getParameter("id")));
-        category.setCategory(req.getParameter("name"));
-        boolean res = categoryService.updateCategory(category);
-        if (res) {
-            jsonObject.put("code", 1);
-            jsonObject.put("msg", "修改成功！");
-            return jsonObject;
-        } else {
-            jsonObject.put("code", 0);
-            jsonObject.put("msg", "修改失败，请检查是否符合规范");
-            return jsonObject;
-        }
-    }
-
 
     /**
      * 获取所有数据数量

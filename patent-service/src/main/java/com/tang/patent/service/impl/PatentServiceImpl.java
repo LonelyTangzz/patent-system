@@ -102,7 +102,7 @@ public class PatentServiceImpl implements PatentService {
     public HashMap<String, List<Patent>> getPatentGroupByCategory(List<Category> categories) {
         HashMap<String, List<Patent>> result = new HashMap<>();
         for (int i = 0; i < categories.size(); i++) {
-            result.put(categories.get(i).getCategory(), patentMapper.getPatentByCategory(categories.get(i).getCategory(), 0));
+            result.put(categories.get(i).getCategoryName(), patentMapper.getPatentByCategory(categories.get(i).getCategoryName(), 0));
         }
         return result;
     }
