@@ -1,7 +1,6 @@
 package com.tang.patent.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.aliyuncs.exceptions.ClientException;
 import com.tang.api.UserApi;
 import com.tang.basic.BaseController;
 import com.tang.basic.BaseResp;

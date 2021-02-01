@@ -1,13 +1,13 @@
 function loadType() {
     $.ajax({
         type: "GET",
-        url: "/admin/getAllCategory.action",
+        url: "/category/all/get",
         dataType: "json",
         success: function (data) {
-            categoryCount = data.allCategory;
+            categoryCount = data.data;
             for (var i = categoryCount.length - 1; i >= 0; i--) {
-                $("#category").prepend("<option value=" + categoryCount[i].id + ">" + categoryCount[i].category + "</option>");
-                $("#edit_category").prepend("<option value=" + categoryCount[i].id + ">" + categoryCount[i].category + "</option>");
+                $("#category").prepend("<option value=" + categoryCount[i].pkId + ">" + categoryCount[i].categoryName + "</option>");
+                $("#edit_category").prepend("<option value=" + categoryCount[i].pkId + ">" + categoryCount[i].categoryName + "</option>");
             }
         }
     });
@@ -24,7 +24,7 @@ function getPatentByPage(num) {
         },
         success: function (data) {
             total = data.total;
-            jsonarray = data.patentList;
+            var jsonarray = data.patentList;
             var head = "<thead>\n" +
                 "<tr>\n" +
                 "<th>#</th>\n" +
@@ -149,8 +149,8 @@ function changePatent() {
 function editPatent(id) {
     var object = JSON.parse(sessionStorage.getItem('patentList[' + id + ']'));
     for (var i = 0; i < categoryCount.length; i++) {
-        if (object.category == categoryCount[i].category)
-            choose = categoryCount[i].id;
+        if (object.category == categoryCount[i].categoryName)
+            choose = categoryCount[i].pkId;
     }
     $("#edit_patent_no").val(object.patentNo);
     $("#edit_patent_name").val(object.patentName);

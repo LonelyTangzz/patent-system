@@ -2,6 +2,7 @@ package com.tang.patent.service;
 
 import com.tang.patent.entity.bean.Category;
 import com.tang.patent.entity.bean.Patent;
+import com.tang.vos.category.CategoryVo;
 
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +26,7 @@ public interface PatentService {
 
     List<Map<String, Object>> countPatentOrderByCategory();
 
-    HashMap<String,List<Patent>> getPatentGroupByCategory(List<Category> categories);
+    HashMap<String,List<Patent>> getPatentGroupByCategory(List<CategoryVo> categories);
 
     Patent getPatentById(Integer id);
 

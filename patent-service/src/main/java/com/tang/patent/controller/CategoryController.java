@@ -8,6 +8,7 @@ import com.tang.patent.entity.bean.Category;
 import com.tang.patent.logger.LoggerUtils;
 import com.tang.patent.service.CategoryService;
 import com.tang.vos.category.CategoryGetByPageVo;
+import com.tang.vos.category.CategoryVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -96,6 +97,20 @@ public class CategoryController extends BaseController implements CategoryApi {
     public ResponseResult deleteCategory(Long pkId) {
         logger.startLog();
         BaseResp baseResp = categoryService.deleteCategory(pkId);
+        logger.endLog();
+        return setResult(baseResp);
+    }
+
+    /**
+     * 获取所有类别信息
+     *
+     * @return 类别信息
+     */
+    @Override
+    public ResponseResult<List<CategoryVo>> getAllCategory() {
+        logger.startLog();
+        BaseResp<CategoryVo> baseResp = new BaseResp();
+        baseResp.setRespData(categoryService.getAllCategory());
         logger.endLog();
         return setResult(baseResp);
     }

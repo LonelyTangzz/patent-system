@@ -74,19 +74,6 @@ public class AdminController extends BaseController implements AdminApi {
     }
 
     /**
-     * 获取所有行业分类
-     * ----------通过
-     *
-     * @return
-     */
-    @RequestMapping(value = "/getAllCategory" + Constants.ACTION_SUFFIX, method = RequestMethod.GET)
-    public Object getAllCategory() {
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("allCategory", categoryService.getAllCategory());
-        return jsonObject;
-    }
-
-    /**
      * 获取所有数据数量
      */
     @RequestMapping(value = "/countAll" + Constants.ACTION_SUFFIX, method = RequestMethod.GET)

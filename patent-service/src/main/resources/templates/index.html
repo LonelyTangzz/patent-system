@@ -92,9 +92,9 @@
             <div class="title">
                 <h3>近期专利</h3>
                 <!--      输出近五条专利种类          -->
-                <div class="more" th:each="categories:${categories}" th:if="${categories.id} lt 6">
-                    <a th:href="'patentSort?name='+${categories.category}+'&page=0'"
-                       th:text="${categories.category}"></a>
+                <div class="more" th:each="categories:${categories}" th:if="${categories.pkId} lt 6">
+                    <a th:href="'patentSort?name='+${categories.categoryName}+'&page=0'"
+                       th:text="${categories.categoryName}"></a>
                 </div>
             </div>
             <div th:each="allPatents:${allPatents}">

@@ -20,8 +20,8 @@
         from category
         where pkId = #{id,jdbcType=INTEGER} AND flag = 0
     </select>
-    <select id="getAllCategory" resultMap="BaseResultMap">
-        select *
+    <select id="getAllCategory" resultType="com.tang.vos.category.CategoryVo">
+        select pkId,categoryName
         from category
         where flag = 0
     </select>
@@ -31,7 +31,7 @@
         FROM category
         WHERE flag = 0
         ORDER BY pkId ASC
-        LIMIT #{page,jdbcType=INTEGER},5
+                LIMIT #{page,jdbcType=INTEGER}, 5
     </select>
     <select id="countCategory" resultType="java.lang.Integer">
         SELECT count(pkId)

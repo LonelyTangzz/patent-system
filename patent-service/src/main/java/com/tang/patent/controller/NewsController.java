@@ -111,7 +111,7 @@ public class NewsController {
     }
 
     /**
-     * 单例专利详情
+     * 单个新闻的详情
      *
      * @param req
      * @return

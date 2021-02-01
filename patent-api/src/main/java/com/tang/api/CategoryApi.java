@@ -2,6 +2,7 @@ package com.tang.api;
 
 import com.tang.basic.ResponseResult;
 import com.tang.vos.category.CategoryGetByPageVo;
+import com.tang.vos.category.CategoryVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 /**
  * @author tangzy.
@@ -66,4 +68,12 @@ public interface CategoryApi {
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     ResponseResult deleteCategory(@RequestParam Long pkId);
 
+    /**
+     * 获取所有类别信息
+     *
+     * @return 类别信息
+     */
+    @ApiOperation(value = "获取所有类别信息", notes = "获取所有类别信息操作-主要针对下拉选框")
+    @RequestMapping(value = "/all/get", method = RequestMethod.GET)
+    ResponseResult<List<CategoryVo>> getAllCategory();
 }

@@ -4,6 +4,7 @@ import com.tang.patent.entity.bean.Category;
 import com.tang.patent.entity.bean.Patent;
 import com.tang.patent.dao.PatentMapper;
 import com.tang.patent.service.PatentService;
+import com.tang.vos.category.CategoryVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -99,7 +100,7 @@ public class PatentServiceImpl implements PatentService {
     }
 
     @Override
-    public HashMap<String, List<Patent>> getPatentGroupByCategory(List<Category> categories) {
+    public HashMap<String, List<Patent>> getPatentGroupByCategory(List<CategoryVo> categories) {
         HashMap<String, List<Patent>> result = new HashMap<>();
         for (int i = 0; i < categories.size(); i++) {
             result.put(categories.get(i).getCategoryName(), patentMapper.getPatentByCategory(categories.get(i).getCategoryName(), 0));

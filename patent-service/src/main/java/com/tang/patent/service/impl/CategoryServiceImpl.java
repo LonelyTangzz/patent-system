@@ -8,6 +8,7 @@ import com.tang.patent.dao.CategoryMapper;
 import com.tang.patent.service.CategoryService;
 import com.tang.vos.category.CategoryVo;
 import org.springframework.beans.BeanUtils;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -51,8 +52,9 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public List<Category> getAllCategory() {
-        return categoryMapper.getAllCategory();
+    public List<CategoryVo> getAllCategory() {
+        List<CategoryVo> result = categoryMapper.getAllCategory();
+        return result;
     }
 
     /**

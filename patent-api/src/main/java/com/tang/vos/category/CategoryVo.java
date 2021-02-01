@@ -21,5 +21,5 @@ public class CategoryVo implements Serializable {
     private Long pkId;
 
     @ApiModelProperty("类别名")
-    private String CategoryName;
+    private String categoryName;
 }

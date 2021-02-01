@@ -10,7 +10,6 @@ import com.tang.patent.service.UserService;
 import com.tang.patent.tools.MD5;
 import com.tang.patent.tools.SendSms;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 

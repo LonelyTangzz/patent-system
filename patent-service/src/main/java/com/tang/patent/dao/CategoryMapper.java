@@ -1,6 +1,7 @@
 package com.tang.patent.dao;
 
 import com.tang.patent.entity.bean.Category;
+import com.tang.vos.category.CategoryVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public interface CategoryMapper {
     Category selectByPrimaryKey(Integer id);
 
 
-    List<Category> getAllCategory();
+    List<CategoryVo> getAllCategory();
 
     Integer countCategory();
 

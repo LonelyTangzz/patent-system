@@ -27,7 +27,12 @@ public interface CategoryService {
     BaseResp insert(String categoryName);
 
 
-    List<Category> getAllCategory();
+    /**
+     * 获取所有分类信息
+     *
+     * @return 分类信息
+     */
+    List<CategoryVo> getAllCategory();
 
     /**
      * 删除分类(软删除)
