@@ -16,7 +16,7 @@ import java.io.Serializable;
  */
 @Data
 @ApiModel(value = "用户注册入参",description = "用户进行注册时提交的表单")
-public class RegisterParams implements Serializable {
+public class RegisterParam implements Serializable {
 
     @NotBlank
     @ApiModelProperty(value = "注册账号", example = "1111")

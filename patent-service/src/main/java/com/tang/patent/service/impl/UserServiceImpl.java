@@ -2,7 +2,7 @@ package com.tang.patent.service.impl;
 
 import com.tang.basic.BaseResp;
 import com.tang.basic.ResultType;
-import com.tang.params.user.RegisterParams;
+import com.tang.params.user.RegisterParam;
 import com.tang.patent.common.Constants;
 import com.tang.patent.entity.bean.User;
 import com.tang.patent.dao.UserMapper;
@@ -17,6 +17,7 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author tangzy
@@ -42,18 +43,17 @@ public class UserServiceImpl implements UserService {
      * @return 操作结果
      */
     @Override
-    public BaseResp registerUser(RegisterParams registerParams) {
+    public BaseResp registerUser(RegisterParam registerParams) {
         BaseResp resp = new BaseResp();
         //toUpperCase将小写字母全体转大写
-        if (!stringRedisTemplate.opsForValue().get(Constants.SMS_PREFIX.concat(registerParams.getPhoneNum())).equals(registerParams.getVerifyCode().toUpperCase())) {
+        if (!stringRedisTemplate.opsForValue().get(Constants.SMS_REGISTER_PREFIX.concat(registerParams.getPhoneNum())).equals(registerParams.getVerifyCode().toUpperCase())) {
             resp.setResultType(ResultType.INSERT_FAIL);
             return resp;
         }
         User user = new User();
         BeanUtils.copyProperties(registerParams, user);
         user.setPassword(MD5.getInstance().getMD5ofStr(user.getPassword()));
-        //todo 这里的url得改
-        user.setAvatar("../avatarPic/img_avatar.png");
+        user.setAvatar("/img_avatar.png");
         user.setCreateTime(new Date());
         user.setLoginTime(new Date());
         if (userMapper.insertSelective(user) <= 0) {
@@ -100,12 +100,24 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public boolean checkAccount(String name, String password) {
+    public Boolean checkAccount(String name, String password) {
         User user = new User();
         user.setUsername(name);
         user.setPassword(MD5.getInstance().getMD5ofStr(password));
         user.setLoginTime(new Date());
         return userMapper.checkAccount(user) > 0;
+    }
+
+    /**
+     * 验证手机验证码是否正确
+     *
+     * @param phoneNum   电话号码
+     * @param verifyCode 验证码
+     * @return 是否正确
+     */
+    @Override
+    public Boolean checkVerifyCode(String phoneNum, String verifyCode) {
+        return Objects.equals(stringRedisTemplate.opsForValue().get(Constants.SMS_RESET_PREFIX.concat(phoneNum)), verifyCode.toUpperCase());
     }
 
     /**

@@ -1,6 +1,6 @@
 package com.tang.patent.service;
 
-import com.tang.params.admin.PasswordChangeParams;
+import com.tang.params.admin.PasswordChangeParam;
 import com.tang.vos.admin.AdminInfoVo;
 import com.tang.basic.BaseResp;
 
@@ -22,8 +22,8 @@ public interface AdminService {
     /**
      * 修改密码
      *
-     * @param passwordChangeParams 修改信息
+     * @param passwordChangeParam 修改信息
      * @return 操作结果
      */
-    BaseResp changePasswd(PasswordChangeParams passwordChangeParams);
+    BaseResp changePasswd(PasswordChangeParam passwordChangeParam);
 }

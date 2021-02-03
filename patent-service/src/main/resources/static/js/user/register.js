@@ -29,7 +29,7 @@ function login(){
            username: $("#username").val(),
            password: $("#password").val(),
            phoneNum: $("#phoneNum").val(),
-           verifyCode:$("#verifyCode").val(),
+           verifyCode: $("#verifyCode").val(),
        },
        success: function (data){
            if(data.status==0){

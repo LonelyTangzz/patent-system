@@ -46,6 +46,8 @@ spring:
     servlet:
       content-type: text/html
     mode: HTML
+  resources:
+    static-locations: [file:E:/IntelliJ IDEA WorkSpace/patent-system/avatarPic,classpath:/resources/,classpath:/META-INF/resources/,classpath:/static/,classpath:/public/]
 mybatis-plus:
   dialect: mysql
   mapper-locations: classpath:mappers/*.xml

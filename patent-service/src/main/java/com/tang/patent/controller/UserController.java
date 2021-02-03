@@ -6,12 +6,12 @@ import com.tang.basic.BaseController;
 import com.tang.basic.BaseResp;
 import com.tang.basic.ResponseResult;
 import com.tang.basic.ResultType;
-import com.tang.params.user.RegisterParams;
+import com.tang.params.user.RegisterParam;
+import com.tang.params.user.ResetPasswordParam;
 import com.tang.patent.entity.bean.Patent;
 import com.tang.patent.entity.bean.User;
 import com.tang.patent.logger.LoggerUtils;
 import com.tang.patent.tools.MD5;
-import com.tang.patent.tools.SendSms;
 import com.tang.patent.service.CategoryService;
 import com.tang.patent.service.NewsService;
 import com.tang.patent.service.PatentService;
@@ -22,11 +22,10 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import java.io.*;
 import java.net.URLDecoder;
 import java.text.ParseException;
@@ -47,16 +46,14 @@ import java.util.regex.Pattern;
  */
 @RestController
 public class UserController extends BaseController implements UserApi {
-    @Autowired
+    @Resource
     private UserService userService;
-    @Autowired
+    @Resource
     private PatentService patentService;
-    @Autowired
+    @Resource
     private CategoryService categoryService;
-    @Autowired
+    @Resource
     private NewsService newsService;
-    @Autowired
-    User user;
 
     /**
      * 打印日志用
@@ -71,7 +68,7 @@ public class UserController extends BaseController implements UserApi {
      * @return 操作结果
      */
     @Override
-    public ResponseResult register(RegisterParams registerParams) {
+    public ResponseResult register(RegisterParam registerParams) {
         logger.startLog();
         BaseResp baseResp = userService.registerUser(registerParams);
         logger.endLog();
@@ -112,40 +109,26 @@ public class UserController extends BaseController implements UserApi {
         Matcher m = p.matcher(phoneNum);
         return m.matches();
     }
-    // todo need to change
-//    /**
-//     * 注册绑定手机号时发送验证码
-//     * ----测试通过
-//     *
-//     * @param req
-//     * @throws ClientException
-//     */
-//    @RequestMapping(value = "verifyPhone", method = RequestMethod.POST)
-//    public boolean verifyPhone(HttpServletRequest req) throws ClientException {
-//        String phoneNum = req.getParameter("phoneNum");
-//        return sendSms.register(phoneNum);
-//    }
-//    public ModelAndView register(User user, HttpServletRequest req) {
-//        ModelAndView mv = new ModelAndView();
-//        user.setPhoneNum(req.getParameter("phoneNum"));
-//        user.setPassword(MD5.getInstance().getMD5ofStr(user.getPassword()));
-//        user.setAvatar("/avatarPic/img_avatar.png");
-//        if (req.getParameter("phoneNum") == "") {
-//            mv.setViewName("user/register.html");
-//            mv.addObject("msg", "请不要传空值！");
-//        } else if (Integer.parseInt(req.getParameter("verifyCode")) != newcode) {
-//            mv.setViewName("user/register.html");
-//            mv.addObject("msg", "验证码错误！");
-//        } else if (userService.addUser(user)) {
-//            mv.addObject("username", req.getParameter("name"));
-//            mv.addObject("msg", "注册成功！");
-//            mv.setViewName("user/login.html");
-//        } else {
-//            mv.setViewName("user/register.html");
-//            mv.addObject("msg", "注册出现异常，请重试！");
-//        }
-//        return mv;
-//    }
+
+    /**
+     * 重置用户密码操作
+     *
+     * @param resetPasswordParam 重置参数
+     * @return 操作结果
+     */
+    @Override
+    public ResponseResult changePassword(ResetPasswordParam resetPasswordParam) {
+        BaseResp baseResp = new BaseResp();
+        if (!userService.checkVerifyCode(resetPasswordParam.getPhoneNum(), resetPasswordParam.getVerifyCode())) {
+            baseResp.setResultType(ResultType.VERIFY_FAIL);
+            return setResult(baseResp);
+        }
+        if (!userService.updatePassword(resetPasswordParam.getUsername(), MD5.getInstance().getMD5ofStr(resetPasswordParam.getPassword()))) {
+            baseResp.setResultType(ResultType.UPDATE_FAIL);
+            return setResult(baseResp);
+        }
+        return setResult(baseResp);
+    }
 
     /**
      * 用户登录
@@ -212,6 +195,7 @@ public class UserController extends BaseController implements UserApi {
     @RequestMapping(value = "updateInfo.action", method = RequestMethod.POST)
     public Object updateInfo(HttpServletRequest req) throws ParseException {
         JSONObject jsonObject = new JSONObject();
+        User user = new User();
         user.setId(Integer.parseInt(req.getParameter("id")));
         if (req.getParameter("sex") != null) {
             user.setSex(Byte.parseByte(req.getParameter("sex")));
@@ -250,24 +234,24 @@ public class UserController extends BaseController implements UserApi {
             jsonObject.put("msg", "文件为空，请检查");
             return jsonObject;
         }
-        String fileName = System.currentTimeMillis() + file.getOriginalFilename() + user_id;
+        String fileName = System.currentTimeMillis() + file.getOriginalFilename();
         String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "avatarPic";
         File file1 = new File(filePath);
         if (!file1.exists()) {
             file1.mkdir();
         }
         File dest = new File(filePath + System.getProperty("file.separator") + fileName);
-        String userAvatorPath = "/avatarPic/" + fileName;
+        String userAvatarPath = "/" + fileName;
         try {
             response.sendRedirect("admin/userControl");
             file.transferTo(dest);
             User user = new User();
             user.setId(Integer.parseInt(user_id));
-            user.setAvatar(userAvatorPath);
+            user.setAvatar(userAvatarPath);
             boolean res = userService.updateUserAvatar(user);
             if (res) {
                 jsonObject.put("code", 1);
-                jsonObject.put("avatar", userAvatorPath);
+                jsonObject.put("avatar", userAvatarPath);
                 jsonObject.put("msg", "上传成功");
                 return jsonObject;
             } else {
@@ -332,48 +316,6 @@ public class UserController extends BaseController implements UserApi {
         }
         return mv;
     }
-
-    //todo 与注册短信合为一个接口
-//    /**
-//     * 忘记密码时第二个步骤
-//     * ---测试通过
-//     *
-//     * @param req
-//     * @return
-//     * @author: user
-//     */
-//    @RequestMapping(value = "resetPassword", method = RequestMethod.POST)
-//    public boolean resetPassword(HttpServletRequest req) throws ClientException {
-//        String phoneNum = req.getParameter("phoneNum");
-//        return sendSms.forgetPassword(phoneNum);
-//    }
-
-    // todo 记得补回来
-//    /**
-//     * 忘记密码时第三个步骤
-//     * ---测试通过
-//     *
-//     * @param req
-//     * @return
-//     * @author: user
-//     */
-//    @RequestMapping("changePassword")
-//    public ModelAndView changePassword(HttpServletRequest req) {
-//        ModelAndView mv = new ModelAndView();
-//        if (Integer.parseInt(req.getParameter("verifyCode")) == newcode) {
-//            if (userService.updatePassword(req.getParameter("username"), MD5.getInstance().getMD5ofStr(req.getParameter("password")))) {
-//                mv.setViewName("user/login.html");
-//                mv.addObject("msg", "重置成功");
-//            } else {
-//                mv.setViewName("user/verifyInfo.html");
-//                mv.addObject("msg", "修改出现异常");
-//            }
-//        } else {
-//            mv.setViewName("user/verifyInfo.html");
-//            mv.addObject("msg", "验证码错误");
-//        }
-//        return mv;
-//    }
 
     /**
      * 上传头像-------用户通道
@@ -461,6 +403,17 @@ public class UserController extends BaseController implements UserApi {
         return mv;
     }
 
+    @RequestMapping(value = "")
+    public ModelAndView facePage() {
+        ModelAndView mv = new ModelAndView("index.html");
+        mv.addObject("categories", categoryService.getAllCategory());
+        mv.addObject("allPatents", patentService.getPatentByPage(0));
+        mv.addObject("totalNews", newsService.countNews());
+        mv.addObject("totalPatents", patentService.countPatent());
+        mv.addObject("news", newsService.getNewsByPage(0));
+        return mv;
+    }
+
     @RequestMapping(value = "login")
     public ModelAndView login() {
         return new ModelAndView("user/login.html");
@@ -513,5 +466,35 @@ public class UserController extends BaseController implements UserApi {
     public ModelAndView addPatent(HttpServletResponse resp) {
         return new ModelAndView("user/addPatent.html");
     }
-
+    /**
+     * 参考接口
+     *
+     * @param resp
+     * @param request
+     * @param name
+     * @throws IOException
+     */
+    @RequestMapping("get/{name}")
+    public void img(HttpServletResponse resp, HttpServletRequest request, @PathVariable("name") String name) throws IOException {
+        File file = new File("F://" + name);
+        System.out.println(file.length());
+        FileInputStream fin = new FileInputStream(file);
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        byte[] outBUfferBytes = new byte[(int) file.length()];
+        byte[] buffer = new byte[102400];
+        int len = 0;
+        while ((len = fin.read(buffer)) > 0) {
+            bos.write(outBUfferBytes, 0, len);
+        }
+        resp.addHeader("Content-Type", "image/png");
+        resp.addHeader("Accept-Ranges", "bytes");
+        resp.addHeader("Content-Length", String.valueOf(file.length()));
+        ServletOutputStream outputStream = resp.getOutputStream();
+        outputStream.write(buffer, 0, (int) file.length());
+//        resp.addHeader("");
+        outputStream.flush();
+        fin.close();
+        outputStream.close();
+        bos.close();
+    }
 }

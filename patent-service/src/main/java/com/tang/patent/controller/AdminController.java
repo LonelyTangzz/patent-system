@@ -3,8 +3,7 @@ package com.tang.patent.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.tang.api.AdminApi;
 import com.tang.patent.common.Constants;
-import com.tang.patent.entity.bean.Category;
-import com.tang.params.admin.PasswordChangeParams;
+import com.tang.params.admin.PasswordChangeParam;
 import com.tang.vos.admin.AdminInfoVo;
 import com.tang.patent.logger.LoggerUtils;
 import com.tang.basic.BaseController;
@@ -15,7 +14,6 @@ import com.tang.patent.service.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @name: AdminController
@@ -62,13 +60,13 @@ public class AdminController extends BaseController implements AdminApi {
     /**
      * 修改密码
      *
-     * @param passwordChangeParams 密码信息
+     * @param passwordChangeParam 密码信息
      * @return 操作结果
      */
     @Override
-    public ResponseResult changeAdminPassWord(PasswordChangeParams passwordChangeParams) {
+    public ResponseResult changeAdminPassWord(PasswordChangeParam passwordChangeParam) {
         logger.startLog();
-        BaseResp baseResp = adminService.changePasswd(passwordChangeParams);
+        BaseResp baseResp = adminService.changePasswd(passwordChangeParam);
         logger.endLog();
         return setResult(baseResp);
     }

@@ -78,7 +78,7 @@
                 <div personDetails="" class="user_info">
                     <div personDetails="" class="header">
                         <a data-toggle='modal' data-target='#editUserImg'>
-                            <img personDetails="" th:src="'/patent'+${userInfo.avatar}" alt="" class="head">
+                            <img personDetails="" th:src="${userInfo.avatar}" alt="" class="head">
                             <p personDetails="" class="modify">修改头像</p>
                         </a>
                     </div>
@@ -188,14 +188,14 @@
                         <div class="col-md-6" style="text-align: center">
                             原头像
                             <img id="BeforeImg" class="img-circle shadow"
-                                 width="100%" th:src="'/patent'+${userInfo.avatar}"/>
+                                 width="100%" th:src="${userInfo.avatar}"/>
                         </div>
                         <div class="col-md-6" style="text-align: center">
                             请选择新头像
                             <label for="file"> <img id="nowImg"
                                                     class="img-circle shadow"
                                                     width="100%"
-                                                    src="avatarPic/img_avatar.png"/>
+                                                    src="img_avatar.png"/>
                             </label>
                             <input type="file" name="file" id="file" multiple="multiple"
                                    class="custom-file-input" hidden/>

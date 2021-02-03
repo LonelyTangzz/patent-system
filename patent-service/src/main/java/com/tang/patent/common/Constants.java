@@ -22,9 +22,14 @@ public class Constants {
      */
     public static final String ACTION_SUFFIX = ".action";
     /**
-     * 短信存于redis中键的前缀
+     * 注册短信存于redis中键的前缀
      */
-    public static final String SMS_PREFIX = "smsTel:";
+    public static final String SMS_REGISTER_PREFIX = "sms_tel_register:";
+
+    /**
+     * 重置密码短信存于redis中键的前缀
+     */
+    public static final String SMS_RESET_PREFIX = "sms_tel_reset:";
 
     /**
      * 用户使用短信的注册操作类型

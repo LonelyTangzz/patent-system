@@ -16,7 +16,7 @@ import java.io.Serializable;
  */
 @Data
 @ApiModel(value = "PasswordChangeParams", description = "密码修改入参")
-public class PasswordChangeParams implements Serializable {
+public class PasswordChangeParam implements Serializable {
     @NotBlank
     @ApiModelProperty(value = "账号", example = "admin")
     private String name;

@@ -74,7 +74,6 @@
         <div class="box-con tran">
             <div class="login-con f-l">
                 <p th:text="'请输入'+${#strings.substring(phoneNum,0,2)}+'****'+${#strings.substring(phoneNum,7,11)}+'手机号码'"></p>
-                <form action="changePassword" method="post">
                     <div class="signup-form form-group">
                         <input type="text" placeholder="手机" id="phoneNum" name="phoneNum">
                         <a href="javascript:checkPhone()" id="verifyButton">短信验证</a>
@@ -90,11 +89,10 @@
                     <div class="form-group">
                         <span class="error-notic" th:if="${msg}!=null" th:text="${msg}"></span>
                         <button type="submit" class="tran pr">
-                            <a class="tran">重置</a>
+                            <a class="tran" href="javascript:changePassword()">重置</a>
                             <!--                        <img class="loading" src="img/user/loading1.gif" style="display:none">-->
                         </button>
                     </div>
-                </form>
                 <div class="from-line"></div>
                 <div class="form-group">
                     <a href="register" class="move-signup a-tag tran blue-border">前去注册<i
@@ -143,6 +141,44 @@
                         $("#verifyButton").setAttribute("href","");
                     } else {
                         $("#verifyButton").text("发送失败");
+                    }
+                }
+            });
+        } else {
+            $("#errorMsg").text("手机号码不一致");
+        }
+    }
+
+    function changePassword(){
+        if ($("#phoneNum").val() == "") {
+            $("#errorMsg").text("手机号不能为空！");
+            return;
+        }
+        if ($("#verifyCode").val() == "") {
+            $("#errorMsg").text("验证码不能为空！");
+            return;
+        }
+        if ($("#password").val() == "") {
+            $("#errorMsg").text("重置密码不能为空！");
+            return;
+        }
+        if ([[${phoneNum}]] == $("#phoneNum").val()) {
+            $.ajax({
+                type: "POST",
+                url: "password/change.action",
+                dataType: "json",
+                data: {
+                    username: $("#username").val(),
+                    password: $("#password").val(),
+                    phoneNum: $("#phoneNum").val(),
+                    verifyCode: $("#verifyCode").val()
+                },
+                success: function (data) {
+                    if (data.status==0) {
+                        alert(data.msg);
+                        window.location.href = "login";
+                    } else {
+                        $("#errorMsg").text(data.msg);
                     }
                 }
             });

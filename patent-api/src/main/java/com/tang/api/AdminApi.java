@@ -1,7 +1,7 @@
 package com.tang.api;
 
 import com.tang.basic.ResponseResult;
-import com.tang.params.admin.PasswordChangeParams;
+import com.tang.params.admin.PasswordChangeParam;
 import com.tang.vos.admin.AdminInfoVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -42,12 +42,12 @@ public interface AdminApi {
     /**
      * 修改密码
      *
-     * @param passwordChangeParams 密码信息
+     * @param passwordChangeParam 密码信息
      * @return 操作结果
      */
     @ApiOperation(value = "修改管理员密码")
     @RequestMapping(value = "/password/change.action", method = RequestMethod.POST)
-    ResponseResult changeAdminPassWord(@RequestBody @Validated PasswordChangeParams passwordChangeParams);
+    ResponseResult changeAdminPassWord(@RequestBody @Validated PasswordChangeParam passwordChangeParam);
 
 
 }

@@ -4,7 +4,7 @@ import com.tang.vos.admin.AdminInfoVo;
 import com.google.common.collect.Lists;
 import com.tang.patent.tools.MD5;
 import com.tang.patent.dao.AdminMapper;
-import com.tang.params.admin.PasswordChangeParams;
+import com.tang.params.admin.PasswordChangeParam;
 import com.tang.patent.service.AdminService;
 import com.tang.basic.BaseResp;
 import com.tang.basic.ResultType;
@@ -49,23 +49,23 @@ class AdminServiceImpl implements AdminService {
     /**
      * 修改密码
      *
-     * @param passwordChangeParams 修改信息
+     * @param passwordChangeParam 修改信息
      * @return 操作结果
      */
     @Override
-    public BaseResp changePasswd(PasswordChangeParams passwordChangeParams) {
+    public BaseResp changePasswd(PasswordChangeParam passwordChangeParam) {
         //将传入密码进行md5加密后与数据库中存储值进行比较
-        String usedPassword = MD5.getInstance().getMD5ofStr(passwordChangeParams.getUsedPassword());
+        String usedPassword = MD5.getInstance().getMD5ofStr(passwordChangeParam.getUsedPassword());
         //验证密码是否正确
-        boolean res = adminMapper.verifyPassword(passwordChangeParams.getName(), usedPassword) > 0;
+        boolean res = adminMapper.verifyPassword(passwordChangeParam.getName(), usedPassword) > 0;
         BaseResp baseResp = new BaseResp();
         if (!res) {
             baseResp.setResultType(ResultType.VERIFY_FAIL);
         }
         //将新密码加密
-        String password = MD5.getInstance().getMD5ofStr(passwordChangeParams.getNowPassword());
+        String password = MD5.getInstance().getMD5ofStr(passwordChangeParam.getNowPassword());
         //修改密码
-        if (adminMapper.changePassword(passwordChangeParams.getName(), password) < 0) {
+        if (adminMapper.changePassword(passwordChangeParam.getName(), password) < 0) {
             baseResp.setResultType(ResultType.UPDATE_FAIL, "修改管理员用户密码出现异常");
         }
         return baseResp;

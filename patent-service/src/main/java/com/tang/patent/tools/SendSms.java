@@ -56,6 +56,9 @@ public class SendSms {
 
     private static final String ARRAYS = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+    private static final String REGISTER_ACTION = "REGISTER";
+    private static final String REST_ACTION = "RESET";
+
     /**
      * 注册短信
      *
@@ -64,7 +67,7 @@ public class SendSms {
      * @throws ClientException 客户端异常
      */
     public Boolean register(String telephone) throws ClientException {
-        return sendSmsTemplate(telephone, REGISTER_TEMPLATE, "REGISTER");
+        return sendSmsTemplate(telephone, REGISTER_TEMPLATE, REGISTER_ACTION);
     }
 
     /**
@@ -75,7 +78,7 @@ public class SendSms {
      * @throws ClientException 客户端异常
      */
     public Boolean forgetPassword(String telephone) throws ClientException {
-        return sendSmsTemplate(telephone, FORGET_PASSWORD_TEMPLATE, "RESET");
+        return sendSmsTemplate(telephone, FORGET_PASSWORD_TEMPLATE, REST_ACTION);
     }
 
     /**
@@ -119,7 +122,11 @@ public class SendSms {
         if (sendSmsResponse.getCode() != null && sendSmsResponse.getCode().equals("OK")) {
             ValueOperations<String, String> valueOperations = stringRedisTemplate.opsForValue();
             //存储验证码至redis缓存
-            valueOperations.set(Constants.SMS_PREFIX.concat(telephone), code, 5, TimeUnit.MINUTES);
+            if (action.equals(REST_ACTION)) {
+                valueOperations.set(Constants.SMS_RESET_PREFIX.concat(telephone), code, 5, TimeUnit.MINUTES);
+            } else {
+                valueOperations.set(Constants.SMS_REGISTER_PREFIX.concat(telephone), code, 5, TimeUnit.MINUTES);
+            }
             SmsLog smsLog = new SmsLog(IdWorker.getId(), telephone, action, new Date());
             //记录操作到数据库
             smsLogMapper.insertMessageLog(smsLog);

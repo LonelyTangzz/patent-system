@@ -31,7 +31,7 @@ function showUser(num) {
                 window.sessionStorage.setItem('userList[' + i + ']', JSON.stringify(jsonarray[i]));
                 head = head + "<tr>" + "<th scope=\"row\" style='vertical-align: middle'>" + jsonarray[i].id + "</th>" +
                     "<td style='vertical-align: middle'>" + jsonarray[i].username + "</td>" +
-                    "<td style='vertical-align: middle' ><a onclick='changeImg(" + jsonarray[i].id + ",\"" + jsonarray[i].avatar + "\")'  data-toggle='modal'  data-target='#editUserImg'>" + "<img class='img-fluid rounded-circle shadow' src=" + jsonarray[i].avatar + "'..' style='max-width: 5rem;max-height: 5rem' />" + "</a></td>" +//这里记得改
+                    "<td style='vertical-align: middle' ><a onclick='changeImg(" + jsonarray[i].id + ",\"" + jsonarray[i].avatar + "\")'  data-toggle='modal'  data-target='#editUserImg'>" + "<img class='img-fluid rounded-circle shadow' src="+jsonarray[i].avatar+" style='max-width: 5rem;max-height: 5rem' />" + "</a></td>" +//这里记得改
                     "<td style='vertical-align: middle'>" + jsonarray[i].realname + "</td>";
                 if (jsonarray[i].sex == 1) {
                     head = head + "<td style='vertical-align: middle'>" + "男" + "</td>";
@@ -110,7 +110,7 @@ function submitEditUser() {
 }
 
 function changeImg(id, avatar) {
-    $("#BeforeImg").attr("src", "../" + avatar);
+    $("#BeforeImg").attr("src", "" + avatar);
     $("#user_id").val(id);
 }
 

@@ -1,12 +1,15 @@
 package com.tang.api;
 
 import com.tang.basic.ResponseResult;
-import com.tang.params.user.RegisterParams;
+import com.tang.params.user.RegisterParam;
+import com.tang.params.user.ResetPasswordParam;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
@@ -29,7 +32,7 @@ public interface UserApi {
      */
     @ApiOperation(value = "用户注册")
     @RequestMapping(value = "register.action", method = RequestMethod.POST)
-    ResponseResult register(@Valid @ModelAttribute RegisterParams registerParams);
+    ResponseResult register(@Valid @ModelAttribute RegisterParam registerParams);
 
     /**
      * 获取验证短信接口
@@ -42,6 +45,17 @@ public interface UserApi {
     @RequestMapping(value = "getVerifyCode", method = RequestMethod.POST)
     ResponseResult getVerifyCode(@NotBlank @RequestParam @ApiParam("手机号") String phoneNum, @NotBlank @RequestParam @ApiParam("获取短信的操作类型") String type);
 
+
+    /**
+     * 根据验证码重置用户密码
+     *
+     * @param resetPasswordParam 重置参数
+     * @return 操作结果
+     */
+    @ApiOperation(value = "根据验证码重置密码")
+    @RequestMapping(value = "password/change.action", method = RequestMethod.POST)
+    ResponseResult changePassword(@Valid @ModelAttribute ResetPasswordParam resetPasswordParam);
+
     /**
      * 用户登录
      *
@@ -51,4 +65,5 @@ public interface UserApi {
      */
     @RequestMapping(value = "login.action", method = RequestMethod.POST)
     ModelAndView login(@NotBlank @RequestParam @ApiParam("用户账号") String username, @NotBlank @RequestParam @ApiParam("用户密码") String password);
+
 }
