@@ -88,7 +88,7 @@
                                 <li personDetails="" class="comon" th:text="${'用户名：'+userInfo.username}"></li>
                                 <div personDetails="" class="line"></div>
                                 <div personDetails="" class="nick">
-                                    <span personDetails="" th:text="${'姓名：'+userInfo.realname}"></span>
+                                    <span personDetails="" th:text="${'姓名：'+userInfo.realName}"></span>
                                     <span personDetails="" class="mod"><a href="javascript:changeInfo()">修改资料</a></span>
                                 </div>
                                 <li personDetails="" class="comon"
@@ -114,7 +114,7 @@
                                     <div>
                                         <label style="width: 110px">姓名：&nbsp;</label>
                                         <input type="text" name="realname" class="signup-form"
-                                               th:value="${userInfo.realname}"/>
+                                               th:value="${userInfo.realName}"/>
                                     </div>
                                     <div>
                                         <label style="width: 110px">生日：&nbsp;</label>
@@ -182,7 +182,7 @@
                   enctype="multipart/form-data">
                 <div class="modal-body">
                     <h5 class="header-other">修改用户信息</h5>
-                    <input id="user_id" name="user_id" type="hidden" th:value="${userInfo.id}"/>
+                    <input id="user_id" name="user_id" type="hidden" th:value="${userInfo.pkId}"/>
                     <div class="form-group row">
                         <!-- 这里有空最好改下图片比例 -->
                         <div class="col-md-6" style="text-align: center">

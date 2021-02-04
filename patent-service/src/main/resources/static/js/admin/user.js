@@ -32,7 +32,7 @@ function showUser(num) {
                 head = head + "<tr>" + "<th scope=\"row\" style='vertical-align: middle'>" + jsonarray[i].id + "</th>" +
                     "<td style='vertical-align: middle'>" + jsonarray[i].username + "</td>" +
                     "<td style='vertical-align: middle' ><a onclick='changeImg(" + jsonarray[i].id + ",\"" + jsonarray[i].avatar + "\")'  data-toggle='modal'  data-target='#editUserImg'>" + "<img class='img-fluid rounded-circle shadow' src="+jsonarray[i].avatar+" style='max-width: 5rem;max-height: 5rem' />" + "</a></td>" +//这里记得改
-                    "<td style='vertical-align: middle'>" + jsonarray[i].realname + "</td>";
+                    "<td style='vertical-align: middle'>" + jsonarray[i].realName + "</td>";
                 if (jsonarray[i].sex == 1) {
                     head = head + "<td style='vertical-align: middle'>" + "男" + "</td>";
                 } else if (jsonarray[i].sex == 0) {
@@ -70,7 +70,7 @@ function currentPage(currentPage) {
 function changeInfo(id) {
     var object = JSON.parse(sessionStorage.getItem('userList[' + id + ']'));
     $("#username").val(object.username);
-    $("#realname").val(object.realname);
+    $("#realName").val(object.realName);
     if (object.sex == 1) {
         $("#male").attr("checked", "true");
     } else if (object.sex == 0) {
@@ -90,7 +90,7 @@ function submitEditUser() {
         url: "/updateInfo.action",
         data: {
             id: $("#hidden_id").val(),
-            realname: $("#realname").val(),
+            realName: $("#realName").val(),
             sex: $("input[name='sex']:checked").val(),
             location: $("#location").val(),
             birth: $("#date").val(),

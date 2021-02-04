@@ -18,7 +18,7 @@
     <sql id="Base_Column_List">
     pkId, username, password, sex, phoneNum, email, birth, location, avatar, createTime, loginTime, realName
   </sql>
-    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
         select
         <include refid="Base_Column_List"/>
         from user
@@ -28,7 +28,7 @@
     <select id="checkAccount" resultType="java.lang.Integer" parameterType="com.tang.patent.entity.bean.User">
     SELECT count(pkId) FROM user WHERE username = #{username,jdbcType=VARCHAR} AND password = #{password,jdbcType=VARCHAR}
   </select>
-    <select id="selectIdByName" resultType="java.lang.Integer" parameterType="java.lang.String">
+    <select id="selectIdByName" resultType="java.lang.Long" parameterType="java.lang.String">
     SELECT pkId FROM user where username = #{username};
   </select>
     <update id="updateUserImg" parameterType="com.tang.patent.entity.bean.User">
