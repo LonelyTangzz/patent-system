@@ -15,7 +15,7 @@ public interface UserMapper {
 
     int insertSelective(User record);
 
-    User selectByPrimaryKey(Integer id);
+    User selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(User record);
 
@@ -23,7 +23,7 @@ public interface UserMapper {
 
     int checkAccount(User record);
 
-    int selectIdByName(@Param("username") String username);
+    Long selectIdByName(@Param("username") String username);
 
     int updateUserImg(User record);
 

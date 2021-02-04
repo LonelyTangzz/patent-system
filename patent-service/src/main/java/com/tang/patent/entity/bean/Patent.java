@@ -8,7 +8,8 @@ import java.util.Date;
 @Data
 @ToString
 public class Patent {
-    private Integer id;
+
+    private Long pkId;
 
     private String patentNo;
 
@@ -26,5 +27,5 @@ public class Patent {
 
     private String img;
 
-    private Date updatetime;
+    private Date updateTime;
 }

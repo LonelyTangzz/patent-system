@@ -5,6 +5,7 @@ import com.tang.patent.entity.bean.Patent;
 import com.tang.patent.dao.PatentMapper;
 import com.tang.patent.service.PatentService;
 import com.tang.vos.category.CategoryVo;
+import com.tang.vos.patent.PatentVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -85,7 +86,7 @@ public class PatentServiceImpl implements PatentService {
      * @return
      */
     @Override
-    public List<Patent> getPatentByPage(Integer page) {
+    public List<PatentVo> getPatentByPage(Integer page) {
         return patentMapper.getPatentByPage(page);
     }
 

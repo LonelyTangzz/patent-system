@@ -3,6 +3,7 @@ package com.tang.patent.service.impl;
 import com.tang.patent.entity.bean.News;
 import com.tang.patent.dao.NewsMapper;
 import com.tang.patent.service.NewsService;
+import com.tang.vos.news.NewsVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,15 +11,16 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @name NewsServiceImpl
  * @author tangzy
- * @since 2021/1/9
  * @version 1.0
+ * @name NewsServiceImpl
  * @description: 新闻业务服务层
+ * @since 2021/1/9
  */
 @Service
 public class NewsServiceImpl implements NewsService {
     @Autowired
+
     private NewsMapper newsMapper;
 
     @Override
@@ -31,8 +33,14 @@ public class NewsServiceImpl implements NewsService {
         return newsMapper.insertSelective(news) > 0 ? true : false;
     }
 
+    /**
+     * 分页获取新闻信息
+     *
+     * @param page 页码
+     * @return 新闻信息
+     */
     @Override
-    public List<News> getNewsByPage(Integer page) {
+    public List<NewsVo> getNewsByPage(Integer page) {
         return newsMapper.getNewsByPage(page);
     }
 
@@ -53,6 +61,6 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public News getNewsById(Integer id) {
-        return newsMapper.selectByPrimaryKey(id);
+        return newsMapper.selectByPrimaryKey((long) id);
     }
 }

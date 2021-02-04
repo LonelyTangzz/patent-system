@@ -1,6 +1,7 @@
 package com.tang.patent.service;
 
 import com.tang.patent.entity.bean.News;
+import com.tang.vos.news.NewsVo;
 
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,13 @@ public interface NewsService {
 
     boolean addNews(News news);
 
-    List<News> getNewsByPage(Integer page);
+    /**
+     * 分页获取新闻信息
+     *
+     * @param page 页码
+     * @return 新闻信息
+     */
+    List<NewsVo> getNewsByPage(Integer page);
 
     boolean deleNews(Integer id);
 

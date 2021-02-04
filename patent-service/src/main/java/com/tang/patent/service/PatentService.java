@@ -3,6 +3,7 @@ package com.tang.patent.service;
 import com.tang.patent.entity.bean.Category;
 import com.tang.patent.entity.bean.Patent;
 import com.tang.vos.category.CategoryVo;
+import com.tang.vos.patent.PatentVo;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +21,7 @@ public interface PatentService {
 
     Boolean updatePatent(Patent patent);
 
-    List<Patent> getPatentByPage(Integer page);
+    List<PatentVo> getPatentByPage(Integer page);
 
     int countPatent();
 

@@ -2,28 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.tang.patent.dao.PatentMapper">
     <resultMap id="BaseResultMap" type="com.tang.patent.entity.bean.Patent">
-        <id column="id" property="id" jdbcType="INTEGER"/>
-        <result column="patent_no" property="patentNo" jdbcType="CHAR"/>
-        <result column="patent_name" property="patentName" jdbcType="VARCHAR"/>
+        <id column="pkId" property="pkId" jdbcType="BIGINT"/>
+        <result column="patentNo" property="patentNo" jdbcType="CHAR"/>
+        <result column="patentName" property="patentName" jdbcType="VARCHAR"/>
         <result column="category" property="category" jdbcType="VARCHAR"/>
         <result column="location" property="location" jdbcType="VARCHAR"/>
         <result column="price" property="price" jdbcType="DOUBLE"/>
         <result column="owner" property="owner" jdbcType="VARCHAR"/>
         <result column="details" property="details" jdbcType="VARCHAR"/>
         <result column="img" property="img" jdbcType="VARCHAR"/>
-        <result column="updatetime" property="updatetime" jdbcType="DATE"/>
+        <result column="updateTime" property="updateTime" jdbcType="DATE"/>
     </resultMap>
     <sql id="Base_Column_List">
-    id, patent_no, patent_name, category, location, price, owner, details, img, updatetime
-  </sql>
+        pkId, patentNo, patentName, category, location, price, owner, details, img, updateTime
+    </sql>
     <!-- 新增的-->
     <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String">
         select
-        <include refid="Base_Column_List"/>selectIdByName
+        <include refid="Base_Column_List"/>
         from patent
-        where patent_name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')
+        where patentName like CONCAT('%',#{name,jdbcType=VARCHAR},'%')
     </select>
-    <select id="getPatentByPage" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <select id="getPatentByPage" resultType="com.tang.vos.patent.PatentVo" parameterType="java.lang.Integer">
         select *
         from patent
         limit #{page,jdbcType=INTEGER},15
@@ -35,7 +35,9 @@
         limit #{page,jdbcType=INTEGER},5
     </select>
     <select id="selectIdByName" resultType="java.lang.Integer" parameterType="java.lang.String">
-    SELECT id FROM user where patent_name = "${name}" ;
+        SELECT pkId
+        FROM patent
+        where patentName = #{name};
     </select>
     <update id="updateUserImg" parameterType="com.tang.patent.entity.bean.Patent">
         update user
@@ -44,24 +46,24 @@
                 img = #{img,jdbcType=VARCHAR},
             </if>
         </set>
-        where id = #{id,jdbcType=INTEGER}
+        where pkId = #{pkId}
     </update>
     <select id="countPatent" resultType="java.lang.Integer">
-    select count(*)
-    from patent
-  </select>
+        select count(*)
+        from patent
+    </select>
     <update id="updateByNo" parameterType="com.tang.patent.entity.bean.Patent">
-    update patent
-    set patent_name = #{patentName,jdbcType=VARCHAR},
-      category = #{category,jdbcType=VARCHAR},
-      location = #{location,jdbcType=VARCHAR},
-      price = #{price,jdbcType=DOUBLE},
-      owner = #{owner,jdbcType=VARCHAR},
-      details = #{details,jdbcType=VARCHAR},
-      img = #{img,jdbcType=VARCHAR},
-      updatetime = #{updatetime,jdbcType=DATE}
-      where patent_no = #{patentNo,jdbcType=CHAR}
-  </update>
+        update patent
+        set patentName = #{patentName,jdbcType=VARCHAR},
+            category   = #{category,jdbcType=VARCHAR},
+            location   = #{location,jdbcType=VARCHAR},
+            price      = #{price,jdbcType=DOUBLE},
+            owner      = #{owner,jdbcType=VARCHAR},
+            details    = #{details,jdbcType=VARCHAR},
+            img        = #{img,jdbcType=VARCHAR},
+            updatetime = #{updatetime,jdbcType=DATE}
+        where patentNo = #{patentNo,jdbcType=CHAR}
+    </update>
     <select id="countPatentOrderByCategory" resultType="java.util.HashMap">
         SELECT count(*) as total, category
         FROM patent
@@ -72,33 +74,34 @@
         select
         <include refid="Base_Column_List"/>
         from patent
-        where id = #{id,jdbcType=INTEGER}
+        where pkId = #{pkId}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from patent
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
+        delete
+        from patent
+        where pkId = #{pkId}
+    </delete>
     <insert id="insert" parameterType="com.tang.patent.entity.bean.Patent">
-    insert into patent (id, patent_no, patent_name, 
-      category, location, price, 
-      owner, details, img, 
-      updatetime)
-    values (#{id,jdbcType=INTEGER}, #{patentNo,jdbcType=CHAR}, #{patentName,jdbcType=VARCHAR}, 
-      #{category,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, 
-      #{owner,jdbcType=VARCHAR}, #{details,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR}, 
-      #{updatetime,jdbcType=DATE})
-  </insert>
+        insert into patent (pkId, patentNo, patentName,
+                            category, location, price,
+                            owner, details, img,
+                            updateTime)
+        values (#{pkId,jdbcType=BIGINT}, #{patentNo,jdbcType=CHAR}, #{patentName,jdbcType=VARCHAR},
+                #{category,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE},
+                #{owner,jdbcType=VARCHAR}, #{details,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR},
+                #{updateTime,jdbcType=DATE})
+    </insert>
     <insert id="insertSelective" parameterType="com.tang.patent.entity.bean.Patent">
         insert into patent
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="id != null">
-                id,
+            <if test="pkId != null">
+                pkId,
             </if>
             <if test="patentNo != null">
-                patent_no,
+                patentNo,
             </if>
             <if test="patentName != null">
-                patent_name,
+                patentName,
             </if>
             <if test="category != null">
                 category,
@@ -150,8 +153,8 @@
             <if test="img != null">
                 #{img,jdbcType=VARCHAR},
             </if>
-            <if test="updatetime != null">
-                #{updatetime,jdbcType=DATE},
+            <if test="updateTime != null">
+                #{updateTime},
             </if>
         </trim>
     </insert>
@@ -159,10 +162,10 @@
         update patent
         <set>
             <if test="patentNo != null">
-                patent_no = #{patentNo,jdbcType=CHAR},
+                patentNo = #{patentNo,jdbcType=CHAR},
             </if>
             <if test="patentName != null">
-                patent_name = #{patentName,jdbcType=VARCHAR},
+                patentName = #{patentName,jdbcType=VARCHAR},
             </if>
             <if test="category != null">
                 category = #{category,jdbcType=VARCHAR},
@@ -182,23 +185,23 @@
             <if test="img != null">
                 img = #{img,jdbcType=VARCHAR},
             </if>
-            <if test="updatetime != null">
-                updatetime = #{updatetime,jdbcType=DATE},
+            <if test="updateTime != null">
+                updateTime = #{updateTime},
             </if>
         </set>
-        where id = #{id,jdbcType=INTEGER}
+        where pkId = #{pkId}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.tang.patent.entity.bean.Patent">
-    update patent
-    set patent_no = #{patentNo,jdbcType=CHAR},
-      patent_name = #{patentName,jdbcType=VARCHAR},
-      category = #{category,jdbcType=VARCHAR},
-      location = #{location,jdbcType=VARCHAR},
-      price = #{price,jdbcType=DOUBLE},
-      owner = #{owner,jdbcType=VARCHAR},
-      details = #{details,jdbcType=VARCHAR},
-      img = #{img,jdbcType=VARCHAR},
-      updatetime = #{updatetime,jdbcType=DATE}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+        update patent
+        set patentNo   = #{patentNo,jdbcType=CHAR},
+            patentName = #{patentName,jdbcType=VARCHAR},
+            category   = #{category,jdbcType=VARCHAR},
+            location   = #{location,jdbcType=VARCHAR},
+            price      = #{price,jdbcType=DOUBLE},
+            owner      = #{owner,jdbcType=VARCHAR},
+            details    = #{details,jdbcType=VARCHAR},
+            img        = #{img,jdbcType=VARCHAR},
+            updateTime = #{updateTime}
+        where pkId = #{pkId}
+    </update>
 </mapper>

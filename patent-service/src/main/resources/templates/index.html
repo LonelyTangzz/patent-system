@@ -98,26 +98,26 @@
                 </div>
             </div>
             <div th:each="allPatents:${allPatents}">
-                <article th:class="'excerpt excerpt-'+${allPatents.id}">
-                    <a class="focus" th:href="'patentDetails?id='+${allPatents.id}" title="专利详情"
+                <article th:class="'excerpt excerpt-'+${allPatents.pkId}">
+                    <a class="focus" th:href="'patentDetails?id='+${allPatents.pkId}" title="专利详情"
                        target="_blank"><img class="thumb"
                                             data-original="img/user/patent.png"
                                             src="img/user/patent.png"
                                             alt="专利详情"
                                             style="display: inline;"></a>
-                    <header><a class="cat" th:href="'patentDetails?id='+${allPatents.id}" title="专利信息">专利信息<i></i></a>
-                        <h2><a th:href="'patentDetails?id='+${allPatents.id}" title="专利名" target="_blank"
+                    <header><a class="cat" th:href="'patentDetails?id='+${allPatents.pkId}" title="专利信息">专利信息<i></i></a>
+                        <h2><a th:href="'patentDetails?id='+${allPatents.pkId}" title="专利名" target="_blank"
                                th:text="${allPatents.patentName}"></a>
                         </h2>
                     </header>
                     <p class="meta">
                         <time class="time"><i class="glyphicon glyphicon-time"></i> <span
-                                th:text="${#dates.format(allPatents.updatetime, 'yyyy-MM-dd')}"></span></time>
+                                th:text="${#dates.format(allPatents.updateTime, 'yyyy-MM-dd')}"></span></time>
                         <span class="comt-author"><i class="glyphicon glyphicon-pencil"></i><span
                                 th:text="${allPatents.owner}"></span></span>
                     </p>
                     <p class="note" th:text="${#strings.substring(allPatents.details,0,80)}+'……'"></p><span><a
-                        th:href="'patentDetails?id='+${allPatents.id}">了解更多</a></span>
+                        th:href="'patentDetails?id='+${allPatents.pkId}">了解更多</a></span>
                 </article>
             </div>
 <!--                        <nav class="pagination" style="display: none;">-->
@@ -174,7 +174,7 @@
             <h3>最新行业资讯</h3>
             <ul>
                 <li>
-                    <a th:each="news:${news}" title="单例新闻" th:href="'newsDetails?id='+${news.id}">
+                    <a th:each="news:${news}" title="单例新闻" th:href="'newsDetails?id='+${news.pkId}">
                         <span class="thumbnail">
 				            <img class="thumb" data-original="img/user/news.png" src="img/user/news.png" alt="新闻"
                                  style="display: block;">
@@ -182,7 +182,7 @@
                         <span class="text" th:text="${news.title}"></span>
                         <span class="muted">
                             <i class="glyphicon glyphicon-time"></i><span
-                                th:text="${#dates.format(news.uptime, 'yyyy-MM-dd')}"></span>
+                                th:text="${#dates.format(news.updateTime, 'yyyy-MM-dd')}"></span>
 			            </span>
                     </a>
                 </li>

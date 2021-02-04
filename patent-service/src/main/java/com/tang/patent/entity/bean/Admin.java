@@ -9,7 +9,7 @@ import java.util.Date;
 @ToString
 public class Admin {
 
-    private Integer id;
+    private Long pkId;
 
     private String username;
 
@@ -19,5 +19,5 @@ public class Admin {
 
     private Date modifyTime;
 
-    private Integer flag;
+    private Boolean flag;
 }

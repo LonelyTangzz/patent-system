@@ -16,6 +16,7 @@ import com.tang.patent.service.CategoryService;
 import com.tang.patent.service.NewsService;
 import com.tang.patent.service.PatentService;
 import com.tang.patent.service.UserService;
+import com.tang.vos.user.IndexDataVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,10 +31,7 @@ import java.io.*;
 import java.net.URLDecoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -142,7 +140,7 @@ public class UserController extends BaseController implements UserApi {
         ModelAndView mv = new ModelAndView();
         if (userService.checkAccount(username, password)) {
             User user = new User();
-            user.setId(userService.getUserIdByName(username));
+            user.setPkId(userService.getUserIdByName(username));
             user.setLoginTime(new Date());
             userService.updateUserInfo(user);
             mv.setViewName("index.html");
@@ -196,7 +194,7 @@ public class UserController extends BaseController implements UserApi {
     public Object updateInfo(HttpServletRequest req) throws ParseException {
         JSONObject jsonObject = new JSONObject();
         User user = new User();
-        user.setId(Integer.parseInt(req.getParameter("id")));
+        user.setPkId(Long.parseLong(req.getParameter("id")));
         if (req.getParameter("sex") != null) {
             user.setSex(Byte.parseByte(req.getParameter("sex")));
         }
@@ -207,7 +205,7 @@ public class UserController extends BaseController implements UserApi {
         user.setEmail(req.getParameter("email"));
         user.setLocation(req.getParameter("location"));
         user.setPhoneNum(req.getParameter("phoneNum"));
-        user.setRealname(req.getParameter("realname"));
+        user.setRealName(req.getParameter("realname"));
         if (userService.updateUserInfo(user)) {
             jsonObject.put("code", 1);
             jsonObject.put("msg", "修改成功！");
@@ -246,7 +244,7 @@ public class UserController extends BaseController implements UserApi {
             response.sendRedirect("admin/userControl");
             file.transferTo(dest);
             User user = new User();
-            user.setId(Integer.parseInt(user_id));
+            user.setPkId(Long.parseLong(user_id));
             user.setAvatar(userAvatarPath);
             boolean res = userService.updateUserAvatar(user);
             if (res) {
@@ -344,7 +342,7 @@ public class UserController extends BaseController implements UserApi {
             response.sendRedirect("personInfo");
             file.transferTo(dest);
             User user = new User();
-            user.setId(Integer.parseInt(user_id));
+            user.setPkId(Long.parseLong(user_id));
             user.setAvatar(userAvatorPath);
             boolean res = userService.updateUserAvatar(user);
             if (res) {
@@ -368,19 +366,18 @@ public class UserController extends BaseController implements UserApi {
      * 修改用户信息
      *
      * @param user
-     * @param req
      * @param resp
      * @param birthChange
      * @throws IOException
      * @throws ParseException
      */
     @RequestMapping(value = "changeInfo", method = RequestMethod.POST)
-    public void changeInfo(User user, HttpServletRequest req, HttpServletResponse resp, String birthChange) throws IOException, ParseException {
+    public void changeInfo(User user, HttpServletResponse resp, String birthChange) throws IOException, ParseException {
         if (birthChange != "" && birthChange != null) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             user.setBirth(simpleDateFormat.parse(birthChange));
         }
-        user.setId(userService.getUserIdByName(user.getUsername()));
+        user.setPkId(userService.getUserIdByName(user.getUsername()));
         boolean res = userService.updateUserInfo(user);
         if (res) {
             resp.sendRedirect("personInfo");
@@ -392,7 +389,7 @@ public class UserController extends BaseController implements UserApi {
     /**
      * 以下为页面配置
      */
-    @RequestMapping(value = "index")
+    @RequestMapping(value = {"index",""})
     public ModelAndView index() {
         ModelAndView mv = new ModelAndView("index.html");
         mv.addObject("categories", categoryService.getAllCategory());
@@ -403,15 +400,17 @@ public class UserController extends BaseController implements UserApi {
         return mv;
     }
 
-    @RequestMapping(value = "")
-    public ModelAndView facePage() {
-        ModelAndView mv = new ModelAndView("index.html");
-        mv.addObject("categories", categoryService.getAllCategory());
-        mv.addObject("allPatents", patentService.getPatentByPage(0));
-        mv.addObject("totalNews", newsService.countNews());
-        mv.addObject("totalPatents", patentService.countPatent());
-        mv.addObject("news", newsService.getNewsByPage(0));
-        return mv;
+    @RequestMapping(value = {"index.action"})
+    public ResponseResult<IndexDataVo> indexData(){
+        BaseResp<IndexDataVo> baseResp = new BaseResp<>();
+        IndexDataVo indexData = new IndexDataVo();
+        indexData.setNews(newsService.getNewsByPage(0));
+        indexData.setPatents(null);
+        indexData.setCategories(categoryService.getAllCategory());
+        indexData.setPatentCount(patentService.countPatent());
+        indexData.setNewsCount(newsService.countNews());
+        baseResp.setRespData(Collections.singletonList(indexData));
+        return setResult(baseResp);
     }
 
     @RequestMapping(value = "login")

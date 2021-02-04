@@ -31,7 +31,7 @@ public class NewsController {
      */
     @RequestMapping(value = "addNews.action", method = RequestMethod.POST)
     public Object addNews(News news) {
-        news.setUptime(new Date());
+        news.setUpdateTime(new Date());
         boolean res = newsService.addNews(news);
         if (res) {
             jsonObject.put("code", 1);
@@ -86,7 +86,7 @@ public class NewsController {
      */
     @RequestMapping(value = "updateNews.action", method = RequestMethod.POST)
     public Object updateNews(News news) {
-        news.setUptime(new Date());
+        news.setUpdateTime(new Date());
         boolean res = newsService.updateNews(news);
         if (res) {
             jsonObject.put("code", 1);

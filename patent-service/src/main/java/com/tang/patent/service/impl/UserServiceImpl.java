@@ -130,9 +130,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean updatePassword(String name, String password) {
         User user = new User();
-        int id = userMapper.selectIdByName(name);
+        Long id = userMapper.selectIdByName(name);
         user.setPassword(password);
-        user.setId(id);
+        user.setPkId(id);
         return userMapper.updateByPrimaryKeySelective(user) > 0;
     }
 
@@ -143,7 +143,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public int getUserIdByName(String name) {
+    public Long getUserIdByName(String name) {
         return userMapper.selectIdByName(name);
     }
 

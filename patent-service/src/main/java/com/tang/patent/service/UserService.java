@@ -56,7 +56,7 @@ public interface UserService {
 
     boolean updateUserAvatar(User user);
 
-    int getUserIdByName(String name);
+    Long getUserIdByName(String name);
 
     boolean updateUserInfo(User user);
 

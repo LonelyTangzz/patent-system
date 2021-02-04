@@ -1,6 +1,7 @@
 package com.tang.patent.dao;
 
 import com.tang.patent.entity.bean.Patent;
+import com.tang.vos.patent.PatentVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,7 +28,7 @@ public interface PatentMapper {
 
     int updateUserImg(Patent record);
 
-    List<Patent> getPatentByPage(@Param("page") Integer page);
+    List<PatentVo> getPatentByPage(@Param("page") Integer page);
 
     List<Patent> getPatentByCategory(String category, Integer page);
 

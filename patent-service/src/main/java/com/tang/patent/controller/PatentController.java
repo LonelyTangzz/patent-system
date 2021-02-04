@@ -54,7 +54,7 @@ public class PatentController {
         patent.setPrice(Double.parseDouble(req.getParameter("price")));
         patent.setDetails(req.getParameter("details"));
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        patent.setUpdatetime(simpleDateFormat.parse(req.getParameter("updateTime")));
+        patent.setUpdateTime(simpleDateFormat.parse(req.getParameter("updateTime")));
         boolean res = patentService.insertPatent(patent);
         if (res) {
             jsonObject.put("code", 1);
@@ -94,7 +94,7 @@ public class PatentController {
         try {
             file.transferTo(dest);
             Patent patent = new Patent();
-            patent.setId(Integer.parseInt(id));
+            patent.setPkId(Long.parseLong(id));
             patent.setImg(storeAvatorPath);
             boolean res = patentService.updateImg(patent);
             if (res) {
@@ -196,7 +196,7 @@ public class PatentController {
         patent.setDetails(req.getParameter("details"));
         //时间转换
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        patent.setUpdatetime(simpleDateFormat.parse(req.getParameter("updateTime")));
+        patent.setUpdateTime(simpleDateFormat.parse(req.getParameter("updateTime")));
         boolean res = patentService.updatePatent(patent);
         if (res) {
             jsonObject.put("code", 1);

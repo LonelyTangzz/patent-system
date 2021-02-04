@@ -76,13 +76,13 @@
                     <img class="thumb" data-original="img/user/patent.png" src="img/user/patent.png"
                          alt="图片部分" style="display: inline;" draggable="false"></a>
                 <header>
-                    <a class="cat" th:href="${'patentDetails?id='+patents.id}" title="专利信息" draggable="false" th:text="${patents.category}"></a>
-                    <h2><a th:href="${'patentDetails?id='+patents.id}" title="专利标题" target="_blank" draggable="false" th:text="${patents.patentName}"></a>
+                    <a class="cat" th:href="${'patentDetails?id='+patents.pkId}" title="专利信息" draggable="false" th:text="${patents.category}"></a>
+                    <h2><a th:href="${'patentDetails?id='+patents.pkId}" title="专利标题" target="_blank" draggable="false" th:text="${patents.patentName}"></a>
                     </h2>
                 </header>
                 <p class="meta">
                     <time class="time"><i class="glyphicon glyphicon-time"></i> <span
-                            th:text="${#dates.format(patents.updatetime, 'yyyy-MM-dd')}"></span></time>
+                            th:text="${#dates.format(patents.updateTime, 'yyyy-MM-dd')}"></span></time>
                     <span class="views"><i class="glyphicon glyphicon-pencil"></i> <span
                             th:text="${patents.owner}"></span></span></p>
                 <p class="note" th:text="${#strings.substring(patents.details,0,80)}+'……'"></p>
@@ -116,9 +116,9 @@
                 <div class="widget-sentence-content">
                     <ul class="plinks ptags ">
                         <div th:each="categories:${categories}">
-                            <li><a th:href="'patentSort?name='+${categories.category}+'&page=0'" title="分类部分"
+                            <li><a th:href="'patentSort?name='+${categories.categoryName}+'&page=0'" title="分类部分"
                                    draggable="false"><label
-                                    th:text="${categories.category}"></label><span class="badge"
+                                    th:text="${categories.categoryName}"></label><span class="badge"
                                                                                    th:text="${categories.total}"></span></a>
                             </li>
                         </div>

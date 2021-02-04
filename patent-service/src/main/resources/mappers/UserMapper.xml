@@ -2,35 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.tang.patent.dao.UserMapper">
     <resultMap id="BaseResultMap" type="com.tang.patent.entity.bean.User">
-        <id column="id" property="id" jdbcType="INTEGER"/>
+        <id column="pkId" property="pkId" jdbcType="BIGINT"/>
         <result column="username" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="sex" property="sex" jdbcType="TINYINT"/>
-        <result column="phone_num" property="phoneNum" jdbcType="CHAR"/>
+        <result column="phoneNum" property="phoneNum" jdbcType="CHAR"/>
         <result column="email" property="email" jdbcType="CHAR"/>
         <result column="birth" property="birth" jdbcType="TIMESTAMP"/>
         <result column="location" property="location" jdbcType="VARCHAR"/>
         <result column="avatar" property="avatar" jdbcType="VARCHAR"/>
-        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
-        <result column="login_time" property="loginTime" jdbcType="TIMESTAMP"/>
-        <result column="realname" property="realname" jdbcType="VARCHAR"/>
+        <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="loginTime" property="loginTime" jdbcType="TIMESTAMP"/>
+        <result column="realName" property="realName" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
-    id, username, password, sex, phone_num, email, birth, location, avatar, create_time, 
-    login_time, realname
+    pkId, username, password, sex, phoneNum, email, birth, location, avatar, createTime, loginTime, realName
   </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
         <include refid="Base_Column_List"/>
         from user
-        where id = #{id,jdbcType=INTEGER}
+        where pkId = #{id,jdbcType=INTEGER}
     </select>
     <!--新增-->
     <select id="checkAccount" resultType="java.lang.Integer" parameterType="com.tang.patent.entity.bean.User">
-    SELECT count(id) FROM user WHERE username = #{username,jdbcType=VARCHAR} AND password = #{password,jdbcType=VARCHAR}
+    SELECT count(pkId) FROM user WHERE username = #{username,jdbcType=VARCHAR} AND password = #{password,jdbcType=VARCHAR}
   </select>
     <select id="selectIdByName" resultType="java.lang.Integer" parameterType="java.lang.String">
-    SELECT id FROM user where username = "${username}" ;
+    SELECT pkId FROM user where username = #{username};
   </select>
     <update id="updateUserImg" parameterType="com.tang.patent.entity.bean.User">
         update user
@@ -39,7 +38,7 @@
                 avatar = #{avatar,jdbcType=VARCHAR},
             </if>
         </set>
-        where id = #{id,jdbcType=INTEGER}
+        where pkId = #{pkId}
     </update>
     <select id="getPageUser" resultMap="BaseResultMap" parameterType="java.lang.Integer">
     select
@@ -52,33 +51,33 @@
     from user
   </select>
     <select id="countUserByMonth"  resultType="java.util.HashMap">
-    select day(create_time) as register_time , count(*) as total
+    select day(createTime) as registerTime , count(*) as total
     from user
-    where month (create_time) = #{month,jdbcType=VARCHAR}
-    and year(create_time) = #{year,jdbcType=VARCHAR}
-    group by day (create_time)
-     order by day (create_time) asc
+    where month (createTime) = #{month,jdbcType=VARCHAR}
+    and year(createTime) = #{year,jdbcType=VARCHAR}
+    group by day (createTime)
+     order by day (createTime) asc
   </select>
     <!--新增-->
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user
-    where id = #{id,jdbcType=INTEGER}
+    where pkId = #{pkId}
   </delete>
     <insert id="insert" parameterType="com.tang.patent.entity.bean.User">
-    insert into user (id, username, password, 
-      sex, phone_num, email, birth, 
-      location, avatar, create_time, 
-      login_time, realname)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    insert into user (pkId, username, password,
+      sex, phoneNum, email, birth,
+      location, avatar, createTime,
+      loginTime, realName)
+    values (#{pkId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{sex,jdbcType=TINYINT}, #{phoneNum,jdbcType=CHAR}, #{email,jdbcType=CHAR}, #{birth,jdbcType=TIMESTAMP}, 
       #{location,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{loginTime,jdbcType=TIMESTAMP}, #{realname,jdbcType=VARCHAR})
+      #{loginTime,jdbcType=TIMESTAMP}, #{realName,jdbcType=VARCHAR})
   </insert>
     <insert id="insertSelective" parameterType="com.tang.patent.entity.bean.User">
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="id != null">
-                id,
+            <if test="pkId != null">
+                pkId,
             </if>
             <if test="username != null">
                 username,
@@ -90,7 +89,7 @@
                 sex,
             </if>
             <if test="phoneNum != null">
-                phone_num,
+                phoneNum,
             </if>
             <if test="email != null">
                 email,
@@ -105,18 +104,18 @@
                 avatar,
             </if>
             <if test="createTime != null">
-                create_time,
+                createTime,
             </if>
             <if test="loginTime != null">
-                login_time,
+                loginTime,
             </if>
-            <if test="realname != null">
-                realname,
+            <if test="realName != null">
+                realName,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="id != null">
-                #{id,jdbcType=INTEGER},
+            <if test="pkId != null">
+                #{pkId,jdbcType=BIGINT},
             </if>
             <if test="username != null">
                 #{username,jdbcType=VARCHAR},
@@ -148,8 +147,8 @@
             <if test="loginTime != null">
                 #{loginTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="realname != null">
-                #{realname,jdbcType=VARCHAR},
+            <if test="realName != null">
+                #{realName,jdbcType=VARCHAR},
             </if>
         </trim>
     </insert>
@@ -166,7 +165,7 @@
                 sex = #{sex,jdbcType=TINYINT},
             </if>
             <if test="phoneNum != null">
-                phone_num = #{phoneNum,jdbcType=CHAR},
+                phoneNum = #{phoneNum,jdbcType=CHAR},
             </if>
             <if test="email != null">
                 email = #{email,jdbcType=CHAR},
@@ -181,30 +180,30 @@
                 avatar = #{avatar,jdbcType=VARCHAR},
             </if>
             <if test="createTime != null">
-                create_time = #{createTime,jdbcType=TIMESTAMP},
+                createTime = #{createTime,jdbcType=TIMESTAMP},
             </if>
             <if test="loginTime != null">
-                login_time = #{loginTime,jdbcType=TIMESTAMP},
+                loginTime = #{loginTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="realname != null">
-                realname = #{realname,jdbcType=VARCHAR},
+            <if test="realName != null">
+                realName = #{realName,jdbcType=VARCHAR},
             </if>
         </set>
-        where id = #{id,jdbcType=INTEGER}
+        where pkId = #{pkId,jdbcType=BIGINT}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.tang.patent.entity.bean.User">
     update user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=TINYINT},
-      phone_num = #{phoneNum,jdbcType=CHAR},
+      phonenum = #{phoneNum,jdbcType=CHAR},
       email = #{email,jdbcType=CHAR},
       birth = #{birth,jdbcType=TIMESTAMP},
       location = #{location,jdbcType=VARCHAR},
       avatar = #{avatar,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      login_time = #{loginTime,jdbcType=TIMESTAMP},
-      realname = #{realname,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      loginTime = #{loginTime,jdbcType=TIMESTAMP},
+      realName = #{realName,jdbcType=VARCHAR}
+    where pkId = #{pkId,jdbcType=BIGINT}
   </update>
 </mapper>

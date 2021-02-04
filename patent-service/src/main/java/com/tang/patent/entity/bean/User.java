@@ -16,7 +16,7 @@ import java.util.Date;
 @ToString
 @Repository
 public class User {
-    private Integer id;
+    private Long pkId;
 
     private String username;
 
@@ -38,6 +38,6 @@ public class User {
 
     private Date loginTime;
 
-    private String realname;
+    private String realName;
 
 }
